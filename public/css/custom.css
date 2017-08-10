@@ -1,0 +1,9 @@
+.side-header img {
+    display: inline-block;
+    margin-left: -6px;
+}
+
+#header-navbar {
+    min-height: 40px;
+    background-color: #2C343F;
+}

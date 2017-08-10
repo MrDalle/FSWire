@@ -1,0 +1,234 @@
+@extends('layouts.oneui')
+            <!-- Header -->
+            <style>
+            .bg-image {
+                height: 400px;
+                background-color: #f9f9f9;
+                background-position: 0 50%;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+            .bg-primary-dark-op {
+                height: 400px;
+                background-color: rgba(62, 74, 89, 0.83);
+            }
+
+
+
+            </style>
+@section('content')
+<!-- Main Container -->
+
+    <!-- Page Content -->
+    <div class="content content-boxed">
+        <!-- User Header -->
+        <div class="block">
+                        <!-- Basic Info -->
+                        <div class="bg-image" style="background-image: url('{{ $user->cover_url }}')">
+
+                            <div class="block-content bg-primary-dark-op text-center overflow-hidden">
+                                <div class="push-30-t push animated fadeInDown">
+                                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ $user->avatar_url }}" onerror="this.src='http://identicon.org?t={{ $user->username }}&s=400'" alt="Avatar"></a>
+                                </div>
+                                <div class="push-30 animated fadeInUp">
+                                    <h2 class="h4 font-w600 text-white push-5">{{ $user->username }}</h2>
+                                    <h3 class="h5 text-gray">Rank Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Basic Info -->
+
+                        <!-- Stats -->
+                        <div class="block-content text-center">
+                            <div class="row items-push text-uppercase">
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="font-w700 text-gray-darker animated fadeIn">Total Hours</div>
+                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $user->totalhours }}</a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="font-w700 text-gray-darker animated fadeIn">Total flights</div>
+                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ \App\PIREP::where('user_id', $user->id)->count() }}</a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="font-w700 text-gray-darker animated fadeIn">AVG LDG RTE</div>
+                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ \App\PIREP::where('user_id', $user->id)->avg('landingrate') }}</a>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="font-w700 text-gray-darker animated fadeIn">RANK</div>
+                                    <div class="text-warning push-10-t animated flipInX">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Stats -->
+                    </div>
+                    <!-- END User Header -->
+
+                    <!-- Main Content -->
+                    <div class="row">
+                        <div class="col-sm-5 col-sm-push-7 col-lg-4 col-lg-push-8">
+
+                            <!-- Follow -->
+                            <div class="block">
+                                <div class="block-content block-content-full text-center">
+                                    <button class="btn btn-sm btn-default"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus text-success"></i> Edit Profile</button>
+
+                                </div>
+                            </div>
+                            <!-- END Follow -->
+
+                            <!-- About -->
+                            <div class="block">
+                                <div class="block-content">
+                                    <p>Hi there, welcome to my profile!</p>
+                                    <p>I'm a web designer and I love creating stuff that solve problems and make your life easier. Feel free to follow me to know more about me and my projects. Thanks for stopping by, wish you a great day!</p>
+                                </div>
+                            </div>
+                            <!-- END About -->
+
+
+                                                        <!-- Products -->
+                                                        <div class="block block-opt-refresh-icon6">
+                                                            <div class="block-header">
+                                                                <ul class="block-options">
+                                                                    <li>
+                                                                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                                                    </li>
+                                                                </ul>
+                                                                <h3 class="block-title"><i class="fa fa-fw fa-briefcase"></i> Pilot Infos</h3>
+                                                            </div>
+                                                            <div class="block-content">
+                                                                <ul class="list list-simple list-li-clearfix">
+                                                                    <li>
+                                                                        <a class="item item-rounded pull-left push-10-r bg-info" href="javascript:void(0)">
+                                                                            <i class="si si-rocket text-white-op"></i>
+                                                                        </a>
+                                                                        <h5 class="push-10-t">HUB</h5>
+                                                                        <div class="font-s13">Responsive App Template</div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="item item-rounded pull-left push-10-r bg-amethyst" href="javascript:void(0)">
+                                                                            <i class="si si-calendar text-white-op"></i>
+                                                                        </a>
+                                                                        <h5 class="push-10-t">Member since</h5>
+                                                                        <div class="font-s13">{{ date('d/m/Y', strtotime($user->created_at)) }}</div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="item item-rounded pull-left push-10-r bg-danger" href="javascript:void(0)">
+                                                                            <i class="si si-speedometer text-white-op"></i>
+                                                                        </a>
+                                                                        <h5 class="push-10-t">iDashboard</h5>
+                                                                        <div class="font-s13">Bootstrap Admin Template</div>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="text-center push">
+                                                                    <small><a href="javascript:void(0)">View More..</a></small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- END Products -->
+
+                            <!-- Followers -->
+                            <div class="block block-opt-refresh-icon6">
+                                <div class="block-header">
+                                    <ul class="block-options">
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                        </li>
+                                    </ul>
+                                    <h3 class="block-title"><i class="fa fa-fw fa-share-alt"></i> Followers</h3>
+                                </div>
+                                <div class="block-content">
+                                    <ul class="nav-users push">
+                                        <li>
+                                            <a href="base_pages_profile.html">
+                                                <img class="img-avatar" src="assets/img/avatars/avatar10.jpg" alt="">
+                                                <i class="fa fa-circle text-success"></i> George Stone
+                                                <div class="font-w400 text-muted"><small>Web Developer</small></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="base_pages_profile.html">
+                                                <img class="img-avatar" src="assets/img/avatars/avatar4.jpg" alt="">
+                                                <i class="fa fa-circle text-warning"></i> Linda Moore
+                                                <div class="font-w400 text-muted"><small>Web Designer</small></div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="base_pages_profile.html">
+                                                <img class="img-avatar" src="assets/img/avatars/avatar5.jpg" alt="">
+                                                <i class="fa fa-circle text-danger"></i> Amy Hunter
+                                                <div class="font-w400 text-muted"><small>Photographer</small></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="text-center push">
+                                        <small><a href="javascript:void(0)">Load More..</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Followers -->
+
+
+                        
+                        </div>
+
+                        <div class="col-sm-7 col-sm-pull-5 col-lg-8 col-lg-pull-4">
+
+                            <!-- Timeline -->
+                            <div class="block block-opt-refresh-icon6">
+                                <div class="block-header">
+                                    <ul class="block-options">
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                                        </li>
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                        </li>
+                                    </ul>
+                                    <h3 class="block-title"><i class="fa fa-newspaper-o"></i> Recent Flights</h3>
+                                </div>
+
+@foreach(\App\PIREP::where('user_id', $user->id)->orderBy('id', 'desc')->limit(10)->get() as $p)
+                                    <!-- System Notification -->
+                                    <div class="block-content content-full">
+                                        <div class="block-header">
+                                          <table class="table table-condensed table-hover">
+                                            <tbody>
+                                            <ul class="block-options">
+                                                <li>
+                                                    <span><em class=" label label-success">{{ date('d/m/Y', strtotime($p->created_at)) }}</em></span>
+                                                </li>
+
+                                                <li>
+                                                    <span><i class="fa fa-database "></i></span>
+                                                </li>
+
+                                            </ul>
+  <td class=" h4 font-w400">{{ $p->airline->icao . $p->flightnum }}
+                                            <td class="h1 font-w700">{{ $p->depapt->icao }} -
+                                            {{ $p->arrapt->icao }}</td></td>
+                                            </div>
+</tbody></table>
+                                        </div>
+
+                                    </div>@endforeach
+                                    <!-- END System Notification -->
+
+
+                                        </div>
+                                    </div>
+                                    <!-- END Social Notification -->
+
+
+
+                                </div>
+
+    @endsection
