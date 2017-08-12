@@ -2,16 +2,8 @@
 
                 <!-- MAP -->
                 <style type="text/css">
-              .header-navbar-fixed #main-container {
-                	padding-top: -54px;
-                }
 
-                .map-container {
-                	width: 100%;
-                  border: none;
-                }
-
-                .map-container iframe{
+                .js-map-full iframe{
                   height:1080px;
                 	width: 100%;
 
@@ -22,12 +14,8 @@
                 @extends('layouts.oneui')
                 @section('content')
                 <!-- MAP -->
-                <div class="content">
-                    <div class="pull-t pull-r-l">
-                <div class="map-container">
+                <div class="js-map-full">
                 <iframe scrolling="no" frameBorder="0" src="https://map.fswire.net"></iframe>
-                </div>
                 <!-- END MAP -->
-                </div>
                 </div>
                 @endsection
