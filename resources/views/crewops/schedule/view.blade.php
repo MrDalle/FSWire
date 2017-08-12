@@ -78,6 +78,7 @@
                 </div>
             @endforeach
         </div>
+        {{ $schedules->links('vendor.pagination.oneui-default') }}
     </div>
 
     <!-- Search Modal -->
