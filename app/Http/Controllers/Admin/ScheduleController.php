@@ -22,7 +22,7 @@ class ScheduleController extends Controller
     public function index()
     {
         // Load all the schedules within the database
-        $schedules = ScheduleTemplate::with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->get();
+        $schedules = ScheduleTemplate::with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->paginate(9);
 
         //$schedules = ScheduleTemplate::all();
         //dd($schedules);

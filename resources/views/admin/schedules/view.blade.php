@@ -15,20 +15,18 @@
 
 
 
-  <!-- Main Container -->
-        <main id="main-container">
             <!-- Page Header -->
   <div class="content">
 
 
 
     <div class="col-sm-12">
-        <div class="card">
-            <div class="card-header">
+      <div class="block block-rounded">
+          <div class="block-header">
                 <i class="fa fa-align-justify"></i> Schedules Table
             </div>
-            <div class="card-block">
-                <div class="card-block">
+          <div class="block-content block-content-full">
+                <div class="block-content block-content-full">
 
                     @if(session('schedule_created'))
                         <div class="alert alert-success">Route successfully created.</div>
@@ -97,6 +95,7 @@
                     </tbody>
                 </table>
                     @endif
+                {{ $schedules->links('vendor.pagination.oneui-default') }}
             </div>
         </div>
     </div>

@@ -7,3 +7,22 @@
     min-height: 40px;
     background-color: #2C343F;
 }
+
+
+.parallax {
+    height: 300px;  /* THIS CAN BE SHORTER IN A REAL DOC */
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-size: cover;
+
+}
+
+.bg-image {
+/*height:300px;*/
+}
+
+.bg-primary-dark-op {
+height:100%;
+}

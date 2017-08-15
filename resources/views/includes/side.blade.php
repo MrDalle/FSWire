@@ -12,7 +12,7 @@
             <span>
 <a href="{{ url('/flightops/profile/'.Auth::user()->id) }}">
                       <img class="img-avatar img-avatar32" src="{{ Auth::user()->avatar_url }}"
-                           onerror="this.src='http://identicon.org?t={{ Auth::user()->username }}&s=400'" alt="Avatar"></a>
+                           onerror="this.src='{{ URL::asset('assets/img/avatars/avatar1.jpg') }}'" alt="Avatar"></a>
                     <span class="font-w600 push-10-l">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                 </span>
         </div>
@@ -27,7 +27,7 @@
                         <a href="#tabs-side-overlay-overview"><i class="fa fa-fw fa-coffee"></i> Overview</a>
                     </li>
                     <li>
-                        <a href="#tabs-side-overlay-sales"><i class="fa fa-fw fa-line-chart"></i> Sales</a>
+                        <a href="#tabs-side-overlay-sales"><i class="fa fa-fw fa-line-chart "></i> Sales</a>
                     </li>
                 </ul>
                 <div class="block-content tab-content">
@@ -115,11 +115,11 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-xs-8">
-                                      <a    href="https://discord.gg/0q7Qozx3iSeChKxY">
-                                          <div class=" form-group col-xs-8 btn btn-primary">Join Discord</div>
-                                      </a>
-                                  </div>
+                                    <div class="col-xs-8">
+                                        <a href="https://discord.gg/0q7Qozx3iSeChKxY">
+                                            <div class=" form-group col-xs-8 btn btn-primary">Join Discord</div>
+                                        </a>
+                                    </div>
                                     <div class="col-xs-8">
                                         <a href="{{ url('/flightops/profile/'.Auth::user()->id) }}">
                                             <div class=" form-group col-xs-8 btn btn-primary">User Profile</div>
@@ -136,7 +136,7 @@
                                               style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        <form class="form-bordered" action="http://vaos.fswire.net/flightops"
+                                        <form class="form-bordered" action="{{ url('flightops') }}"
                                               method="post" onsubmit="return false;">
                                         </form>
                                     </div>
@@ -357,8 +357,9 @@
 
                     </ul>
                 </div>
-                <a class="h5 text-white" href="https://vaos.fswire.net/flightops">
-                    <img src="{{URL::asset('assets/img/favicons/favicon.png')}}" alt=""> <span class="h4 font-w600 sidebar-mini-hide"> FSWire</span>
+                <a class="h5 text-white" href="{{ url('flightops') }}">
+                    <img src="{{URL::asset('assets/img/favicons/favicon.png')}}" alt=""> <span
+                            class="h4 font-w600 sidebar-mini-hide"> FSWire</span>
                 </a>
             </div>
             <!-- END Side Header -->
@@ -367,25 +368,31 @@
             <div class="side-content side-content-full">
                 <ul class="nav-main">
                     <li>
-                        <a class="active" href="https://vaos.fswire.net/flightops"><i class="si si-speedometer"></i><span
+                        <a href="{{ url('flightops') }}"><i class="si si-speedometer"></i><span
                                     class="sidebar-mini-hide">Dashboard</span></a>
                     </li>
 
                     <li>
-                        <a class="active" href=" {{ url('/map/') }}"><i class="si si-map"></i><span
+                        <a href=" {{ url('map') }}"><i class="si si-map"></i><span
                                     class="sidebar-mini-hide">RADAR</span></a>
                     </li>
                     <li>
-                        <a class="active" href="  {{ url('/wxr') }}"><i class="si si-umbrella"></i><span
+                        <a href="  {{ url('wxr') }}"><i class="si si-umbrella"></i><span
                                     class="sidebar-mini-hide">WXR</span></a>
                     </li>
-  <li class="nav-main-heading"><span class="sidebar-mini-hide">{{ Auth::user()->username }}</span></li>
                     <li>
-                        <a class="active"   href="{{ url('/flightops/profile/'.Auth::user()->id) }}"><i class="si si-user"></i><span
+                        <a href="  {{ url('flightops/stats/') }}"><i class="fa fa-certificate"></i><span
+                                    class="sidebar-mini-hide">Server Stats</span></a>
+                    </li>
+                    <li class="nav-main-heading"><span class="sidebar-mini-hide">{{ Auth::user()->username }}</span>
+                    </li>
+                    <li>
+                        <a href="{{ url('flightops/profile/'.Auth::user()->id) }}"><i
+                                    class="si si-user"></i><span
                                     class="sidebar-mini-hide">Pilot</span></a>
                     </li>
                     <li>
-                        <a class="active" href="  {{ url('/flightops/logbook') }}"><i class="si si-book-open"></i><span
+                        <a href="  {{ url('flightops/logbook') }}"><i class="si si-book-open"></i><span
                                     class="sidebar-mini-hide">Logbook</span></a>
                     </li>
 
@@ -393,71 +400,87 @@
 
                     <li class="nav-main-heading"><span class="sidebar-mini-hide">Dispatch</span></li>
                     <li>
-                        <a class="active" href="  {{ url('/flp') }}"><i class="si si-calculator"></i><span
+                        <a href="  {{ url('flp') }}"><i class="si si-calculator"></i><span
                                     class="sidebar-mini-hide">Plan Flight</span></a>
                     </li>
                     <li>
-                        <a class="active" href="  {{ url('/flightops/schedule') }}"><i class="si si-layers"></i><span
+                        <a href="  {{ url('flightops/schedule') }}"><i class="fa fa-barcode"></i><span
                                     class="sidebar-mini-hide">Schedule</span></a>
                     </li>
 
                     <li>
-                        <a class="active" href="  {{ url('/flightops/bids') }}"><i class="fa fa-check-square-o"></i><span
+                        <a href="  {{ url('flightops/bids') }}"><i
+                                    class="fa fa-check-square-o"></i><span
                                     class="sidebar-mini-hide">Bids</span></a>
                     </li>
+                    <!-- Admin Center -->
+                @if(Auth::user()->admin)
+                    <li>
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span
+                                    class="sidebar-mini-hide">Admin Center</span></a>
+                        <ul>
+
+
+                            <li class="nav-main-heading"><span class="sidebar-mini-hide">VA Management</span></li>
+
+
+                            <li>
+                                <a href="{{url('admin/schedule')}}"><i
+                                            class="fa fa-ravelry"></i><span
+                                            class="sidebar-mini-hide">Route Creator</span></a>
+                            </li>
+                            <li>
+                                <a href="  {{ url('admin/fleet') }}"><i class="si si-plane"></i><span
+                                            class="sidebar-mini-hide">Fleet Manager</span></a>
+                            </li>
+                            <li>
+                                <a href="{{url('admin/airlines')}}"><i
+                                            class="fa fa-ravelry"></i><span
+                                            class="sidebar-mini-hide">Airlines</span></a>
+                            </li>
+
+                            <li class="nav-main-heading"><span class="sidebar-mini-hide">Admin Center</span></li>
+                            <li>
+                                <a href="{{ url('admin') }}"><i class="fa fa-ravelry"></i><span
+                                            class="sidebar-mini-hide">Dashboard</span></a>
+                            </li>
+
+
+
+                            <li>
+                                <a href="{{ url('admin/pireps') }}"><i
+                                            class="fa fa-ravelry"></i><span
+                                            class="sidebar-mini-hide">PIREPS</span></a>
+                            </li>
+                            <li>
+                                <a href="{{ url('admin/pireps?view=pending') }}"><i
+                                            class="fa fa-ravelry"></i><span
+                                            class="sidebar-mini-hide">Awaiting Approval</span></a>
+                            </li>
+                        </ul>
+
+                    @endif
+
+                    <!-- Admin Center -->
                     <li class="nav-main-heading"><span class="sidebar-mini-hide">Community</span></li>
                     <li>
-                        <a class="active" href="  {{ url('/forum') }}"><i class="si si-users"></i><span
+                        <a href="  {{ url('forum') }}"><i class="si si-users"></i><span
                                     class="sidebar-mini-hide">Forum</span></a>
                     </li>
                     <li>
-                        <a class="active" href="https://support.fswire.net/"><i class="si si-question"></i><span
+                        <a href="https://support.fswire.net/"><i class="fa fa-life-ring"></i><span
                                     class="sidebar-mini-hide">Support</span></a>
                     </li>
-
                     <li>
-
-                      <!-- Admin Center -->
-                      @if(Auth::user()->admin)<li>
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">Admin Center</span></a>
-<ul>
-
-
-                    <li class="nav-main-heading"><span class="sidebar-mini-hide">VA Management</span></li>
-
-
-                    <li>
-                        <a class="active" href="{{url('/admin/schedule')}}"><i class="fa fa-ravelry"></i><span
-                                    class="sidebar-mini-hide">Route Creator</span></a>
+                        <a href="{{ url('faq') }}"><i class="si si-question"></i><span
+                                    class="sidebar-mini-hide">FAQ</span></a>
                     </li>
                     <li>
-                        <a class="active" href="  {{ url('admin/fleet') }}"><i class="si si-plane"></i><span
-                                    class="sidebar-mini-hide">Fleet Manager</span></a>
-                    </li>
-
-                    <li class="nav-main-heading"><span class="sidebar-mini-hide">Admin Center</span></li>
-                    <li>
-                        <a class="active" href="{{ url('admin') }}"><i class="fa fa-ravelry"></i><span
-                                    class="sidebar-mini-hide">Dashboard</span></a>
+                        <a href="https://discord.gg/ZFp9Rgc"><i class="fa fa-headphones"></i><span
+                                    class="sidebar-mini-hide">Join Discord</span></a>
                     </li>
 
 
-
-
-                    <li>
-                        <a class="active" href="{{ url('/admin/pireps') }}"><i class="fa fa-ravelry"></i><span
-                                    class="sidebar-mini-hide">PIREPS</span></a>
-                    </li>
-                    <li>
-                        <a class="active" href="{{ url('/admin/pireps?view=pending') }}"><i class="fa fa-ravelry"></i><span
-                                    class="sidebar-mini-hide">Awaiting Approval</span></a>
-                    </li>
-</li>
-</ul>
-
-@endif
-
-<!-- Admin Center -->
 
 
 

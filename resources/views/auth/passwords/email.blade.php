@@ -33,29 +33,29 @@
         -webkit-font-smoothing: antialiased;
         z-index: 1;
         }
-        
+
         .noscroll {
         overflow-x: hidden;
         overflow-y: hidden;
         }
-        
+
         .register {
         position: fixed;
         bottom: 0;
         width: 100%;
         margin-bottom: 15px;
         }
-        
+
         .register p {
         padding-right: 6px;
         }
-        
+
         .element {
         transform: translateY(165%);
         }
-        
+
         @media (max-width: 770px) {
-            
+
             .element {
             display: none;
             visibility: hidden;
@@ -142,9 +142,9 @@
         </script>
          <script type="text/javascript">
             //target the entire page, and listen for touch events
-        $('html, body').on('touchstart touchmove', function(e){ 
+        $('html, body').on('touchstart touchmove', function(e){
         //prevent native touch activity like scrolling
-        e.preventDefault(); 
+        e.preventDefault();
             });
         </script>
     </body>

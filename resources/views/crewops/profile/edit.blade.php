@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <label for="email">Avatar</label>
+                                        <label for="email">Avatar URL</label>
 
                                         @if($user->avatar_url === null)
 
@@ -158,6 +158,7 @@
                                                 multiple="">
 
                                             <option value="7">FSX</option>
+                                            <option value="7">FSX:SE</option>
                                             <option value="7">P3D V3</option>
                                             <option value="7">P3D V4</option>
                                             <option value="7">X-Plane 10</option>

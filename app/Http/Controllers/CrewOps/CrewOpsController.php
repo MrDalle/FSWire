@@ -22,7 +22,15 @@ class CrewOpsController extends Controller
         // Get the total number of bids for the user
         $totalbids = Bid::where('user_id', Auth::user()->id)->get();
         $totalLogs = PIREP::where('user_id', Auth::user()->id)->get();
-        return view('crewops.dashboard', ['bids' => $totalbids, 'logs' => $totalLogs]);
+        $newpirep = PIREP::where('user_id', Auth::user()->id)->with('depapt')->with('arrapt')->latest('created_at')->first();
+        $flighttime = PIREP::where('user_id', Auth::user()->id)->sum('flighttime');
+        if (Auth::user()->totalhours != null) {
+            $totalflightime = Auth::user()->totalhours + $flighttime;
+        }else{
+            $totalflightime = $flighttime;
+        }
+
+        return view('crewops.dashboard', ['bids' => $totalbids, 'logs' => $totalLogs, 'newpirep' => $newpirep, 'totalflightime' => $totalflightime]);
     }
     public function profileUpdate(Request $request)
     {
@@ -75,7 +83,14 @@ class CrewOpsController extends Controller
             ->limit(10)
             ->get();
 
-        return view('crewops.profile.view', ['user' => $user, 'pireps' => $pireps]);
+        $flighttime = PIREP::where('user_id', $id)->sum('flighttime');
+        if ($user->totalhours != null) {
+            $totalflightime = $user->totalhours + $flighttime;
+        }else{
+            $totalflightime = $flighttime;
+        }
+
+        return view('crewops.profile.view', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
     }
     public function profileEdit()
     {

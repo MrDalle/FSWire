@@ -77,10 +77,10 @@
                         </div>
                         <div class="block-content block-content-full block-content-narrow">
                           <!-- Warning Alert -->
-                          <div class="alert alert-warning alert-dismissable">
+                          <div class="alert alert-danger alert-dismissable">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                               <h3 class="font-w300">Warning</h3>
-                              <p>in order to reactivate your account please visit the <a class="alert-link" href="https://vaos.fswire.net/password/reset">"forgot password" page!</a>!</p>
+                              <p>in order to reactivate your account please visit the <a class="alert-link" href="{{ url('/password/reset') }}">"forgot password" page!</a>!</p>
                           </div>
                           <!-- END Warning Alert -->
 
@@ -126,7 +126,7 @@
 
                                           <div class="col-xs-6">
                                               <label class="css-input switch switch-sm switch-primary">
-                                                  <input type="checkbox" id="login-remember-me" name="login-remember-me"><span></span> Remember Me?
+                                                  <input type="checkbox" id="login-remember-me" name="remember"><span></span> Remember Me?
                                               </label>
                                           </div>
                                           <div class="col-xs-6">
@@ -139,9 +139,11 @@
                                             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 push-25-t">
                                                     <button class="btn btn-sm btn-block btn-primary" type="submit">Log in</button>
 
-                                          </div>
+                                          </div></div>
+                                          <div class="form-group push-5-t">
+                                            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 push-25-t">
                                           <a href="{{ url('/register') }}">
-                                              <button class="btn btn-primary" style="display: inline;" type="button">
+                                            <button class="btn btn-sm btn-block btn-primary" type="button">
                                                   Register
                                               </button>
                                           </a>
@@ -149,14 +151,14 @@
 
 
 
-                                          </div>
+                                          </div></div>
 
 
                         </form>
 
                         <!-- Lock Screen Footer -->
                         <div class="push-10-t text-center animated fadeInUp">
-                            <small class="text-black-op font-w600"><span class="js-year-copy"></span> &copy; FSWire 0.6</small>
+                            <small class="text-black-op font-w600"><span class="js-year-copy"></span> &copy; FSWire 1.0</small>
                         </div>
                         <!-- END Lock Screen Footer -->
 
@@ -165,7 +167,7 @@
                     <!-- END Lock Screen Block -->
                 </div>
             </div>
-        </div>
+        </div></div>
         <!-- END Lock Screen Content -->
 
 

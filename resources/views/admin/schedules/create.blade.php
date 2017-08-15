@@ -74,6 +74,28 @@
                                                 </div>
                                             </div>
                                         </a>
+
+                                        <!-- Route eingabe
+                                        <a class="list-group-item bg-gray-light">
+                                            <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
+                                            <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
+                                                <label class="col-md-3 form-control-label" for="text-input">Route</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5">
+                                                </div>
+                                            </div>
+                                        </a> -->
+
+
+
+
+
+
+
+
+
+
+
                                         <a class="list-group-item bg-gray-light" >
                                           <span class="badge bg-warning">4 DIGITS</span>&nbsp;&nbsp;
                                             <i class="fa fa-fw fa-number push-5-r"></i> <div class="form-group row">
@@ -92,7 +114,7 @@
                                               </select>
                                         </a>
                                         <a class="list-group-item bg-gray-light">
-                                            <i class="fa fa-fw fa-plane push-5-r"></i> Choose Plane<select id="aircraft_group" name="aircraft_group" class="form-control" size="1">
+                                            <i class="fa fa-fw fa-plane push-5-r"></i> Choose Aircraft Group<select id="aircraft_group" name="aircraft_group" class="form-control" size="1">
                                                 @foreach($acfgroups as $acf)
                                                     <option value="{{ $acf->icao }}">{{ $acf->name }}</option>
                                                 @endforeach
@@ -115,6 +137,7 @@
                                         </a>
 <a class="list-group-item bg-gray-light">
                                     <div class="card-block">
+                                      
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp; Submit</button>
                                         <button type="reset" class="btn btn-danger"><i class="fa fa-ban"></i>&nbsp; Reset</button>
 
@@ -126,6 +149,6 @@
                         </div></div></div>
 
 
-</main>
+
 @endsection
 </body>

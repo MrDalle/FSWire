@@ -3,38 +3,19 @@
 
 
                 <!-- MAP -->
-                <style type="text/css">
-                .map-container {
-
-                  border: none;
-                }
-
-                .map-container iframe{
-                  height:1080px;
-                	width:100%;
-
-
-                	position: relative; /* IE needs a position other than static */
-                }
-
-                </style>
-
-
-<body>
-
-
-                <!-- MAP -->
-                <div class="map-container">
-                <iframe  frameBorder="0" src="http://onlineflightplanner.org/widget"></iframe>
-                </div>
-                <!-- END MAP -->
-
-                <!-- END Page Content -->
-            </main>
-            <!-- END Main Container -->
-
-
-        <!-- END Page Container -->
+                <!-- Maintenance Content -->
+                        <div class="content bg-white text-center pulldown overflow-hidden">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <div class="font-s64 text-gray push-30-t push-50">
+                                        <i class="fa fa-cog fa-spin"></i>
+                                    </div>
+                                    <h1 class="h2 font-w400 push-15 animated fadeInLeftBig">Under Construction</h1>
+                                    <h2 class="h3 font-w300 text-dark-op push-50 animated fadeInRightBig">This feature will arrive soon!</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Maintenance Content -->
 @endsection
 </body>
 

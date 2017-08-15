@@ -15,8 +15,6 @@
 
 
 
-  <!-- Main Container -->
-        <main id="main-container">
             <!-- Page Header -->
   <div class="content">
 
@@ -26,11 +24,11 @@
         {{csrf_field()}}
 
         <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
+            <div class="block block-rounded">
+                <div class="block-header">
                     <i class="fa fa-align-justify"></i> Basic Information
                 </div>
-                <div class="card-block">
+                <div class="block-content block-content-full text-center">
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label" for="select">Airline</label>
                         <div class="col-md-9">
@@ -71,12 +69,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
+
+          <div class="col-lg-4">
+              <div class="block block-rounded">
+                  <div class="block-header">
                     <i class="fa fa-align-justify"></i> Aircraft Properties
                 </div>
-                <div class="card-block">
+                <div class="block-content block-content-full text-center">
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label" for="text-input">Name</label>
                         <div class="col-md-9">

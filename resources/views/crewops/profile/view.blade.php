@@ -10,7 +10,7 @@
             }
 
             .bg-primary-dark-op {
-                height: 400px;
+                height: 300px;
                 background-color: rgba(62, 74, 89, 0.83);
             }
 
@@ -44,7 +44,7 @@
                             <div class="row items-push text-uppercase">
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">Total Hours</div>
-                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $user->totalhours }}</a>
+                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $totalflightime }}</a>
                                 </div>
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">Total flights</div>
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">AVG LDG RTE</div>
-                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ \App\PIREP::where('user_id', $user->id)->avg('landingrate') }}</a>
+                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ (int) \App\PIREP::where('user_id', $user->id)->avg('landingrate') }}</a>
                                 </div>
 
                                 <div class="col-xs-6 col-sm-3">
@@ -177,7 +177,7 @@
                             <!-- END Followers -->
 
 
-                        
+
                         </div>
 
                         <div class="col-sm-7 col-sm-pull-5 col-lg-8 col-lg-pull-4">

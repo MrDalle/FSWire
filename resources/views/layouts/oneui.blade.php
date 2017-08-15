@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
     <!-- Page JS Plugins CSS go here -->
-
+    @yield('plugin')
     <!-- Bootstrap and OneUI CSS framework -->
     <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" id="css-main" href="{{ URL::asset('assets/css/oneui.css') }}">
@@ -94,6 +94,16 @@
 <script src="{{ URL::asset('assets/js/core/jquery.placeholder.min.js') }}"></script>
 <script src="{{ URL::asset('assets/js/core/js.cookie.min.js') }}"></script>
 <script src="{{ URL::asset('assets/js/app.js') }}"></script>
+
+<script>
+    var url = window.location.href;
+
+    $('.nav-main a').filter(function() {
+        return this.href == url;
+    }).addClass('active').parents('ul').each(function(){
+        jQuery(this).parent('li').addClass('open');
+    });
+</script>
 
 <!-- Page JS Plugins + Page JS Code -->
 @yield('javascript')

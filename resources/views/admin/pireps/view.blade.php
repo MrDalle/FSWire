@@ -51,7 +51,7 @@
                             <td>{{ $p->depapt->icao }}</td>
                             <td>{{ $p->arrapt->icao }}</td>
                             <td>
-                                <a href="{{ url('admin/pireps/'.$p->id) }}" class="btn btn-primary btn-sm">View</a>
+                                <a href="{{ url('admin/pireps/'.$p->id) }}" class="btn btn-primary btn-sm disabled">View</a>
                             </td>
                         </tr>
                     @endforeach
