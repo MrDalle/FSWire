@@ -357,7 +357,7 @@
                 </div>
                 <a class="h5 text-white" href="{{ url('flightops') }}">
                     <img src="{{URL::asset('assets/img/favicons/favicon.png')}}" alt=""> <span
-                            class="h4 font-w600 sidebar-mini-hide"> FSWire</span>
+                            class="h3 font-w700 sidebar-mini-hide">FSWire</span>
                 </a>
             </div>
             <!-- END Side Header -->
