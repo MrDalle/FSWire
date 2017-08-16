@@ -21,7 +21,7 @@ class fswireScheduleController extends Controller
     {
         $airlines = Airline::all();
         $acfgroups = AircraftGroup::all();
-        return view('admin.schedules.create', ['airlines' => $airlines, 'acfgroups' => $acfgroups]);
+        return view('crewops.schedule.create', ['airlines' => $airlines, 'acfgroups' => $acfgroups]);
     }
 
     /**
