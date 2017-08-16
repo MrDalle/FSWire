@@ -102,7 +102,7 @@
                         </div>
                         <div class="block-content-full progress active">
                             <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar"
-                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">100%
+                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%">75% for next rank | 20 Hours left
                             </div>
                         </div>
                         <div class="block-content">
@@ -235,8 +235,9 @@
                         </div>
 
                     </a></div>
-                    <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-            </div>
+
+                    <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
+
             <!-- END Row 1 -->
         </div>
 

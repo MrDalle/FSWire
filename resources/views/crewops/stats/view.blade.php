@@ -9,7 +9,7 @@
                 }
 
                 .map-container iframe{
-                  height:1080px;
+                  height:1080;
                   width:100%;
 
 
@@ -22,7 +22,7 @@
                 @section('content')
                 <!-- MAP -->
                 <div class="map-container">
-                <iframe scrolling="no" frameBorder="0" src="https://map.fswire.net/statistics"></iframe>
+                <iframe  frameBorder="0" src="https://map.fswire.net/statistics"></iframe>
                 <!-- END MAP -->
                 </div>
                 @endsection

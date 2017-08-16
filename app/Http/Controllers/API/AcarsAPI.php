@@ -174,7 +174,7 @@ class AcarsAPI extends Controller
 
 
                 $data = new stdClass();
-                $data->aircraft = (string) $flight->bid->aircraft->id;
+                $data->aircraft = (string) $flight->bid->aircraft->icao;
                 $data->aircraftname = $flight->bid->aircraft->name;
                 $data->alt = $flight->altitude;
                 $data->arrapt = $flight->bid->arrapt->name;
@@ -205,7 +205,7 @@ class AcarsAPI extends Controller
                 $data->online = $flight->online;
                 $data->phasedetail = $flight->phase;
                 $data->pilotid = $flight->user->pilotid; // TODO Make pilot ID work
-                $data->pilotname = $flight->user->first_name.' '.$flight->user->last_name;
+                $data->pilotname = $flight->user->username;
                 $data->registration = $flight->bid->aircraft->registration;
                 $data->route = $flight->bid->route;
                 $data->route_details = $flight->bid->route_details;
@@ -245,7 +245,7 @@ class AcarsAPI extends Controller
                 }
 
                 if ($c['pilotid'] == ''){
-                    $c['pilotid'] = 'Test';
+                    $c['pilotid'] = '';
                 }
 
 

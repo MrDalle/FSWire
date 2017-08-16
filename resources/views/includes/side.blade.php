@@ -26,9 +26,7 @@
                     <li class="active">
                         <a href="#tabs-side-overlay-overview"><i class="fa fa-fw fa-coffee"></i> Overview</a>
                     </li>
-                    <li>
-                        <a href="#tabs-side-overlay-sales"><i class="fa fa-fw fa-line-chart "></i> Sales</a>
-                    </li>
+
                 </ul>
                 <div class="block-content tab-content">
                     <!-- Overview Tab -->
@@ -37,15 +35,15 @@
                         <a class="block block-link-hover2" href="javascript:void(0)">
                             <div class="block-content block-content-full bg-primary clearfix">
                                 <i class="si si-clock fa-2x text-white pull-right"></i>
-                                <span class="h4 font-w700 text-white">{{ Auth::user()->totalhours }}</span> <span
-                                        class="h4 text-white-op">Hours flown</span>
+                                <span class="h4 font-w700 text-white">0</span>
+                                <span class="h4 text-white-op">Miles flown</span>
                             </div>
                         </a>
 
                         <a class="block block-link-hover2" href="javascript:void(0)">
                             <div class="block-content block-content-full bg-danger clearfix">
                                 <i class="si si-plane fa-2x text-white pull-right"></i>
-                                <span class="h4 font-w700 text-white">{{ \App\PIREP::where('user_id', Auth::user()->id)->count() }}</span>
+                                <span class="h4 font-w700 text-white">{{ (int) \App\PIREP::where('user_id', Auth::user()->id)->count() }}</span>
                                 <span class="h4 text-white-op">Total flights</span>
                             </div>
                         </a>
@@ -53,7 +51,7 @@
                         <a class="block block-link-hover2" href="javascript:void(0)">
                             <div class="block-content block-content-full bg-success clearfix">
                                 <i class="si si-plane fa-2x text-white pull-right"></i>
-                                <span class="h4 font-w700 text-white">{{ \App\PIREP::where('user_id', Auth::user()->id)->avg('landingrate') }}</span>
+                                <span class="h4 font-w700 text-white">{{ (int)\App\PIREP::where('user_id', Auth::user()->id)->avg('landingrate') }} FPM</span>
                                 <span class="h4 text-white-op">AVG LDG RTE</span>
                             </div>
                         </a>

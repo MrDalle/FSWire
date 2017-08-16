@@ -54,6 +54,11 @@ class ScheduleController extends Controller
         // For now, just send the input to the controller.
         // dd($request);
         // Convert Request into Array
+
+        $this->validate($request, [
+            'flightnum' => 'required|numeric|digits:4',
+        ]);
+
         $data = $request->all();
         VAOS_Schedule::newRoute($data);
 
