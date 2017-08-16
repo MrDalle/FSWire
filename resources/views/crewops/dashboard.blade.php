@@ -195,7 +195,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <p><i class="fa fa-check"></i><a class="alert-link"
                                                              href="javascript:void(0)">FSWire</a> was updated
-                                successfully to V1.0!</p>
+                                successfully to V1.0! </p>
                         </div>
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

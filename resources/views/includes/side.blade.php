@@ -387,7 +387,7 @@
                     <li>
                         <a href="{{ url('flightops/profile/'.Auth::user()->id) }}"><i
                                     class="si si-user"></i><span
-                                    class="sidebar-mini-hide">Pilot</span></a>
+                                    class="sidebar-mini-hide">Profile</span></a>
                     </li>
                     <li>
                         <a href="  {{ url('flightops/logbook') }}"><i class="si si-book-open"></i><span
