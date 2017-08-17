@@ -2,6 +2,7 @@
 
 
 @section('content')
+  <div class="content">
     <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/airlines/'.$airline->id) }}">
         {{csrf_field()}}
         {{ method_field('PUT') }}
@@ -68,4 +69,5 @@
             </div>
         </div>
     </form>
+    </div>
 @endsection
