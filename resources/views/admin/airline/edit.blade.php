@@ -1,11 +1,5 @@
-@extends('layouts.admin')
+@extends('layouts.oneui')
 
-@section('breadcrumb')
-    <li class="breadcrumb-item">Home</li>
-    <li class="breadcrumb-item"><a href="{{ url('admin/') }}">Admin</a></li>
-    <li class="breadcrumb-item"><a href="{{ url('admin/airlines') }}">Airlines</a></li>
-    <li class="breadcrumb-item active">Edit Airline ({{ $airline->name }})</li>
-@endsection
 
 @section('content')
     <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/airlines/'.$airline->id) }}">
