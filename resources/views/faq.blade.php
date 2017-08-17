@@ -74,9 +74,9 @@
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq3" href="#faq2_q4">My Username is userSystem.Windows.Forms.Label, Text: ????</a>
                                 </h3>
                             </div>
-                            <div id="faq4_q" class="panel-collapse collapse">
+                            <div id="faq2_q4" class="panel-collapse collapse">
                                 <div class="panel-body">
-                              Congrats! your account is one out of many which got succesfully merge into FSWire. In order to cahnge your Username please visit the Profile tab and edit your profile there!
+                              Congrats! your account is one out of many which got succesfully merge into FSWire. In order to change your Username please visit the Profile tab and edit your profile there!
                                 </div>
                             </div>
                         </div>
