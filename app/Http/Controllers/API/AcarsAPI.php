@@ -174,7 +174,7 @@ class AcarsAPI extends Controller
 
 
                 $data = new stdClass();
-                $data->aircraft = (string) $flight->bid->aircraft->icao;
+                $data->aircraft = (string) $flight->bid->aircraft->registration;
                 $data->aircraftname = $flight->bid->aircraft->name;
                 $data->alt = $flight->altitude;
                 $data->arrapt = $flight->bid->arrapt->name;
