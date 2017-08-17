@@ -1,11 +1,5 @@
-@extends('layouts.admin')
+@extends('layouts.oneui')
 
-@section('breadcrumb')
-    <li class="breadcrumb-item">Home</li>
-    <li class="breadcrumb-item"><a href="{{ url('admin/') }}">Admin</a></li>
-    <li class="breadcrumb-item"><a href="{{ url('admin/schedule') }}">Schedule</a></li>
-    <li class="breadcrumb-item active">Edit Route ({{ $schedule->airline->icao . $schedule->flightnum }})</li>
-@endsection
 
 @section('content')
     <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/schedule/'.$schedule->id) }}">
@@ -13,11 +7,11 @@
         {{ method_field('PUT') }}
 
         <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
+            <div class="block block-rounded">
+                <div class="block-header">
                     <i class="fa fa-align-justify"></i> Basic Information
                 </div>
-                <div class="card-block">
+                <div class="block-content block-content-full text-center">
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label" for="select">Airline</label>
                         <div class="col-md-9">
@@ -60,11 +54,11 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="card">
+            <div class="block block-rounded">
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Route Defaults
                 </div>
-                <div class="card-block">
+                <div class="block-content block-content-full text-center">
                     <div class="form-group row">
                         <label class="col-md-3 form-control-label" for="select">Aircraft Group</label>
                         <div class="col-md-9">
