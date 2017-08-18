@@ -18,7 +18,7 @@
                 <div class="block-header">
                     <ul class="block-options">
                         <li>
-                            <button type="button" onclick="window.location.href="{{url(/flightops/profile/ . $u->id)}}">
+                        <button type="button" onclick="window.location.href="{{url('/flightops/profile/' . $u->id)}}">
                                 <i class="si si-user"></i>
                             </button>
                         </li>
