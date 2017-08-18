@@ -24,7 +24,7 @@
                         </li>
                     </ul>
 
-                    <div class="block-title">Joshua Munoz</div>
+                    <div class="block-title"><a href="{{ url('flightops/profile/' . $u->id) }}">{{ $u->username }}</a></div>
                 </div>
                 <div class="block-content block-content-full bg-primary text-center">
                     <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar16.jpg" alt="">
@@ -45,16 +45,16 @@
                     <table class="table table-borderless table-striped font-s13">
                         <tbody>
                             <tr>
-                                <td class="font-w600" style="width: 30%;">Category</td>
-                                <td>Work</td>
+                                <td class="font-w600" style="width: 30%;">Total Flights</td>
+                                <td>{{ count($u->pirep) }}</td>
                             </tr>
                             <tr>
                                 <td class="font-w600">Phone</td>
                                 <td>+ 00 66008300</td>
                             </tr>
                             <tr>
-                                <td class="font-w600">Email</td>
-                                <td>user1@one.ui</td>
+                                <td class="font-w600">AVG LDG </td>
+                                <td>{{ (INT) \App\PIREP::where('user_id', $u->id)->avg('landingrate') }}</td>
                             </tr>
                         </tbody>
                     </table>
