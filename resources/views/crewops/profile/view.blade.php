@@ -72,7 +72,7 @@
                       <div class="col-sm-7 col-lg-8">
 
                           <!-- Timeline -->
-                          <div class="block block-opt-refresh-icon6">
+                          <div class="block block-opt-refresh-icon6 animated fadeInLeft">
                               <div class="block-header">
                                   <ul class="block-options">
                                       <li>
@@ -122,7 +122,7 @@
                                 <div class="col-sm-5 col-lg-4 ">
 
                                     <!-- Follow -->
-                                    <div class="block">
+                                    <div class="block animated fadeInRight">
                                         <div class="block-content block-content-full text-center">
                                             <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus"></i> Edit Profile</button>
 
