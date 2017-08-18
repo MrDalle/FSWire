@@ -24,11 +24,11 @@
                         </li>
                     </ul>
 
-                    <div class="block-title"><a href="{{ url('flightops/profile/' . $u->id) }}">{{ $u->username }}</a></div>
+                    <div class="block-title">Pilot</div>
                 </div>
                 <div class="block-content block-content-full bg-primary text-center">
-                    <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar16.jpg" alt="">
-                    <div class="font-s13 push-10-t">Graphic Designer</div>
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ $user->avatar_url }}" onerror="this.src='http://identicon.org?t={{ $user->username }}&s=400'" alt="Avatar"></a>
+                    <div class="font-s13 push-10-t"><a href="{{ url('flightops/profile/' . $u->id) }}">{{ $u->username }}</a></div>
                 </div>
                 <div class="block-content">
 
