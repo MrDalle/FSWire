@@ -27,8 +27,8 @@
                     <div class="block-title">Pilot</div>
                 </div>
                 <div class="block-content block-content-full bg-primary text-center">
-                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ $u->avatar_url }}" onerror="this.src='http://identicon.org?t={{ $u->username }}&s=400'" alt="Avatar"></a>
-                    <div class="font-s13 push-10-t"><a href="{{ url('flightops/profile/' . $u->id) }}">{{ $u->username }}</a></div>
+                    <img class="img-avatar img-avatar96 img-avatar-thumb" href="{{ url('flightops/profile/' . $u->id) }}" src="{{ $u->avatar_url }}" onerror="this.src='https://identicon.org?t={{ $u->username }}&s=400'" alt="Avatar"></a>
+                    <div class="font-s13 push-10-t">{{ $u->username }}</div>
                 </div>
                 <div class="block-content">
 
