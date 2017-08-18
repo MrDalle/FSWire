@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <!-- END Basic Info -->
-
+ 
                         <!-- Stats -->
                         <div class="block-content text-center">
                             <div class="row items-push text-uppercase">
