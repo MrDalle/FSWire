@@ -1,48 +1,114 @@
-@extends('layouts.crewops')
+@extends('layouts.oneui')
 
 @section('head')
     <link href="{{URL::asset('/crewops/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
     <link href="{{URL::asset('/crewops/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
 @endsection
 @section('content')
+<!-- Page Content -->
+<div class="content">
     <div class="row">
-        <div class="col l12">
-            <h1 class="page-header">Roster</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">Recent Flights</span>
-                    <table id="table_id" class="table">
-                        <thead>
-                        <tr>
-                            <th width="10%">ID</th>
-                            <th width="25%">Username</th>
-                            <th width="25%">First Name</th>
-                            <th width="25%">Last Name</th>
-                            <th width="15%">Total Flights</th>
-                            <th>Landing Rate Avg</th>
-                        </tr>
-                        </thead>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <!-- Contact -->
+            <div class="block block-rounded">
+                <div class="block-header">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button" data-toggle="modal" data-target="#modal-contact-edit">
+                                <i class="si si-pencil"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="block-title">Joshua Munoz</div>
+                </div>
+                <div class="block-content block-content-full bg-primary text-center">
+                    <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar16.jpg" alt="">
+                    <div class="font-s13 push-10-t">Graphic Designer</div>
+                </div>
+                <div class="block-content">
+                    <div class="text-center push">
+                        <a class="text-default" href="javascript:void(0)">
+                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                        </a>
+                        <a class="text-info" href="javascript:void(0)">
+                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                        </a>
+                        <a class="text-danger" href="javascript:void(0)">
+                            <i class="fa fa-2x fa-fw fa-youtube-square"></i>
+                        </a>
+                    </div>
+                    <table class="table table-borderless table-striped font-s13">
                         <tbody>
-                        @foreach($users as $u)
                             <tr>
-                                <td>{{ $u->id }}</td>
-                                <td><a href="{{ url('flightops/profile/' . $u->id) }}">{{ $u->username }}</a></td>
-                                <td>{{ $u->first_name }}</td>
-                                <td>{{ $u->last_name }}</td>
-                                <td>{{ count($u->pirep) }}</td>
-                                <td>{{ \App\PIREP::where('user_id', $u->id)->avg('landingrate') }}</td>
+                                <td class="font-w600" style="width: 30%;">Category</td>
+                                <td>Work</td>
                             </tr>
-                        @endforeach
+                            <tr>
+                                <td class="font-w600">Phone</td>
+                                <td>+ 00 66008300</td>
+                            </tr>
+                            <tr>
+                                <td class="font-w600">Email</td>
+                                <td>user1@one.ui</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            <!-- END Contact -->
         </div>
-    </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <!-- Contact -->
+            <div class="block block-rounded">
+                <div class="block-header">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button" data-toggle="modal" data-target="#modal-contact-edit">
+                                <i class="si si-pencil"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="block-title">Ashley Welch</div>
+                </div>
+                <div class="block-content block-content-full bg-primary text-center">
+                    <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar6.jpg" alt="">
+                    <div class="font-s13 push-10-t">Photographer</div>
+                </div>
+                <div class="block-content">
+                    <div class="text-center push">
+                        <a class="text-default" href="javascript:void(0)">
+                            <i class="fa fa-2x fa-fw fa-facebook-square"></i>
+                        </a>
+                        <a class="text-info" href="javascript:void(0)">
+                            <i class="fa fa-2x fa-fw fa-twitter-square"></i>
+                        </a>
+                        <a class="text-danger" href="javascript:void(0)">
+                            <i class="fa fa-2x fa-fw fa-youtube-square"></i>
+                        </a>
+                    </div>
+                    <table class="table table-borderless table-striped font-s13">
+                        <tbody>
+                            <tr>
+                                <td class="font-w600" style="width: 30%;">Category</td>
+                                <td>Work</td>
+                            </tr>
+                            <tr>
+                                <td class="font-w600">Phone</td>
+                                <td>+ 00 43008422</td>
+                            </tr>
+                            <tr>
+                                <td class="font-w600">Email</td>
+                                <td>user2@one.ui</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END Contact -->
+        </div>
+      </div>
+  </div>
+
 @endsection
 
 @section('js')
