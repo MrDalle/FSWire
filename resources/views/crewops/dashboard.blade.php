@@ -182,10 +182,9 @@
                                         <div class="h1 font-w700">2</div>
                                         <div class="h5 text-muted text-uppercase push-5-t">New Notifications</div>
                                     </td>
-                                    <td>
-                                        <div class="push-30 push-30-t">
-                                            <i class="si si-plane fa-3x text-black-op"></i>
-                                        </div>
+                                    <td class="border-r" style="width: 50%;">
+                                        <div class="h1 font-w700">{{$newpirep->arrapt->icao}}</div>
+                                        <div class="h5 text-muted text-uppercase push-5-t">Latest Location</div>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -229,7 +228,7 @@
                             <div class="text-center push-50-t push-50">
                                 <h3 class="text-white-op">Latest PIREP</h3>
                                 @if($newpirep != null)
-                                    {{$newpirep->depapt->name}}
+
                                     {{$newpirep->arrapt->name}}
                                     @endif
                             </div>
