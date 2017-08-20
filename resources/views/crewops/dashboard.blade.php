@@ -254,7 +254,7 @@
                                     <h3 class="text-white-op">Latest Location</h3>
                                     @if($newpirep != null)
                                         {{$newpirep->depapt->name}}
-                                        {{$newpirep->arapt->name}}
+                                        {{$newpirep->arrapt->name}}
                                         @endif
                                 </div>
                             </div>
