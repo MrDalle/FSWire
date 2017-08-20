@@ -182,10 +182,12 @@
                                         <div class="h1 font-w700">2</div>
                                         <div class="h5 text-muted text-uppercase push-5-t">New Notifications</div>
                                     </td>
+                                    @if($newpirep != null)
                                     <td class="border-r" style="width: 50%;">
                                         <div class="h1 font-w700">{{$newpirep->arrapt->icao}}</div>
                                         <div class="h5 text-muted text-uppercase push-5-t">Latest Location</div>
                                     </td>
+                                        @endif
                                 </tr>
                                 </tbody>
                             </table>
