@@ -230,12 +230,36 @@
                                 <h3 class="text-white-op">Latest PIREP</h3>
                                 @if($newpirep != null)
                                     {{$newpirep->depapt->name}}
+                                    {{$newpirep->arapt->name}}
                                     @endif
                             </div>
                         </div>
 
                     </a></div>
+                    <div class="block animated pulse">
+                        <a class="block block-link-hover2" href="{{ url('/flightops/logbook') }}">
+                            <div class="block-content block-content-full bg-primary ribbon ribbon-modern ribbon-crystal">
+                                <div class="ribbon-box font-w600 text-uppercase">
+                                    @if($newpirep != null)
+                                    @if($newpirep->status === 1)
+                                        APPROVED
+                                    @elseif($newpirep->status === 2)
+                                        PENDING
+                                    @else
+                                        DENIED
+                                    @endif
+                                    @endif
+                                </div>
+                                <div class="text-center push-50-t push-50">
+                                    <h3 class="text-white-op">Latest Location</h3>
+                                    @if($newpirep != null)
+                                        {{$newpirep->depapt->name}}
+                                        {{$newpirep->arapt->name}}
+                                        @endif
+                                </div>
+                            </div>
 
+                        </a></div>
                     <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
 
             <!-- END Row 1 -->
