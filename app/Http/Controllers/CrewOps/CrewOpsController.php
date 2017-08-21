@@ -96,6 +96,19 @@ class CrewOpsController extends Controller
     {
         // Check if the user is the right user. We don't want someone modifying other people's profile.
         $user = User::find(Auth::user()->id);
+
+                $pireps = PIREP::where('user_id', $id)
+                    ->orderBy('id', 'desc')
+                    ->limit(10)
+                    ->get();
+
+                $flighttime = PIREP::where('user_id', $id)->sum('flighttime');
+                if ($user->totalhours != null) {
+                    $totalflightime = $user->totalhours + $flighttime;
+                }else{
+                    $totalflightime = $flighttime;
+                }
+                
         return view('crewops.profile.edit', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
     }
     public function getSchedule(Request $request)
