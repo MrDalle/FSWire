@@ -92,7 +92,7 @@ class CrewOpsController extends Controller
 
         return view('crewops.profile.view', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
     }
-    public function profileEdit($id)
+    public function profileEdit()
     {
         // Check if the user is the right user. We don't want someone modifying other people's profile.
         $user = User::find(Auth::user()->id);
