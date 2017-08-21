@@ -92,7 +92,7 @@ class CrewOpsController extends Controller
 
         return view('crewops.profile.view', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
     }
-    public function profileEdit()
+    public function profileEdit($id)
     {
         // Check if the user is the right user. We don't want someone modifying other people's profile.
         $user = User::find(Auth::user()->id);
@@ -108,7 +108,7 @@ class CrewOpsController extends Controller
                 }else{
                     $totalflightime = $flighttime;
                 }
-                
+
         return view('crewops.profile.edit', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
     }
     public function getSchedule(Request $request)
