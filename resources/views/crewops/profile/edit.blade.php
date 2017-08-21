@@ -91,7 +91,7 @@
                                   <div class="col-xs-12">
                                       <label for="email">Username</label>
                                       <input class="form-control input-lg" type="username" name="username"
-                                             value="{{ Auth::user()->email }}" class="form-control">
+                                             value="{{ Auth::user()->username }}" class="form-control">
                                   </div>
                                 </div>
                                 <div class="form-group">
