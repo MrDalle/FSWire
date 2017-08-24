@@ -20,7 +20,7 @@ class PIREPController extends Controller
     {
         if($request->query('view') == "pending")
         {
-            $pireps = PIREP::where('status', 0)->with('user')->with('depapt')->with('arrapt')->with('aircraft')->get();
+            $pireps = PIREP::where('status', 0)->with('user')->with('depapt')->with('arrapt')->with('aircraft')->paginate(15);
             return view('admin.pireps.pending', ['pireps' => $pireps]);
         }
         $pireps = PIREP::with('user')->with('depapt')->with('arrapt')->with('aircraft')->get();

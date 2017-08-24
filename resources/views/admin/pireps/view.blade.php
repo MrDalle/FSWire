@@ -57,24 +57,8 @@
                     @endforeach
                     </tbody>
                 </table>
-
+                {{ $pireps->links('vendor.pagination.oneui-default') }}
             </div>
         </div>
     </div>
-@endsection
-@section('js')
-    <script type="text/javascript">
-        $(document).ready( function () {
-            $('#table_id').DataTable( {
-                responsive: true,
-                "autoWidth": false
-            });
-            $(".clickable-row").click(function() {
-                window.document.location = $(this).data("href");
-            });
-        } );
-    </script>
-    <script src="{{URL::asset('/crewops/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{URL::asset('/crewops/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('/crewops/vendor/datatables-responsive/dataTables.responsive.js')}}"></script>
 @endsection
