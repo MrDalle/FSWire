@@ -1,5 +1,8 @@
 
 @extends('layouts.oneui')
+@section('plugin')
+    <link rel="stylesheet" href="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.css') }}">
+@endsection
 
 @section('content')
 <div class="content bg-gray-lighter">
