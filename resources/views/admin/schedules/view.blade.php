@@ -41,7 +41,7 @@
                         <strong>No Routes Found:</strong> The server returned no routes in the system.
                     </div>
                 @else
-                <table id="table_id" class="table table-striped table-hover">
+                <table id="table_id" class="table table-bordered table-striped table-hover js-dataTable-full ">
                     <thead>
                     <tr>
                         <th>Airline Code</th>
@@ -124,4 +124,6 @@
     <script src="{{URL::asset('/crewops/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{URL::asset('/crewops/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('/crewops/vendor/datatables-responsive/dataTables.responsive.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/pages/base_tables_datatables.js') }}"></script>
 @endsection
