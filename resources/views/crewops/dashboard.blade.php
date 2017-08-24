@@ -230,11 +230,6 @@
                             <div class="text-center push-50-t push-50">
                                 <h3 class="text-white-op">Latest PIREP</h3>
                                 @if($newpirep != null)
-                                    {{$newpirep->depapt->name}}
-                                    {{$newpirep->arrapt->name}}
-                                    @endif
-                            </div>
-                            <div class="">
                                 <table class="block-table text-center bg-gray-lighter border-b">
                                     <tbody>
                                     <tr>
@@ -249,7 +244,11 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                    @endif
                             </div>
+
+
+
                         </div>
 
                     </a></div>
