@@ -135,6 +135,12 @@
                                               <div><a href="javascript:void(0)">Flightplanner Update</a></div>
                                               <div><small class="text-muted">Create a Route for a plane of your choice would be nice or? with this update you will be able to create companyroutes for almost any plane</small></div>
                                           </li>
+                                          <li>
+                                              <i class="si si-wrench text-success"></i>
+                                              <div class="font-w600">Buy us a coffe! </div>
+                                              <div><a href="https://fswire.net/donate.php"Paypal Donation</a></div>
+                                              <div><small class="text-muted">support us so we can keep up the good work and upgrade server structre and more </small></div>
+                                          </li>
                                       </ul>
                                   </div>
                               </div>
