@@ -234,6 +234,22 @@
                                     {{$newpirep->arrapt->name}}
                                     @endif
                             </div>
+                            <div class="">
+                                <table class="block-table text-center bg-gray-lighter border-b">
+                                    <tbody>
+                                    <tr>
+                                        <td class="border-r" style="width: 50%;">
+                                            <div class="h1 font-w700">{{$newpirep->depapt->icao}}</div>
+                                            <div class="h5 text-muted text-uppercase push-5-t">Departure</div>
+                                        </td>
+                                        <td class="border-r" style="width: 50%;">
+                                            <div class="h1 font-w700">{{$newpirep->arrapt->icao}}</div>
+                                            <div class="h5 text-muted text-uppercase push-5-t">Arrival</div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                     </a></div>
