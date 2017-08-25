@@ -17,8 +17,16 @@
                             </div>
                             <div id="faq1_q1" class="panel-collapse collapse in ">
                                 <div class="panel-body h5">
-                                  FSWire is the new Version of FSClouds old VA System based on PHPVMS.
+                                  FSWire is the new Version of FSClouds old VA System based on PHPVMS. We are a community driven project and our mission is it to reinvent the way of flight tracking and web based infrastructre for simmers.
+
                                 </div>
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="4QKERX5KS8RAC">
+<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+
                             </div>
                         </div>
 
