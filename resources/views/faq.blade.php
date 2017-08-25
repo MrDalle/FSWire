@@ -239,6 +239,56 @@
                                                                         </div>
                                                                     </div>
 
+                                                                    <div id="changelog" class="panel-group">
+                                                                        <div class="panel panel-default">
+                                                                            <div class="panel-heading">
+                                                                                <h4 class="panel-title">
+                                                                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update11" aria-expanded="false">
+                                                                                        <strong>1.1</strong> PIREP Update <span class="font-w400 text-muted pull-right">September | 2017</span>
+                                                                                    </a>
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div id="changelog-update11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                                                <div class="panel-body">
+                                                                                    <ul class="list list-simple">
+                                                                                        <li>
+                                                                                            <strong class="text-uppercase">New features</strong>
+                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
+
+
+                                                                                                <li>
+                                                                                                    <i class="fa fa-plus fa-li text-success"></i> PIREPS will now store stats like Flighttime,Miles flown, Dep/Arr-Time
+                                                                                                </li>
+
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <strong class="text-uppercase">Improvements</strong>
+                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
+                                                                                                <li>
+                                                                                                    <i class="fa fa-check fa-li text-primary"></i> Improving many pages that are already in teh system
+                                                                                                </li>
+
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <strong class="text-uppercase">Updates</strong>
+                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
+                                                                                                <li>
+                                                                                                    <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Bootstrap Colorpicker 2.5.1 (2.4.0)
+                                                                                                </li>
+
+                                                                                            </ul>
+                                                                                        </li>
+
+                                                                                        </li>
+                                                                                    </ul>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
 
 
 
