@@ -91,8 +91,8 @@
 
 
 
-                            
-                                                                <h1 class="font-w500 text-black push-30">FSWire Roadmap - Future Plans</h1>
+                            <h2 class="h3 font-w600 push-50-t push">FSWire Roadmap - Future Plans</h2>
+
 
                                                                 <!-- Changelog Content -->
                                                                 <div id="changelog" class="panel-group">
