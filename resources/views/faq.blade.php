@@ -4,7 +4,7 @@
 
 <div class="content">
             <!-- Frequently Asked Questions -->
-            <div class="block">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="block-content block-content-full block-content-narrow">
                     <!-- Introduction -->
                     <h2 class="h2 font-w600 push-30-t push">Introduction</h2>
@@ -91,7 +91,7 @@
 
 
 
-                                <div class="col-md-8 col-md-offset-2">
+                            
                                                                 <h1 class="font-w500 text-black push-30">FSWire Roadmap - Future Plans</h1>
 
                                                                 <!-- Changelog Content -->
@@ -416,7 +416,7 @@
                                                                         </div>
                                                                     </div>
 
-  </div>  </div>
+   </div>
 
 
 
