@@ -4,7 +4,7 @@
 
 <div class="content">
             <!-- Frequently Asked Questions -->
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-6">
                 <div class="block-content block-content-full block-content-narrow">
                     <!-- Introduction -->
                     <h2 class="h2 font-w600 push-30-t push">Introduction</h2>
@@ -17,7 +17,7 @@
                             </div>
                             <div id="faq1_q1" class="panel-collapse collapse in ">
                                 <div class="panel-body h5">
-                                  FSWire is the new Version of FSClouds old VA System based on PHPVMS. We are a community driven project and our mission is it to reinvent the way of flight tracking and web based infrastructre for simmers.
+                                  FSWire is the new Version of FSClouds old VA System based on PHPVMS. <p> <p>We are a community driven project and our mission is it to reinvent the way of flight tracking and web based infrastructre for simmers.
 We try to create smth new and indepent for bush flyers and Virtual Airline Pilots.Incase you want to support this project you can give us your ideas and thoughts. Or just leave some bugs so we can buy more beer and invest to server upgrades, licencsed plugins and more.
                                 </div>
 
@@ -106,11 +106,12 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 
 
                                     </form>
+</div>
+</div>
 
-
-
-
-                            <h2 class="h3 font-w600 push-50-t push">FSWire Roadmap - Future Plans</h2>
+<div class="col-md-6">
+  <div class="bg-grey-lighter">
+                            <h2 class="h3 font-w600 push-50-t push">FSWire Roadmap - Feature Plans</h2>
 
 
                                                                 <!-- Changelog Content -->
@@ -188,7 +189,6 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                                         </ul>
                                                                                     </li>
                                                                                 </ul>
-                                                                                <p class="remove-margin-b"><a href="javascript:void(0)" data-toggle="scroll-to" data-speed="650" data-target="#docs-template-updating">Updating</a> to the new 3.2 version is easy but if you need any assistance do not hesitate to <a href="http://goo.gl/ZXmNx0">contact us</a>! :-)</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>  </div>
