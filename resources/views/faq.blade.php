@@ -172,7 +172,7 @@
                                                                                 <p class="remove-margin-b"><a href="javascript:void(0)" data-toggle="scroll-to" data-speed="650" data-target="#docs-template-updating">Updating</a> to the new 3.2 version is easy but if you need any assistance do not hesitate to <a href="http://goo.gl/ZXmNx0">contact us</a>! :-)</p>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </div>  </div>
 
                                                                     <div id="changelog" class="panel-group">
                                                                         <div class="panel panel-default">
@@ -444,7 +444,7 @@
 
 
 
-                            </div></div></div>
+                            </div></div>
 
 @endsection
 </body>
