@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="content content-boxed">
+<div class="content">
             <!-- Frequently Asked Questions -->
             <div class="block">
                 <div class="block-content block-content-full block-content-narrow">
