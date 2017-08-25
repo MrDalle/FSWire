@@ -5,7 +5,7 @@
 <div class="content">
             <!-- Frequently Asked Questions -->
             <div class="col-md-6">
-                <div class="block-content block-content-full block-content-narrow">
+                <div class="block block-content block-content-full block-content-narrow">
                     <!-- Introduction -->
                     <h2 class="h2 font-w600 push-30-t push">Introduction</h2>
                     <div id="faq1" class="panel-group">
@@ -110,7 +110,7 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 </div>
 
 <div class="col-md-6">
-  <div class="bg-grey-lighter">
+  <div class="block block-content block-content-full block-content-narrow">
                             <h2 class="h3 font-w600 push-50-t push">FSWire Roadmap - Feature Plans</h2>
 
 
@@ -119,12 +119,12 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                     <div class="panel panel-default">
                                                                         <div class="panel-heading">
                                                                             <h4 class="panel-title">
-                                                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update10" aria-expanded="false">
+                                                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update10" aria-expanded="FALSE">
                                                                                     <strong>1.0</strong> Initial Release <span class="font-w400 text-muted pull-right">August 2017</span>
                                                                                 </a>
                                                                             </h4>
                                                                         </div>
-                                                                        <div id="changelog-update10" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                                        <div id="changelog-update10" class="panel-collapse collapse " aria-expanded="false" style="height: 0px;">
                                                                             <div class="panel-body">
                                                                                 <ul class="list list-simple">
                                                                                     <li>
