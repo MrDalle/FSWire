@@ -157,7 +157,7 @@
 
 
                                 <div class="col-md-8 col-md-offset-2">
-                                                                <h1 class="font-w300 text-black push-30">FSWire Roadmap - Future Plans</h1>
+                                                                <h1 class="font-w500 text-black push-30">FSWire Roadmap - Future Plans</h1>
 
                                                                 <!-- Changelog Content -->
                                                                 <div id="changelog" class="panel-group">
@@ -175,28 +175,13 @@
                                                                                     <li>
                                                                                         <strong class="text-uppercase">New features</strong>
                                                                                         <ul class="fa-ul list-simple-mini push-10-t">
+
+
                                                                                             <li>
-                                                                                                <i class="fa fa-plus fa-li text-success"></i> Project Management Pages
-                                                                                                <ul class="fa-ul list-simple-mini push-10-t">
-                                                                                                    <li>
-                                                                                                        <i class="fa fa-plus fa-li text-success"></i> Dashboard Page
-                                                                                                    </li>
-                                                                                                    <li>
-                                                                                                        <i class="fa fa-plus fa-li text-success"></i> Project Page (with Tasks UI)
-                                                                                                    </li>
-                                                                                                    <li>
-                                                                                                        <i class="fa fa-plus fa-li text-success"></i> Create Project Page
-                                                                                                    </li>
-                                                                                                    <li>
-                                                                                                        <i class="fa fa-plus fa-li text-success"></i> Edit Project Page
-                                                                                                    </li>
-                                                                                                </ul>
+                                                                                                <i class="fa fa-plus fa-li text-success"></i> Allmost all features of the old VAS are included
                                                                                             </li>
                                                                                             <li>
-                                                                                                <i class="fa fa-plus fa-li text-success"></i> Image Cropper
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-plus fa-li text-success"></i> Masonry
+                                                                                                <i class="fa fa-plus fa-li text-success"></i> New Livemap with 3D mode and live telemetry
                                                                                             </li>
                                                                                         </ul>
                                                                                     </li>
@@ -204,16 +189,16 @@
                                                                                         <strong class="text-uppercase">Improvements</strong>
                                                                                         <ul class="fa-ul list-simple-mini push-10-t">
                                                                                             <li>
-                                                                                                <i class="fa fa-check fa-li text-primary"></i> Improved frontend’s horizontal navigation spacing (to match with header’s) on mobile screens
+                                                                                                <i class="fa fa-check fa-li text-primary"></i> Improved loading times on all pages with pagination
                                                                                             </li>
                                                                                             <li>
-                                                                                                <i class="fa fa-check fa-li text-primary"></i> Improved backend’s page headings styles
+                                                                                                <i class="fa fa-check fa-li text-primary"></i> Improved backend’s pages like Route Creator and Schedules
                                                                                             </li>
                                                                                             <li>
-                                                                                                <i class="fa fa-check fa-li text-primary"></i> Small under the hood improvements to main JS code
+                                                                                                <i class="fa fa-check fa-li text-primary"></i> All lists are now searchable
                                                                                             </li>
                                                                                             <li>
-                                                                                                <i class="fa fa-check fa-li text-primary"></i> <code>https://</code> was added to Google web fonts and Google Maps urls
+                                                                                                <i class="fa fa-check fa-li text-primary"></i> <code>https://</code> was added to secure your passwords and transfered data
                                                                                             </li>
                                                                                         </ul>
                                                                                     </li>
@@ -223,70 +208,17 @@
                                                                                             <li>
                                                                                                 <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Bootstrap Colorpicker 2.5.1 (2.4.0)
                                                                                             </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Bootstrap Datetimepicker 4.17.47 (4.17.44)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> FullCalendar 3.4.0 (3.1.0)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> SweetAlert2 6.6.2 (6.3.1)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> CKEditor 4.6.2 (4.6.1)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> jQuery Card 2.3.0 (2.1.0)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> ChartJS 2.5.0 (2.4.0)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> JS Cookie 2.1.4 (2.1.3)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> DataTables 1.10.15 (1.10.13)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> HighlightJS 9.11.0 (9.9.0)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Ion RangeSlider 2.1.7 (2.1.6)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Gmaps 0.4.25 (0.4.24)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Summernote 0.8.3 (0.8.2)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Bootstrap Wizard 1.4.2 (1.3.2)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> Scroll Lock 3.1.2 (2.2.0)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> (AngularJS version only) AngularJS 1.6.4 (1.6.1)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> (AngularJS version only) Angular UI Router 0.4.2 (0.3.2)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> (AngularJS version only) Angular UI Bootstrap Tpls 2.5.0 (2.4.0)
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <i class="fa fa-angle-double-up fa-li text-amethyst"></i> (AngularJS version only) oclazyload 1.0.10 (1.0.9)
-                                                                                            </li>
+
                                                                                         </ul>
                                                                                     </li>
                                                                                     <li>
                                                                                         <strong class="text-uppercase">Fixes</strong>
                                                                                         <ul class="fa-ul list-simple-mini push-10-t">
                                                                                             <li>
-                                                                                                <i class="fa fa-heartbeat fa-li text-city"></i> Fixed bug in mobile navigation (boxed layout pages)
+                                                                                                <i class="fa fa-heartbeat fa-li text-city"></i> Fixed bug on some pages seeing admin access only menu items
                                                                                             </li>
                                                                                             <li>
-                                                                                                <i class="fa fa-heartbeat fa-li text-city"></i> <code>rtl_start_frontend_header_nav.html</code> Small inline CSS fixes to the Get Started file
+                                                                                                <i class="fa fa-heartbeat fa-li text-city"></i> <code>smartCARS</code> issue corosponding our map solved
                                                                                             </li>
                                                                                             <li>
                                                                                                 <i class="fa fa-heartbeat fa-li text-city"></i> Small overall CSS fixes
