@@ -12,3 +12,11 @@ _ide_helper\.php
 laradock
 
 composer\.phar
+
+\.DS_Store
+
+Documentation/InstallationGuide\.pdf
+
+Documentation/
+
+*.pdf
