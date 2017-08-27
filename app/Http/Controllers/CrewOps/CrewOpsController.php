@@ -25,9 +25,9 @@ class CrewOpsController extends Controller
         $newpirep = PIREP::where('user_id', Auth::user()->id)->with('depapt')->with('arrapt')->latest('created_at')->first();
         $flighttime = PIREP::where('user_id', Auth::user()->id)->sum('flighttime');
         if (Auth::user()->totalhours != null) {
-            $totalflightime = Auth::user()->totalhours + $flighttime;
+            $totalflightime = Auth::user()->totalhours + $this->convertTime($flighttime);
         }else{
-            $totalflightime = $flighttime;
+            $totalflightime = $this->convertTime($flighttime);
         }
 
         return view('crewops.dashboard', ['bids' => $totalbids, 'logs' => $totalLogs, 'newpirep' => $newpirep, 'totalflightime' => $totalflightime]);
@@ -85,9 +85,9 @@ class CrewOpsController extends Controller
 
         $flighttime = PIREP::where('user_id', $id)->sum('flighttime');
         if ($user->totalhours != null) {
-            $totalflightime = $user->totalhours + $flighttime;
+            $totalflightime = $user->totalhours + $this->convertTime($flighttime);
         }else{
-            $totalflightime = $flighttime;
+            $totalflightime = $this->convertTime($flighttime);
         }
 
         return view('crewops.profile.view', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
@@ -104,9 +104,9 @@ class CrewOpsController extends Controller
 
                 $flighttime = PIREP::where('user_id', $user->id)->sum('flighttime');
                 if ($user->totalhours != null) {
-                    $totalflightime = $user->totalhours + $flighttime;
+                    $totalflightime = $user->totalhours + $this->convertTime($flighttime);
                 }else{
-                    $totalflightime = $flighttime;
+                    $totalflightime = $this->convertTime($flighttime);
                 }
 
         return view('crewops.profile.edit', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
@@ -187,5 +187,29 @@ class CrewOpsController extends Controller
 
         $request->session()->flash('success', 'Manual PIREP submitted for manual approval.');
         return redirect('/flightops');
+    }
+
+    function convertTime($dec)
+    {
+        // start by converting to seconds
+        $seconds = ($dec * 3600);
+        // we're given hours, so let's get those the easy way
+        $hours = floor($dec);
+        // since we've "calculated" hours, let's remove them from the seconds variable
+        $seconds -= $hours * 3600;
+        // calculate minutes left
+        $minutes = floor($seconds / 60);
+        // remove those from seconds as well
+        $seconds -= $minutes * 60;
+        // return the time formatted HH:MM:SS
+        //return lz($hours).":".lz($minutes).":".lz($seconds);
+        return $hours;
+
+    }
+
+// lz = leading zero
+    function lz($num)
+    {
+        return (strlen($num) < 2) ? "0{$num}" : $num;
     }
 }
