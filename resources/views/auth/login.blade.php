@@ -76,13 +76,13 @@
                             <h3 class="block-title">Login</h3>
                         </div>
                         <div class="block-content block-content-full block-content-narrow">
-                          <!-- Warning Alert -->
+                          <!-- Warning Alert
                           <div class="alert alert-danger alert-dismissable">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                               <h3 class="font-w300">Warning</h3>
                               <p>in order to reactivate your account please visit the <a class="alert-link" href="{{ url('/password/reset') }}">"forgot password" page!</a>!</p>
                           </div>
-                          <!-- END Warning Alert -->
+                          END Warning Alert -->
 
                           <form class="js-validation-login form-horizontal push-30-t" action="{{ url('/login') }}" class="form-horizontal" method="POST" role="form">
                                         {{ csrf_field() }}
