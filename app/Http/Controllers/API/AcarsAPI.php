@@ -111,7 +111,7 @@ class AcarsAPI extends Controller
      */
     public static function getAcarsData(Request $request){
 
-        $flights  = ACARSData::with(['bid.airline', 'bid.aircraft', 'bid.depapt', 'bid.arrapt', 'user'])->get();
+        $flights  = ACARSData::where('update_at', '>=', Carbon::now()->subDay())->with(['bid.airline', 'bid.aircraft', 'bid.depapt', 'bid.arrapt', 'user'])->get();
 
         if ($request->query('format') == 'phpVMS') {
 
