@@ -19,6 +19,7 @@
 
 
 <div class="content">
+  <div class="col-xs-12 col-md-12 col-lg-12">
   <div class="block animated fadeInUp">
     <div class="block-content ">
         <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
