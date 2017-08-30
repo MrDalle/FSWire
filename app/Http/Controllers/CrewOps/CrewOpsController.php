@@ -132,11 +132,11 @@ class CrewOpsController extends Controller
         //dd($query);
         // Load all the schedules within the database
         if (empty($query)) {
-            $schedules = ScheduleTemplate::with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->orderBy('created_at')->paginate(8);
+            $schedules = ScheduleTemplate::with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->orderBy('created_at', 'desc')->paginate(8);
             //dd($schedules);
         }
         else
-            $schedules = ScheduleTemplate::where($query)->with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->orderBy('arrapt_id', 'desc')->paginate(8);
+            $schedules = ScheduleTemplate::where($query)->with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->orderBy('created_at', 'desc')->paginate(8);
         $aircraft = Aircraft::all();
         //$schedules = ScheduleTemplate::all();
         //dd($schedules);
