@@ -30,7 +30,7 @@
                 <th class="text-center">ICAO</th>
                 <th>Airline</th>
                 <th>Flight</th>
-                <th>Depparture</th>
+                <th>Departure</th>
                 <th>Arrival</th>
                 <th>Aircraft</th>
                 <th>Approved</th>
