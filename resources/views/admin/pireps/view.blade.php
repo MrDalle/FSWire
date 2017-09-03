@@ -1,10 +1,6 @@
 
 @extends('layouts.oneui')
 
-@section('plugin')
-    <link rel="stylesheet" href="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.css') }}">
-@endsection
-
 @section('content')
 <div class="content bg-gray-lighter">
     <div class="row items-push">
@@ -33,7 +29,7 @@
             </div>
             <div class="card-block">
 
-                <table id="table_id" class="table table-bordered table-striped table-hover js-dataTable-full ">
+                <table id="table_id" class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <th>Date</th>
@@ -48,7 +44,7 @@
                     <tbody>
                     @foreach($pireps as $p)
                         <tr>
-                            <td>{{ $p->created_at }}</td>
+                            <td>{{ $p->date_created }}</td>
                             <td>{{ $p->user->username }}</td>
                             <td>{{ $p->airline->icao }}</td>
                             <td>{{ $p->flightnum }}</td>
@@ -61,12 +57,8 @@
                     @endforeach
                     </tbody>
                 </table>
+                {{ $pireps->links('vendor.pagination.oneui-default') }}
             </div>
         </div>
     </div>
-@endsection
-
-      @section('javascript')
-          <script src="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-          <script src="{{ URL::asset('assets/js/pages/base_tables_datatables.js') }}"></script>
 @endsection
