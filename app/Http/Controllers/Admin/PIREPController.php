@@ -23,7 +23,7 @@ class PIREPController extends Controller
             $pireps = PIREP::where('status', 0)->with('user')->with('depapt')->with('arrapt')->with('aircraft')->get();
             return view('admin.pireps.pending', ['pireps' => $pireps]);
         }
-        $pireps = PIREP::with('user')->with('depapt')->with('arrapt')->with('aircraft')->paginate(15);
+        $pireps = PIREP::with('user')->with('depapt')->with('arrapt')->with('aircraft')->get();
         //return response()->json($pireps);
         return view('admin.pireps.view', ['pireps' => $pireps]);
     }
