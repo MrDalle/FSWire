@@ -262,7 +262,7 @@ class AcarsAPI extends Controller
             $results = DB::table('schedule_complete')->where('created_at','<=',Carbon::now()->subDay(1))->get();
 
             foreach ($results as $result){
-                $newrestult = DB::table('schedule_complete')->where('bid_id' == $result->id)->where('updated_at', '<=', Carbon::now()->subHour(1));
+                $newrestult = DB::table('schedule_complete')->where('bid_id' == $result->id)->where('updated_at', '<=', Carbon::now()->subHour(1))->get();
                 return $newrestult;
             }
         }
