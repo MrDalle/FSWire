@@ -259,8 +259,13 @@ class AcarsAPI extends Controller
         }
         elseif ($request->query('format') == 'test'){
 
-            $result = DB::table('schedule_complete')->where('created_at','>=',Carbon::now()->subDay(1))->get();
-            return $result;
+            $results = DB::table('schedule_complete')->where('created_at','<=',Carbon::now()->subDay(1))->get();
+
+            return $results;
+
+            foreach ($results as $result){
+                DB::table('schedule_complete')->where('updated_at', '>=', Carbon::now()->subHour(1));
+            }
         }
         else{
             return response()->json([
