@@ -258,11 +258,8 @@ class AcarsAPI extends Controller
 
         }
         elseif ($request->query('format') == 'test'){
-            $date = new DateTime;
-            $date->modify('-1 day');
-            $formatted_date = $date->format('Y-m-d H:i:s');
 
-            $result = DB::table('vaos_bids')->where('created_at','>=',$formatted_date)->get();
+            $result = DB::table('vaos_bids')->where('created_at','>=',Carbon::now()->subDay(1))->get();
             return $result;
         }
         else{
