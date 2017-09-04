@@ -10,7 +10,6 @@ use App\Models\Airport;
 use App\ScheduleComplete;
 use App\User;
 use Carbon\Carbon;
-use DB;
 use Illuminate\Http\Request;
 use stdClass;
 
@@ -259,7 +258,7 @@ class AcarsAPI extends Controller
         }
         elseif ($request->query('format') == 'test'){
 
-            $results = Bid::where('created_at','<=',Carbon::now()->subDay(1))->get();
+            $results = Bid::where('created_at','<=',Carbon::today())->get();
 
             foreach ($results as $result){
                 $result->delete();
