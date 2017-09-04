@@ -10,6 +10,7 @@ use App\Models\Airport;
 use App\ScheduleComplete;
 use App\User;
 use Carbon\Carbon;
+use DB;
 use Illuminate\Http\Request;
 use stdClass;
 
@@ -255,7 +256,16 @@ class AcarsAPI extends Controller
 
             return json_encode($acarsflights); // Convert to json format
 
-        }else{
+        }
+        elseif ($request->query('format') == 'test'){
+            $date = new DateTime;
+            $date->modify('-1 day');
+            $formatted_date = $date->format('Y-m-d H:i:s');
+
+            $result = DB::table('vaos_bids')->where('created_at','>=',$formatted_date)->get();
+            return $result;
+        }
+        else{
             return response()->json([
                 'status' => 200,
                 'ACARSData' => $flights
