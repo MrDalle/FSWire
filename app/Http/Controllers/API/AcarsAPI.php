@@ -261,8 +261,6 @@ class AcarsAPI extends Controller
 
             $results = Bid::where('created_at','<=',Carbon::now()->subDay(1))->get();
 
-            return $results;
-
             foreach ($results as $result){
                 $result->delete();
             }
