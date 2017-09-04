@@ -256,14 +256,6 @@ class AcarsAPI extends Controller
             return json_encode($acarsflights); // Convert to json format
 
         }
-        elseif ($request->query('format') == 'test'){
-
-            $results = Bid::where('created_at','<=',Carbon::today())->get();
-
-            foreach ($results as $result){
-                $result->delete();
-            }
-        }
         else{
             return response()->json([
                 'status' => 200,
