@@ -259,7 +259,7 @@ class AcarsAPI extends Controller
         }
         elseif ($request->query('format') == 'test'){
 
-            $result = DB::table('vaos_bids')->where('created_at','>=',Carbon::now()->subDay(1))->get();
+            $result = DB::table('vaos_schedule_complete')->where('created_at','>=',Carbon::now()->subDay(1))->get();
             return $result;
         }
         else{
