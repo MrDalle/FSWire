@@ -15,6 +15,10 @@ Route::get('/wxr', function() {
     return view('wxr');
 })->middleware('auth');
 
+Route::get('/wxr/new', function() {
+    return view('wxr_new');
+})->middleware('auth');
+
 Route::get('/faq', function() {
     return view('faq');
 })->middleware('auth');
