@@ -3,14 +3,20 @@
                 <!-- MAP -->
                 <style type="text/css">
 
-                    .js-map-full.custom {
-                        position: absolute;
-                        top: 60px;
-                        right: 0px;
-                        bottom: 0px;
-                        left: 0px;
-                        overflow: hidden;
-                    }
+                .js-map-full iframe{
+                  height:1080px;
+                	width: 100%;
+
+                	position: relative; /* IE needs a position other than static */
+                }
+                .js-map-full.custom {
+                    position: absolute;
+                    top: 60px;
+                    right: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    overflow: hidden;
+                }
                 </style>
 
                 @extends('layouts.oneui')
