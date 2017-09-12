@@ -4,14 +4,14 @@
                 <style type="text/css">
 
                 .js-map-full iframe{
-                  height:1080px;
+                  height:100%;
                 	width: 100%;
 
                 	position: relative; /* IE needs a position other than static */
                 }
                 .js-map-full.custom {
                     position: absolute;
-                    top: 60px;
+                    top: 54px;
                     right: 0px;
                     bottom: 0px;
                     left: 0px;
