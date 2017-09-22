@@ -530,8 +530,7 @@
 
     </ul>
     <!-- END Header Navigation Left -->
-</header>
-<!-- END Header -->
+
 
 <div class="modal fade in" id="apps-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
     <div class="modal-sm modal-dialog modal-dialog-top">
@@ -549,7 +548,7 @@
                 <div class="block-content">
                     <div class="row text-center">
                         <div class="col-xs-6">
-                            <a class="block block-rounded" href="base_pages_dashboard.html">
+                            <a class="block block-rounded" href="{{ url('flightops') }}">
                                 <div class="block-content text-white bg-default">
                                     <i class="si si-speedometer fa-2x"></i>
                                     <div class="font-w600 push-15-t push-15">Backend</div>
@@ -557,7 +556,7 @@
                             </a>
                         </div>
                         <div class="col-xs-6">
-                            <a class="block block-rounded" href="frontend_home.html">
+                            <a class="block block-rounded" href="https://fswire.net">
                                 <div class="block-content text-white bg-modern">
                                     <i class="si si-rocket fa-2x"></i>
                                     <div class="font-w600 push-15-t push-15">Frontend</div>
@@ -571,3 +570,6 @@
         </div>
     </div>
 </div>
+
+</header>
+<!-- END Header -->
