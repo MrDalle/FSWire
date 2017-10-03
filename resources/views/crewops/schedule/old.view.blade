@@ -97,8 +97,8 @@
                         </div>
                         <div class="block-content">
                             <form action="{{ url('/flightops/schedule') }}" id="form-id" method="GET">
-
-                                <div class="form-material">
+                                <div class="form-group items-push push-10">
+                                    <div class="col-sm-6">
                                     <input class="form-control" placeholder="Departure Airport" list="apt" name="depapt"
                                            type="text">
                                     <datalist id="apt">
@@ -136,6 +136,7 @@
                                 {{--<div class="card-action">
                                     <button class="btn green darken-3" type="submit">Search</button>
                                     </div>--}}
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <main id="main-container">
+
     <!-- Hero Content -->
-    <div class="bg-image overflow-hidden" style="background-image: url('assets/img/photos/bg.png'); ">
+    <div class="bg-image overflow-hidden" style="background-image: url('assets/img/photos/photo28@2x.jpg'); ">
         <!-- Search Content -->
         <section class="content content-full content-boxed overflow-hidden">
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
@@ -23,38 +23,49 @@
                             </ul>
                             <div class="block-content tab-content mheight-200">
                                 <div class="tab-pane active" id="travel-flights">
-                                    <form class="form-horizontal" action="{{ url('/flightops/schedule') }}" method="get" onsubmit="return false;">
+
+                                    <form action="{{ url('/flightops/schedule') }}" id="form-id" method="GET">
                                         <div class="form-group items-push push-10">
-                                            <div class="col-sm-6">
-                                                <label for="travel-flights-from">FROM</label>
-                                                <input class="form-control" type="text" id="travel-flights-from" name="travel-flights-from" placeholder="Eg. Paris, FR">
-                                                <datalist id="apt">
-                                                    @foreach(App\Models\Airport::all() as $a)
-                                                        <option value="{{ $a->icao }}">{{ $a->name }}</option>
-                                                    @endforeach
-                                                </datalist>
+
+                                            <div class="form-material col-sm-6">
+                                                <label for="travel-flights-from">Departure Airport</label>
+                                            <input class="form-control" placeholder="EDDF" list="apt" name="depapt"
+                                                   type="text">
+                                            <datalist id="apt">
+                                                @foreach(App\Models\Airport::all() as $a)
+                                                    <option value="{{ $a->icao }}">{{ $a->name }}</option>
+                                                @endforeach
+                                            </datalist>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <label for="travel-flights-to">TO</label>
-                                                <input class="form-control" type="text" id="travel-flights-to" name="travel-flights-to" placeholder="Eg. New York, US">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <label>WHEN?</label>
-                                                <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
-                                                    <input class="form-control" type="text" id="travel-flights-departure" name="travel-flights-departure" placeholder="Departure">
-                                                    <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
-                                                    <input class="form-control" type="text" id="travel-flights-return" name="travel-flights-return" placeholder="Return">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <label for="travel-flights-adults">ADULTS</label>
-                                                <input class="form-control" type="number" min="1" max="10" id="travel-flights-adults" name="travel-flights-adults" value="1">
-                                            </div>
+                                          <div class="form-material col-sm-6">
+                                              <label for="travel-flights-from">Arrival Airport</label>
+                                            <input class="form-control" placeholder="OMDB" list="apt" name="arrapt"
+                                                   type="text">
+
+                                          </div>
+                                          <div class="form-material col-sm-8">
+                                            <input class="form-control" placeholder="Aircraft" list="acf" name="aircraft_group"
+                                                   type="text">
+
+                                            <datalist id="acf">
+                                                @foreach(App\AircraftGroup::all() as $a)
+                                                    <option value="{{ $a->icao }}">{{ $a->name }}</option>
+                                                @endforeach
+                                            </datalist>
+                                          </div>
+                                          <div class="form-material col-sm-4">
+                                            <input class="form-control" placeholder="Airline" list="airline" name="airline"
+                                                   type="text">
+
+                                            <datalist id="airline">
+                                                @foreach(App\Airline::all() as $a)
+                                                    <option value="{{ $a->icao }}">{{ $a->airline }}</option>
+                                                @endforeach
+                                            </datalist>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-xs-12">
-                                                <button class="btn btn-noborder btn-rounded btn-primary text-uppercase" type="submit"><i class="fa fa-search push-5-r"></i> Search Flights</button>
-                                            </div>
+                                        {{--<div class="card-action">
+                                            <button class="btn green darken-3" type="submit">Search</button>
+                                            </div>--}}
                                         </div>
                                     </form>
                                 </div>
