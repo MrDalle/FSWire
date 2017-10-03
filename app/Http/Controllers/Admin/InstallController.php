@@ -148,4 +148,8 @@ class InstallController extends Controller {
     $aircraft = $oldDB->getTable('aircraft')->get();
     $aircraft = $oldDB->getTable('aircraft')->get();
   }
+    public function dbMigrate() {
+       Artisan::call('migrate');
+       return redirect('/');
+    }
 }
