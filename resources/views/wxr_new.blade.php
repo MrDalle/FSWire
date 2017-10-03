@@ -38,10 +38,7 @@
         // @map is instance of Leaflet maps
         //
         function windytyMain(map) {
-            var popup = L.popup()
-                .setLatLng([50.4, 14.3])
-                .setContent("Hello World")
-                .openOn( map );
+           
         }
 
     </script>
