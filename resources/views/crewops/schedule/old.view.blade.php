@@ -39,7 +39,10 @@
                         </div>
                     </div>
                     <div class="card-action">
-                        <button class="btn green darken-3" type="submit">Apply Filter</button>
+                        <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal"><i
+                                    class="fa fa-check"></i> Ok
+                        </button>
+                    </div>
                         <div class="right">
 
 

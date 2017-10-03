@@ -4,7 +4,7 @@
 
 
     <!-- Hero Content -->
-    <div class="bg-image overflow-hidden" style="background-image: url('assets/img/photos/photo28@2x.jpg'); ">
+    <div class="bg-image overflow-hidden" style="background-image: url('/assets/img/photos/bg.png'); ">
         <!-- Search Content -->
         <section class="content content-full content-boxed overflow-hidden">
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
@@ -17,7 +17,7 @@
                         <div class="block">
                             <ul class="nav nav-tabs nav-justified" data-toggle="tabs">
                                 <li class="active">
-                                    <a href="#travel-flights"><i class="fa fa-plane text-primary push-5-r"></i> <span class="text-primary-dark">Flights</span></a>
+                                    <a href="#travel-flights"><i class="fa fa-plane text-primary push-5-r"></i> <span class="text-primary-dark">Search Route Database</span></a>
                                 </li>
 
                             </ul>
@@ -68,129 +68,35 @@
                                             </div>--}}
                                         </div>
                                     </form>
-                                </div>
-                                <div class="tab-pane" id="travel-hotels">
-                                    <form class="form-horizontal" action="frontend_travel_home.html" method="post" onsubmit="return false;">
-                                        <div class="form-group items-push push-10">
-                                            <div class="col-xs-12">
-                                                <label for="travel-hotels-where">WHERE</label>
-                                                <input class="form-control" type="text" id="travel-hotels-where" name="travel-hotels-where" placeholder="Eg. Paris, FR">
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <label>WHEN?</label>
-                                                <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
-                                                    <input class="form-control" type="text" id="travel-hotels-arrival" name="travel-hotels-arrival" placeholder="Arrival">
-                                                    <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
-                                                    <input class="form-control" type="text" id="travel-hotels-departure" name="travel-hotels-departure" placeholder="Departure">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <label for="travel-hotels-adults">ADULTS</label>
-                                                <input class="form-control" type="number" min="1" max="10" id="travel-hotels-adults" name="travel-hotels-adults" value="2">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-xs-12">
-                                                <button class="btn btn-noborder btn-rounded btn-success text-uppercase" type="submit"><i class="fa fa-search push-5-r"></i> Search Hotels</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="tab-pane" id="travel-packages">
-                                    <form class="form-horizontal" action="frontend_travel_home.html" method="post" onsubmit="return false;">
-                                        <div class="form-group items-push push-10">
-                                            <div class="col-xs-12">
-                                                <label for="travel-packages-destination">DESTINATION</label>
-                                                <input class="form-control" type="text" id="travel-packages-destination" name="travel-packages-destination" placeholder="Eg. London, GB">
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <label for="travel-packages-month">MONTH</label>
-                                                <select class="form-control" id="travel-packages-month" name="travel-packages-month">
-                                                    <option value="0">When?</option>
-                                                    <option value="1">January</option>
-                                                    <option value="2">February</option>
-                                                    <option value="3">March</option>
-                                                    <option value="4">April</option>
-                                                    <option value="5">May</option>
-                                                    <option value="6">June</option>
-                                                    <option value="7">July</option>
-                                                    <option value="8">August</option>
-                                                    <option value="9">September</option>
-                                                    <option value="10">October</option>
-                                                    <option value="11">November</option>
-                                                    <option value="12">December</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <label for="travel-packages-budget">BUDGET</label>
-                                                <select class="form-control" id="travel-packages-budget" name="travel-packages-budget">
-                                                    <option value="0">How much?</option>
-                                                    <option value="1">$99 to $499</option>
-                                                    <option value="2">$500 to $999</option>
-                                                    <option value="3">$1000 to $1999</option>
-                                                    <option value="4">$2000 to $2999</option>
-                                                    <option value="5">$3000 to $4999</option>
-                                                    <option value="6">$5000 to $9999</option>
-                                                    <option value="6">&gt; $9999</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <label for="travel-packages-adults">ADULTS</label>
-                                                <input class="form-control" type="number" min="1" max="10" id="travel-packages-adults" name="travel-packages-adults" value="2">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-xs-12">
-                                                <button class="btn btn-noborder btn-rounded btn-danger text-uppercase" type="submit"><i class="fa fa-search push-5-r"></i> Search Packages</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END Search Content -->
 
-        <!-- Features -->
-        <div class="bg-black-op">
-            <section class="content content-boxed">
-                <div class="push-20-t push-50">
-                    <div class="row items-push text-center">
-                        <div class="col-xs-6 col-md-3 visibility-hidden" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="200">
-                            <div class="item item-2x item-circle push-10">
-                                <i class="si si-plane text-white"></i>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal"><i
+                                                            class="fa fa-check"></i> Search
+                                                </button>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <h5 class="h7 text-black-op animated fadeInDown">
+                                                    There are currently {{ \App\ScheduleTemplate::where('enabled', 1)->count() }} schedules in the
+                                                    system</h5>
+                                            </div>
+                                            </div>
                             </div>
-                            <div class="font-w600 text-white-op text-uppercase">Cheap Flights</div>
+
                         </div>
-                        <div class="col-xs-6 col-md-3 visibility-hidden" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="400">
-                            <div class="item item-2x item-circle push-10">
-                                <i class="si si-heart text-white"></i>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="font-w600 text-white-op text-uppercase">Best Deals</div>
                         </div>
-                        <div class="col-xs-6 col-md-3 visibility-hidden" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="600">
-                            <div class="item item-2x item-circle push-10">
-                                <i class="si si-clock text-white"></i>
-                            </div>
-                            <div class="font-w600 text-white-op text-uppercase">Save Time</div>
-                        </div>
-                        <div class="col-xs-6 col-md-3 visibility-hidden" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="800">
-                            <div class="item item-2x item-circle push-10">
-                                <i class="si si-support text-white"></i>
-                            </div>
-                            <div class="font-w600 text-white-op text-uppercase">24/7 Support</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <!-- END Features -->
+
+
+    <!-- END Search Content -->
+
+
     </div>
     <!-- END Hero Content -->
-    
 
     <div class="content">
         <h1 class="page-heading font-w600">

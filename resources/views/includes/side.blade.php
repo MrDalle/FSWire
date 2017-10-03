@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-8">
-                                        <a href="https://discord.gg/0q7Qozx3iSeChKxY">
+                                        <a href="https://discord.gg/GAdDDTY">
                                             <div class=" form-group col-xs-8 btn btn-primary">Join Discord</div>
                                         </a>
                                     </div>
