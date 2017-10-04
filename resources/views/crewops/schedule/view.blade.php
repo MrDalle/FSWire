@@ -70,28 +70,25 @@
                                             {{--<div class="card-action">
                                                 <button class="btn green darken-3" type="submit">Search</button>
                                                 </div>--}}
+                                            <div class="form-group">
+                                                <div class="col-xs-12">
+                                                    <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal">
+                                                        <i
+                                                                class="fa fa-check"></i> Search
+                                                    </button>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <h5 class="h7 text-black-op animated fadeInDown">
+                                                        There are
+                                                        currently {{ \App\ScheduleTemplate::where('enabled', 1)->count() }}
+                                                        schedules in the
+                                                        system</h5>
+                                                </div>
+                                            </div>
                                         </div>
                                     </form>
-
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal">
-                                            <i
-                                                    class="fa fa-check"></i> Search
-                                        </button>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <h5 class="h7 text-black-op animated fadeInDown">
-                                            There are
-                                            currently {{ \App\ScheduleTemplate::where('enabled', 1)->count() }}
-                                            schedules in the
-                                            system</h5>
-                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
