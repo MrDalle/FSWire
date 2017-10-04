@@ -232,7 +232,7 @@
         </div>
         <!-- END Pop Out Modal -->
 
-    @foreach($schedules as $s)
+        @foreach($schedules as $s)
         <!-- Pop Out Modal -->
             <div class="modal fade" id="modal-popout{{$s->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-popout modal-m">
@@ -293,10 +293,9 @@
                     </div>
                 </div>
             </div>
+        <!-- END Pop Out Modal -->
+        @endforeach
     </div>
-    <!-- END Pop Out Modal -->
-    @endforeach
-
 @endsection
 
 
