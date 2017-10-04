@@ -10,14 +10,17 @@
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
             <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->
             <div class="push-100-t push-100">
-                <h1 class="font-s48 font-w700 text-uppercase text-white push-10 visibility-hidden text-center" data-toggle="appear" data-class="animated fadeInDown">Travel The World</h1>
-                <h2 class="h3 font-w400 text-white-op push-50 visibility-hidden text-center" data-toggle="appear" data-timeout="750">Let us help you explore the world, one step at a time.</h2>
+                <h1 class="font-s48 font-w700 text-uppercase text-white push-10 visibility-hidden text-center"
+                    data-toggle="appear" data-class="animated fadeInDown">Travel The World</h1>
+                <h2 class="h3 font-w400 text-white-op push-50 visibility-hidden text-center" data-toggle="appear"
+                    data-timeout="750">Let us help you explore the world, one step at a time.</h2>
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
                         <div class="block">
                             <ul class="nav nav-tabs nav-justified" data-toggle="tabs">
                                 <li class="active">
-                                    <a href="#travel-flights"><i class="fa fa-plane text-primary push-5-r"></i> <span class="text-primary-dark">Search Route Database</span></a>
+                                    <a href="#travel-flights"><i class="fa fa-plane text-primary push-5-r"></i> <span
+                                                class="text-primary-dark">Search Route Database</span></a>
                                 </li>
 
                             </ul>
@@ -29,70 +32,75 @@
 
                                             <div class="form-material col-sm-6">
                                                 <label for="travel-flights-from">Departure Airport</label>
-                                            <input class="form-control" placeholder="EDDF" list="apt" name="depapt"
-                                                   type="text">
-                                            <datalist id="apt">
-                                                @foreach(App\Models\Airport::all() as $a)
-                                                    <option value="{{ $a->icao }}">{{ $a->name }}</option>
-                                                @endforeach
-                                            </datalist>
+                                                <input class="form-control" placeholder="EDDF" list="apt" name="depapt"
+                                                       type="text">
+                                                <datalist id="apt">
+                                                    @foreach(App\Models\Airport::all() as $a)
+                                                        <option value="{{ $a->icao }}">{{ $a->name }}</option>
+                                                    @endforeach
+                                                </datalist>
                                             </div>
-                                          <div class="form-material col-sm-6">
-                                              <label for="travel-flights-from">Arrival Airport</label>
-                                            <input class="form-control" placeholder="OMDB" list="apt" name="arrapt"
-                                                   type="text">
+                                            <div class="form-material col-sm-6">
+                                                <label for="travel-flights-from">Arrival Airport</label>
+                                                <input class="form-control" placeholder="OMDB" list="apt" name="arrapt"
+                                                       type="text">
 
-                                          </div>
-                                          <div class="form-material col-sm-8">
-                                            <input class="form-control" placeholder="Aircraft" list="acf" name="aircraft_group"
-                                                   type="text">
+                                            </div>
+                                            <div class="form-material col-sm-8">
+                                                <input class="form-control" placeholder="Aircraft" list="acf"
+                                                       name="aircraft_group"
+                                                       type="text">
 
-                                            <datalist id="acf">
-                                                @foreach(App\AircraftGroup::all() as $a)
-                                                    <option value="{{ $a->icao }}">{{ $a->name }}</option>
-                                                @endforeach
-                                            </datalist>
-                                          </div>
-                                          <div class="form-material col-sm-4">
-                                            <input class="form-control" placeholder="Airline" list="airline" name="airline"
-                                                   type="text">
+                                                <datalist id="acf">
+                                                    @foreach(App\AircraftGroup::all() as $a)
+                                                        <option value="{{ $a->icao }}">{{ $a->name }}</option>
+                                                    @endforeach
+                                                </datalist>
+                                            </div>
+                                            <div class="form-material col-sm-4">
+                                                <input class="form-control" placeholder="Airline" list="airline"
+                                                       name="airline"
+                                                       type="text">
 
-                                            <datalist id="airline">
-                                                @foreach(App\Airline::all() as $a)
-                                                    <option value="{{ $a->icao }}">{{ $a->airline }}</option>
-                                                @endforeach
-                                            </datalist>
-                                        </div>
-                                        {{--<div class="card-action">
-                                            <button class="btn green darken-3" type="submit">Search</button>
-                                            </div>--}}
+                                                <datalist id="airline">
+                                                    @foreach(App\Airline::all() as $a)
+                                                        <option value="{{ $a->icao }}">{{ $a->airline }}</option>
+                                                    @endforeach
+                                                </datalist>
+                                            </div>
+                                            {{--<div class="card-action">
+                                                <button class="btn green darken-3" type="submit">Search</button>
+                                                </div>--}}
                                         </div>
                                     </form>
 
 
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-xs-12">
-                                                <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal"><i
-                                                            class="fa fa-check"></i> Search
-                                                </button>
-                                            </div>
-                                            <div class="col-xs-12">
-                                                <h5 class="h7 text-black-op animated fadeInDown">
-                                                    There are currently {{ \App\ScheduleTemplate::where('enabled', 1)->count() }} schedules in the
-                                                    system</h5>
-                                            </div>
-                                            </div>
-                            </div>
-
-                        </div>
-                                    </form>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal">
+                                            <i
+                                                    class="fa fa-check"></i> Search
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h5 class="h7 text-black-op animated fadeInDown">
+                                            There are
+                                            currently {{ \App\ScheduleTemplate::where('enabled', 1)->count() }}
+                                            schedules in the
+                                            system</h5>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-    <!-- END Search Content -->
+        <!-- END Search Content -->
 
 
     </div>
@@ -109,7 +117,8 @@
             @foreach($schedules as $s)
                 <div class="col-sm-6 col-lg-3">
                     <!-- Add Friend -->
-                    <div class="bg-image animated fadeInUp" style="background-image: url('{{ $s->airline->widget }}'); background-size: 100% 100%;">
+                    <div class="bg-image animated fadeInUp"
+                         style="background-image: url('{{ $s->airline->widget }}'); background-size: 100% 100%;">
                         <div class="bg-black-op">
                             <div class="block block-themed block-transparent">
                                 <div class="block-header">
