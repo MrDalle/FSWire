@@ -72,7 +72,7 @@
                                                 </div>--}}
                                             <div class="form-group">
                                                 <div class="col-xs-12">
-                                                    <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal">
+                                                    <button class="btn btn-sm btn-primary text" type="submit" data-dismiss="modal">
                                                         <i
                                                                 class="fa fa-check"></i> Search
                                                     </button>
