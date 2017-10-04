@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Hero Content -->
-    <div class="bg-image overflow-hidden" style="background-image: {{ asset('assets/img/photos/bg.png') }};">
+    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/bg.png') }});">
         <!-- Search Content -->
         <section class="content content-full content-boxed overflow-hidden">
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
@@ -113,7 +113,7 @@
                 <div class="col-sm-6 col-lg-3">
                     <!-- Add Friend -->
                     <div class="bg-image animated fadeInUp"
-                         style="background-image: {{ $s->airline->widget }}; background-size: 100% 100%;">
+                         style="background-image: url({{ $s->airline->widget }}); background-size: 100% 100%;">
                         <div class="bg-black-op">
                             <div class="block block-themed block-transparent">
                                 <div class="block-header">
