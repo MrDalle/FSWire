@@ -12,7 +12,7 @@
                 .js-map-full.custom {
                     position: absolute;
                     top: 54px;
-                    right: 0px;
+                    right: 20px;
                     bottom: 0px;
                     left: 0px;
                     overflow: hidden;

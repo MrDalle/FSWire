@@ -531,6 +531,8 @@
     </ul>
     <!-- END Header Navigation Left -->
 
+</header>
+<!-- END Header -->
     <!-- Apps Modal -->
     <!-- Opens from the button in the header -->
     <div class="modal fade" id="apps-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -572,6 +574,3 @@
         </div>
     </div>
     <!-- END Apps Modal -->
-
-</header>
-<!-- END Header -->
