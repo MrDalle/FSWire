@@ -23,6 +23,10 @@ Route::get('/faq', function() {
     return view('faq');
 })->middleware('auth');
 
+Route::get('/freeflight', function() {
+    return view('ff');
+})->middleware('auth');
+
 Route::get('/', function() {
     return view('faq');
 })->middleware('auth');
