@@ -90,16 +90,16 @@
                                     </div>
                                 </a>
 
-
-                                <a class="list-group-item bg-gray-light">
-                                    <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
-                                    <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
-                                        <label class="col-md-3 form-control-label" for="text-input">Route</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5">
-                                        </div>
-                                    </div>
-                                </a>
+                                <!-- Route eingabe
+                                                          <a class="list-group-item bg-gray-light">
+                                                              <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
+                                                              <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
+                                                                  <label class="col-md-3 form-control-label" for="text-input">Route</label>
+                                                                  <div class="col-md-9">
+                                                                      <input type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5">
+                                                                  </div>
+                                                              </div>
+                                                          </a> -->
 
 
                                 <a class="list-group-item bg-gray-light">
@@ -137,8 +137,10 @@
                                     <i class="fa fa-fw fa-plane push-5-r"></i> Type of flight
                                     <select id="type" name="type" class="form-control" size="1">
                                         <option value="0">Please select</option>
-                                        <option value="1">Scheduled Passenger</option>
-                                        <option value="2">Scheduled Cargo</option>
+                                        <option value="1">Passenger Flight</option>
+                                        <option value="2">Cargo Flight</option>
+                                        <option value="3">Bush Flying</option>
+                                        <option value="3">Free Flight</option>
                                     </select>
                                     <div class="checkbox">
                                         <label for="checkbox1">
