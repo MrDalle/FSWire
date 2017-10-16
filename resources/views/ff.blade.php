@@ -90,7 +90,7 @@
                                     </div>
                                 </a>
 
-                                <!-- Route eingabe
+
                                 <a class="list-group-item bg-gray-light">
                                     <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
                                     <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
@@ -99,7 +99,7 @@
                                             <input type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5">
                                         </div>
                                     </div>
-                                </a> -->
+                                </a>
 
 
                                 <a class="list-group-item bg-gray-light">
@@ -173,7 +173,3 @@
 
 
 @endsection
-</body>
-
-
-</html>
