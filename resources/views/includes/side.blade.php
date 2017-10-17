@@ -398,6 +398,11 @@
 
                     <li class="nav-main-heading"><span class="sidebar-mini-hide">Dispatch</span></li>
                     <li>
+                        <a href="  {{ url('freeflight') }}"><i class="si si-plane"></i><span
+                                    class="sidebar-mini-hide">Free Flight</span></a>
+                    </li>
+
+                    <li>
                         <a href="  {{ url('flp') }}"><i class="si si-calculator"></i><span
                                     class="sidebar-mini-hide">Plan Flight</span></a>
                     </li>
