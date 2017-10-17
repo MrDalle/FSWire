@@ -108,7 +108,8 @@
                                     <i class="fa fa-fw fa-edit push-5-r"></i> Flying on<select id="airline"
                                                                                                     name="airline"
                                                                                                     class="form-control disabled"
-                                                                                                    size="1">
+                                                                                                    size="1"
+                                                                                               style="display:none;">
 
                                         @foreach($airlines as $a)
                                             <option value="{{ $a->icao }}">{{ $a->icao }} - {{ $a->name }}</option>
