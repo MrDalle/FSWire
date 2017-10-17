@@ -104,10 +104,10 @@
                                     </div>
                                 </a>
 
-                                <a class="list-group-item bg-gray-light disabled">
+                                <a class="list-group-item bg-gray-light">
                                     <i class="fa fa-fw fa-edit push-5-r"></i> Flying on<select id="airline"
                                                                                                     name="airline"
-                                                                                                    class="form-control"
+                                                                                                    class="form-control disabled"
                                                                                                     size="1">
 
                                         @foreach($airlines as $a)
