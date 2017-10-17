@@ -5,8 +5,8 @@
         <div class="row items-push">
             <div class="col-sm-7">
                 <h1 class="page-heading">
-                    Plan a Free Flight
-                    <small>no matter if you do a Airliner Flight or just flying in the bush!</small>
+                    VA Management
+                    <small>take care of your pilots needs.</small>
                 </h1>
             </div>
         </div>
@@ -66,7 +66,10 @@
                                             <input value="{{ old('depicao') }}" type="text" id="depicao" name="depicao"
                                                    class="form-control text-center" placeholder="eg. KLAX" required>
                                         </td>
+                                        <td class="fa fa-plane" style="width: 20%;">
 
+
+                                        </td>
                                         <td class="border-r" style="width: 40%;">
                                             <div class="h4 font-w700">Arrival</div>&nbsp;
 
@@ -137,9 +140,8 @@
                                     <i class="fa fa-fw fa-plane push-5-r"></i> Type of flight
                                     <select id="type" name="type" class="form-control" size="1">
                                         <option value="0">Please select</option>
-                                        <option value="1">Airline Flight</option>
-                                        <option value="2">Cargo Flight</option>
-                                        <option value="2">Bush Flying</option>
+                                        <option value="1">Scheduled Passenger</option>
+                                        <option value="2">Scheduled Cargo</option>
                                     </select>
                                     <div class="checkbox">
                                         <label for="checkbox1">
@@ -170,61 +172,6 @@
         </form>
     </div>
 
-
-    <div class="col-xs-6 col-lg-3 ">
-        <!-- Crystal on Background Color -->
-        <div class="block animated pulse">
-            <a class="block block-link-hover2" href="{{ url('/flightops/logbook') }}">
-                <div class="block-content block-content-full bg-primary ribbon ribbon-modern ribbon-crystal">
-                    <div class="ribbon-box font-w600 text-uppercase">
-                        @if($newpirep != null)
-                            @if($newpirep->status === 1)
-                                APPROVED
-                            @elseif($newpirep->status === 2)
-                                PENDING
-                            @else
-                                DENIED
-                            @endif
-                        @endif
-                    </div>
-                    <div class="text-center push-50-t push-50">
-                        <h3 class="text-white-op">Latest PIREP</h3>
-                        @if($newpirep != null)
-                            {{$newpirep->depapt->name}}
-                            {{$newpirep->arrapt->name}}
-                        @endif
-                    </div>
-                </div>
-
-            </a></div>
-
-        <!-- END Row 1 -->
-    </div>
-
-    <!-- Dashboard Cards -->
-    <div class="col-xs-4 col-lg-2 col-md-2">
-        <a class="block block-link-hover2 text-center   animated pulse" href="{{ url('/flightops/schedule') }}">
-            <div class="block-content block-content-full bg-modern">
-                <i class="si si-settings fa-4x text-white"></i>
-                <div class="font-w600 text-white-op push-15-t">Bid Flight</div>
-            </div>
-        </a>
-
-
-        <a class="block block-link-hover2 text-center animated pulse" href="{{ url('/map') }}">
-            <div class="block-content block-content-full bg-city">
-                <i class="si si-map fa-4x text-white"></i>
-                <div class="font-w600 text-white-op push-15-t">RADAR</div>
-            </div>
-        </a>
-
-        <a class="block block-link-hover2 text-center  animated pulse" href="{{ url('/flightops/logbook') }}">
-            <div class="block-content block-content-full bg-flat">
-                <i class="si si-book-open fa-4x text-white"></i>
-                <div class="font-w600 text-white-op push-15-t">Logbook</div>
-            </div>
-        </a>
-    </div>
 
 
 @endsection

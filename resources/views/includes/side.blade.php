@@ -398,7 +398,7 @@
 
                     <li class="nav-main-heading"><span class="sidebar-mini-hide">Dispatch</span></li>
                     <li>
-                        <a href="  {{ url('freeflight') }}"><i class="si si-plane"></i><span
+                        <a href="  {{ url('flightops/freeflight') }}"><i class="si si-plane"></i><span
                                     class="sidebar-mini-hide">Free Flight</span></a>
                     </li>
 

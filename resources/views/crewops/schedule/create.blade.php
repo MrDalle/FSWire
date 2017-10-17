@@ -5,8 +5,8 @@
         <div class="row items-push">
             <div class="col-sm-7">
                 <h1 class="page-heading">
-                    VA Management
-                    <small>take care of your pilots needs.</small>
+                    Plan a Free Flight
+                    <small>no matter if you do a Airliner Flight or just flying in the bush!</small>
                 </h1>
             </div>
         </div>
@@ -21,17 +21,17 @@
     <!-- Page Content -->
     <div class="content">
 
-      @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/flightops/schedule') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/schedule') }}">
             {{csrf_field()}}
             <div class="row">
 
@@ -66,10 +66,7 @@
                                             <input value="{{ old('depicao') }}" type="text" id="depicao" name="depicao"
                                                    class="form-control text-center" placeholder="eg. KLAX" required>
                                         </td>
-                                        <td class="fa fa-plane" style="width: 20%;">
 
-
-                                        </td>
                                         <td class="border-r" style="width: 40%;">
                                             <div class="h4 font-w700">Arrival</div>&nbsp;
 
@@ -140,8 +137,9 @@
                                     <i class="fa fa-fw fa-plane push-5-r"></i> Type of flight
                                     <select id="type" name="type" class="form-control" size="1">
                                         <option value="0">Please select</option>
-                                        <option value="1">Scheduled Passenger</option>
-                                        <option value="2">Scheduled Cargo</option>
+                                        <option value="1">Airline Flight</option>
+                                        <option value="2">Cargo Flight</option>
+                                        <option value="2">Bush Flying</option>
                                     </select>
                                     <div class="checkbox">
                                         <label for="checkbox1">
@@ -172,6 +170,32 @@
         </form>
     </div>
 
+
+
+    <!-- Dashboard Cards -->
+    <div class="col-xs-4 col-lg-2 col-md-2">
+        <a class="block block-link-hover2 text-center   animated pulse" href="{{ url('/flightops/schedule') }}">
+            <div class="block-content block-content-full bg-modern">
+                <i class="si si-settings fa-4x text-white"></i>
+                <div class="font-w600 text-white-op push-15-t">Bid Flight</div>
+            </div>
+        </a>
+
+
+        <a class="block block-link-hover2 text-center animated pulse" href="{{ url('/map') }}">
+            <div class="block-content block-content-full bg-city">
+                <i class="si si-map fa-4x text-white"></i>
+                <div class="font-w600 text-white-op push-15-t">RADAR</div>
+            </div>
+        </a>
+
+        <a class="block block-link-hover2 text-center  animated pulse" href="{{ url('/flightops/logbook') }}">
+            <div class="block-content block-content-full bg-flat">
+                <i class="si si-book-open fa-4x text-white"></i>
+                <div class="font-w600 text-white-op push-15-t">Logbook</div>
+            </div>
+        </a>
+    </div>
 
 
 @endsection
