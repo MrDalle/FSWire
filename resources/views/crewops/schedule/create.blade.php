@@ -91,8 +91,27 @@
                                 </a>
 
 
+                                <a class="list-group-item bg-gray-light">
+                                    <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
+                                    <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
+                                        <label class="col-md-3 form-control-label" for="text-input">Route</label>
+                                        <div class="col-md-9">
+                                            <input value="{{ old('route') }}" type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5" required>
+                                        </div>
+                                    </div>
+                                </a>
 
+                                <a class="list-group-item bg-gray-light">
+                                    <i class="fa fa-fw fa-edit push-5-r"></i> Flying on<select id="airline"
+                                                                                                    name="airline"
+                                                                                                    class="form-control"
+                                                                                                    size="1">
 
+                                        @foreach($airlines as $a)
+                                            <option value="{{ $a->icao }}">{{ $a->icao }} - {{ $a->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </a>
 
                                 <a class="list-group-item bg-gray-light">
                                     <span class="badge bg-warning">4 DIGITS</span>&nbsp;&nbsp;
