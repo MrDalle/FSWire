@@ -4,7 +4,7 @@
     <style type="text/css">
 
         .js-map-full iframe{
-            height:550px;
+            height:100%;
             width: 100%;
 
             position: relative; /* IE needs a position other than static */
@@ -206,7 +206,7 @@
 
 
             <div class="col-lg-6">
-                <div class="block block-bordered">
+                <div class="block block-bordered js-map-full custom">
                     <div class="block-header">
                         <ul class="block-options">
                             <li>
@@ -224,9 +224,9 @@
                         </ul>
                         <h3 class=" h3 font-w700">Live WXR</h3>
                     </div>
-                    <div class="js-map-full custom">
+
                 <iframe src="https://embed.windy.com/embed2.html?lat=52.122&lon=8.960&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&forecast=12&calendar=now&location=ip&type=map&actualGrid=&metricWind=kt&metricTemp=%C2%B0C" frameborder="0"></iframe>
-            </div> </div>
+            </div>
             </div>
 
     <!-- Dashboard Cards -->
