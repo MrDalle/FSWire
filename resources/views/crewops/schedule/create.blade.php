@@ -180,6 +180,7 @@
 
         </form>
 
+
             <div class="col-lg-6">
                 <div class="block block-bordered">
                     <div class="block-header">
