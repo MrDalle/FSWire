@@ -104,30 +104,7 @@
                                     </div>
                                 </a>
 
-                                <a class="list-group-item bg-gray-light">
-                                    <i class="fa fa-fw fa-edit push-5-r"></i> Flying on
-                                    <div class="checkbox">
-                                        <label for="checkbox1">
-                                            <input type="checkbox" id="enabled" name="enabled" value="0"> FSWire
-                                        </label>
-                                        <label for="checkbox2">
-                                            <input type="checkbox" id="enabled" name="enabled" value="1"> VATSIM
-                                        </label>
-                                        <label for="checkbox3">
-                                            <input type="checkbox" id="enabled" name="enabled" value="1"> IVAO
-                                        </label>
-                                    </div>
-                                    <select id="airline"
-                                                                                                    name="airline"
-                                                                                                    class="form-control disabled"
-                                                                                                    size="1"
-                                                                                               style="display:none;">
 
-                                        @foreach($airlines as $a)
-                                            <option value="{{ $a->icao }}">{{ $a->icao }} - {{ $a->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </a>
 
 
 
@@ -156,16 +133,35 @@
 
                                 </a>
                                 <a class="list-group-item bg-gray-light">
-                                    <div class="card-block">
-
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;
-                                            Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-danger"><i class="fa fa-ban"></i>&nbsp;
-                                            Reset
-                                        </button>
+                                    <i class="fa fa-fw fa-edit push-5-r"></i> Flying on
+                                    <div class="checkbox">
+                                        <label for="checkbox1">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> FSWire
+                                        </label>
+                                        <label for="checkbox2">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> VATSIM
+                                        </label>
+                                        <label for="checkbox3">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> IVAO
+                                        </label>
+                                        <label for="checkbox4">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> offline
+                                        </label>
+                                        <label for="checkbox5">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> other Networks
+                                        </label>
 
                                     </div>
+                                    <select id="airline"
+                                            name="airline"
+                                            class="form-control disabled"
+                                            size="1"
+                                            style="display:none;">
+
+                                        @foreach($airlines as $a)
+                                            <option value="{{ $a->icao }}">{{ $a->icao }} - {{ $a->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </a>
                             </div>
                         </div>
