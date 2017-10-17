@@ -166,9 +166,9 @@
                     </div>
                     <!-- END Email Center Widget -->
                 </div>
-            </div>
+
         </form>
-    </div>
+
 
 
 
@@ -196,6 +196,6 @@
             </div>
         </a>
     </div>
-
-
+    </div>
+    </div>
 @endsection
