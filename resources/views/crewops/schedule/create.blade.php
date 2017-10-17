@@ -30,10 +30,10 @@
                 </ul>
             </div>
         @endif
-
+            <div class="row">
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/schedule') }}">
             {{csrf_field()}}
-            <div class="row">
+
 
                 <div class="col-lg-4">
                     <!-- Email Center Widget -->
@@ -197,13 +197,14 @@
                                         data-action="content_toggle"></button>
                             </li>
                         </ul>
-                        <h3 class=" h3 font-w700">Route Creator</h3>
+                        <h3 class=" h3 font-w700">Live WXR</h3>
                     </div>
                 <iframe width="800" height="500" src="https://embed.windy.com/embed2.html?lat=52.122&lon=8.960&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&forecast=12&calendar=now&location=ip&type=map&actualGrid=&metricWind=kt&metricTemp=%C2%B0C" frameborder="0"></iframe>
             </div>
             </div>
 
     <!-- Dashboard Cards -->
+                <div class="row">
     <div class="col-xs-4 col-lg-2 col-md-2">
         <a class="block block-link-hover2 text-center   animated pulse" href="{{ url('/flightops/schedule') }}">
             <div class="block-content block-content-full bg-modern">
@@ -226,6 +227,7 @@
                 <div class="font-w600 text-white-op push-15-t">Logbook</div>
             </div>
         </a>
+    </div>
     </div>
     </div>
     </div>
