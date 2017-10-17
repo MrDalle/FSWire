@@ -35,7 +35,7 @@ Route::group(['prefix' => '/flightops', 'namespace' => 'CrewOps', 'middleware' =
       return view('crewops.stats.view');
   });
 
-    Route::get('schedule/create', 'fswireScheduleController@create');
+    Route::get('freeflight', 'fswireScheduleController@create');
     Route::post('schedule', 'fswireScheduleController@store');
 
 });
