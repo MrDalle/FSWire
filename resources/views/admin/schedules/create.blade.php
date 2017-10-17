@@ -118,9 +118,9 @@
                                     </div>
                                 </a>
                                 <a class="list-group-item bg-gray-light">
-                                    <i class="fa fa-fw fa-edit push-5-r"></i>Free Flight on<select id="airline"
+                                    <i class="fa fa-fw fa-edit push-5-r"></i> Choose Airline<select id="airline"
                                                                                                     name="airline"
-                                                                                                    class="form-control disabled"
+                                                                                                    class="form-control"
                                                                                                     size="1">
 
                                         @foreach($airlines as $a)

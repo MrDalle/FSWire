@@ -90,7 +90,7 @@
                                     </div>
                                 </a>
 
-                                <!-- Route eingabe
+
                                 <a class="list-group-item bg-gray-light">
                                     <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
                                     <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
@@ -99,7 +99,7 @@
                                             <input type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5">
                                         </div>
                                     </div>
-                                </a> -->
+                                </a>
 
 
                                 <a class="list-group-item bg-gray-light">
@@ -114,19 +114,9 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a class="list-group-item bg-gray-light">
-                                    <i class="fa fa-fw fa-edit push-5-r"></i> Choose Airline<select id="airline"
-                                                                                                    name="airline"
-                                                                                                    class="form-control"
-                                                                                                    size="1">
 
-                                        @foreach($airlines as $a)
-                                            <option value="{{ $a->icao }}">{{ $a->icao }} - {{ $a->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </a>
                                 <a class="list-group-item bg-gray-light">
-                                    <i class="fa fa-fw fa-plane push-5-r"></i> Choose Aircraft Group<select
+                                    <i class="fa fa-fw fa-plane push-5-r"></i> Choose Airframe<select
                                             id="aircraft_group" name="aircraft_group" class="form-control" size="1">
                                         @foreach($acfgroups as $acf)
                                             <option value="{{ $acf->icao }}">{{ $acf->name }}</option>
