@@ -180,7 +180,7 @@
 
         </form>
 
-            <div class="col-xs-4 col-lg-3 col-md-5">
+            <div class="col-lg-6">
                 <div class="block block-bordered">
                     <div class="block-header">
                         <ul class="block-options">
@@ -203,8 +203,32 @@
             </div>
             </div>
 
+    <!-- Dashboard Cards -->
 
+    <div class="col-xs-4 col-lg-2 col-md-2">
+        <a class="block block-link-hover2 text-center   animated pulse" href="{{ url('/flightops/schedule') }}">
+            <div class="block-content block-content-full bg-modern">
+                <i class="si si-settings fa-4x text-white"></i>
+                <div class="font-w600 text-white-op push-15-t">Bid Flight</div>
+            </div>
+        </a>
+
+
+        <a class="block block-link-hover2 text-center animated pulse" href="{{ url('/map') }}">
+            <div class="block-content block-content-full bg-city">
+                <i class="si si-map fa-4x text-white"></i>
+                <div class="font-w600 text-white-op push-15-t">RADAR</div>
+            </div>
+        </a>
+
+        <a class="block block-link-hover2 text-center  animated pulse" href="{{ url('/flightops/logbook') }}">
+            <div class="block-content block-content-full bg-flat">
+                <i class="si si-book-open fa-4x text-white"></i>
+                <div class="font-w600 text-white-op push-15-t">Logbook</div>
+            </div>
+        </a>
     </div>
+
     </div>
     </div>
 @endsection
