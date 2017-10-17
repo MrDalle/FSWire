@@ -206,16 +206,12 @@
 
 
             <div class="col-lg-6">
-                <div class="block block-bordered js-map-full custom">
+                <div class="block block-bordered">
                     <div class="block-header">
                         <ul class="block-options">
                             <li>
                                 <button type="button" data-toggle="block-option"
                                         data-action="fullscreen_toggle"></button>
-                            </li>
-                            <li>
-                                <button type="button" data-toggle="block-option" data-action="refresh_toggle"
-                                        data-action-mode="demo"><i class="si si-refresh"></i></button>
                             </li>
                             <li>
                                 <button type="button" data-toggle="block-option"
@@ -225,7 +221,7 @@
                         <h3 class=" h3 font-w700">Live WXR</h3>
                     </div>
 
-                <iframe src="https://embed.windy.com/embed2.html?lat=52.122&lon=8.960&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&forecast=12&calendar=now&location=ip&type=map&actualGrid=&metricWind=kt&metricTemp=%C2%B0C" frameborder="0"></iframe>
+                <iframe class="js-map-full custom" src="https://embed.windy.com/embed2.html?lat=52.122&lon=8.960&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&forecast=12&calendar=now&location=ip&type=map&actualGrid=&metricWind=kt&metricTemp=%C2%B0C" frameborder="0"></iframe>
             </div>
             </div>
 
