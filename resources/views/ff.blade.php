@@ -1,4 +1,5 @@
 @extends('layouts.oneui')
+
 @section('content')
     <div class="content bg-gray-lighter">
         <div class="row items-push">

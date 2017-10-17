@@ -23,9 +23,6 @@ Route::get('/faq', function() {
     return view('faq');
 })->middleware('auth');
 
-Route::get('/freeflight', function() {
-    return view('ff');
-})->middleware('auth');
 
 Route::get('/', function() {
     return view('faq');
@@ -37,7 +34,7 @@ Route::group(['prefix' => '/flightops', 'namespace' => 'CrewOps', 'middleware' =
   Route::get('/stats', function () {
       return view('crewops.stats.view');
   });
-
+    Route::get('freeflight', 'fswireScheduleController@create');
     Route::get('schedule/create', 'fswireScheduleController@create');
     Route::post('schedule', 'fswireScheduleController@store');
 
