@@ -96,7 +96,7 @@
                                     <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
                                         <label class="col-md-3 form-control-label" for="text-input">Route</label>
                                         <div class="col-md-9">
-                                            <input type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5">
+                                            <input value="{{ old('route') }}" type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5" required>
                                         </div>
                                     </div>
                                 </a>
