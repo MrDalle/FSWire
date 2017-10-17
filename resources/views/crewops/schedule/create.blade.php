@@ -105,7 +105,19 @@
                                 </a>
 
                                 <a class="list-group-item bg-gray-light">
-                                    <i class="fa fa-fw fa-edit push-5-r"></i> Flying on<select id="airline"
+                                    <i class="fa fa-fw fa-edit push-5-r"></i> Flying on
+                                    <div class="checkbox">
+                                        <label for="checkbox1">
+                                            <input type="checkbox" id="enabled" name="enabled" value="0"> FSWire
+                                        </label>
+                                        <label for="checkbox2">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> VATSIM
+                                        </label>
+                                        <label for="checkbox3">
+                                            <input type="checkbox" id="enabled" name="enabled" value="1"> IVAO
+                                        </label>
+                                    </div>
+                                    <select id="airline"
                                                                                                     name="airline"
                                                                                                     class="form-control disabled"
                                                                                                     size="1"
