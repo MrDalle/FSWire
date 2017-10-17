@@ -78,6 +78,18 @@
                                 </table>
                             </div>
                             <div class="list-group">
+                                <a class="list-group-item bg-gray-light">
+                                    <span class="badge bg-warning">4 DIGITS</span>&nbsp;&nbsp;
+                                    <i class="fa fa-fw fa-number push-5-r"></i>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 form-control-label" for="text-input">Flight
+                                            Number</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="flightnum" name="flightnum" value="{{ old('flightnum') }}" class="form-control"
+                                                   placeholder="eg. 1126" required>
+                                        </div>
+                                    </div>
+                                </a>
                                 <a class="list-group-item active">
                                     <span class="badge bg-warning">STD | 1013HP</span>&nbsp;
                                     <i class="fa fa-fw  push-5-r"></i>
@@ -91,15 +103,6 @@
                                 </a>
 
 
-                                <a class="list-group-item bg-gray-light">
-                                    <span class="badge bg-warning">ROUTE + SID / STAR</span>&nbsp;
-                                    <i class="fa fa-fw  push-5-r"></i><div class="form-group row">
-                                        <label class="col-md-3 form-control-label" for="text-input">Route</label>
-                                        <div class="col-md-9">
-                                            <input value="{{ old('route') }}" type="text" id="route" name="route" class="form-control" placeholder="eg. CASTA6 GMN DUCKE BORDY BTG HAWKZ5" required>
-                                        </div>
-                                    </div>
-                                </a>
 
                                 <a class="list-group-item bg-gray-light">
                                     <i class="fa fa-fw fa-edit push-5-r"></i> Flying on<select id="airline"
@@ -112,6 +115,7 @@
                                         @endforeach
                                     </select>
                                 </a>
+
 
 
                                 <a class="list-group-item bg-gray-light">
