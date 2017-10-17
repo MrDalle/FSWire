@@ -19,6 +19,8 @@
                 }
                 </style>
 
+@endsection
+
                 @extends('layouts.oneui')
                 @section('content')
                 <!-- MAP -->

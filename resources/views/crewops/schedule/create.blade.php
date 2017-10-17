@@ -1,3 +1,27 @@
+@section('stylesheet')
+
+    <!-- MAP -->
+    <style type="text/css">
+
+        .js-map-full iframe{
+            height:550px;
+            width: 100%;
+
+            position: relative; /* IE needs a position other than static */
+        }
+        .js-map-full.custom {
+            position: absolute;
+            top: 54px;
+            right: 20px;
+            bottom: 0px;
+            left: 0px;
+            overflow: hidden;
+        }
+    </style>
+
+@endsection
+
+
 @extends('layouts.oneui')
 
 @section('content')
@@ -200,8 +224,9 @@
                         </ul>
                         <h3 class=" h3 font-w700">Live WXR</h3>
                     </div>
+                    <div class="js-map-full custom">
                 <iframe width="100%" height="550" src="https://embed.windy.com/embed2.html?lat=52.122&lon=8.960&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&forecast=12&calendar=now&location=ip&type=map&actualGrid=&metricWind=kt&metricTemp=%C2%B0C" frameborder="0"></iframe>
-            </div>
+            </div> </div>
             </div>
 
     <!-- Dashboard Cards -->
