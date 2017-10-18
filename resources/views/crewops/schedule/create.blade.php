@@ -134,6 +134,9 @@
                                                 <label for="checkbox1">
                                                     <input type="checkbox" id="enabled" name="enabled" value="1"> FSWire
                                                 </label>
+                                                <label for="checkbox1">
+                                                    <input type="checkbox" id="enabled" name="enabled" value="1"> FSCloud
+                                                </label>
                                                 <label for="checkbox2">
                                                     <input type="checkbox" id="enabled" name="enabled" value="1"> VATSIM
                                                 </label>
