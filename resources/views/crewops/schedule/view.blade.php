@@ -3,15 +3,15 @@
 @section('content')
 
     <!-- Hero Content -->
-    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/bg.png') }});">
+    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/bg4.png') }});">
         <!-- Search Content -->
         <section class="content content-full content-boxed overflow-hidden">
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
             <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->
             <div class="push-100-t push-100">
-                <h1 class="font-s48 font-w700 text-uppercase text-white push-10 visibility-hidden text-center"
+                <h1 class="font-s48 font-w700 text-uppercase text-white push-10 text-center"
                     data-toggle="appear" data-class="animated fadeInDown">Travel The World</h1>
-                <h2 class="h3 font-w400 text-white-op push-50 visibility-hidden text-center" data-toggle="appear"
+                <h2 class="h3 font-w400 text-white-op push-50 text-center" data-toggle="appear"
                     data-timeout="750">Let us help you explore the world, one step at a time.</h2>
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
@@ -76,7 +76,7 @@
                                                         <i
                                                                 class="fa fa-check"></i> Search
                                                     </button>
-                                                </div>
+                                                </div> <br>
 
                                         </div>
                                 </div>
@@ -87,9 +87,54 @@
                     </div>
                 </div>
             </div>
+
         </section>
         <!-- END Search Content -->
+        <!-- Features -->
+        <div class="bg-black-op">
+            <section class="content content-boxed">
+                <div class="push-20-t push-50">
+                    <div class="row items-push text-center">
+                        <div class="col-xs-6 col-md-3 visibility-hidden" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="200">
+                            <div class="item item-2x item-circle push-10">
+                                <i class="si si-plane text-white"></i>
+                            </div>
+                            <div class="font-w600 text-white-op text-uppercase"></div>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="200">
+                            <div class="item item-2x item-circle push-10">
+                                <i class="si si-plane text-white"></i>
+                            </div>
+                            <div class="font-w600 text-white-op text-uppercase">{{ \App\ScheduleTemplate::where('enabled', 1)->count() }} available ROUTES</div>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="200">
+                            <div class="item item-2x item-circle push-10">
+                                <i class="si si-plane text-white"></i>
+                            </div>
+                            <div class="font-w600 text-white-op text-uppercase">{{ \App\PIREP::all()->count() }} logged FLIGHTS</div>
+                        </div>
+
+
+                        <div class="col-xs-6 col-md-3 visibility-hidden" data-toggle="appear" data-offset="-100" data-class="animated flipInY" data-timeout="200">
+                            <div class="item item-2x item-circle push-10">
+                                <i class="si si-plane text-white"></i>
+                            </div>
+                            <div class="font-w600 text-white-op text-uppercase"></div>
+                        </div>
+                    </div>
+
+                    <div class="font-w700 text-white-op text-uppercase text-center">  Scroll down to view the newest schedules </div>
+                </div>
+
+
+            </section>
+        </div>
+        <!-- END Features -->
     </div>
+
+
     <!-- END Hero Content -->
 
     <div class="content">

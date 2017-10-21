@@ -230,7 +230,8 @@
                             <div class="text-center push-50-t push-50">
                                 <h3 class="text-white-op">Latest PIREP</h3>
                                 @if($newpirep != null)
-                                    {{$newpirep->depapt->name}}
+                                    <br>
+                                  {{$newpirep->depapt->name}}  <br>
                                     {{$newpirep->arrapt->name}}
                                     @endif
                             </div>
