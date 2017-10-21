@@ -224,7 +224,7 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 
 
                                                                                                 <li>
-                                                                                                    <i class="fa fa-plus fa-li text-success"></i> PIREPS will now store stats like Flighttime,Miles flown, Dep/Arr-Time
+                                                                                                    <i class="fa fa-plus fa-li text-success"></i> PIREPS will now store stats like Flighttime,Miles flown, Dep/Arr-Time, Fuel used...
                                                                                                 </li>
 
                                                                                             </ul>
@@ -234,6 +234,9 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                                             <ul class="fa-ul list-simple-mini push-10-t">
                                                                                                 <li>
                                                                                                     <i class="fa fa-check fa-li text-primary"></i> Improving many pages that are already in the system
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <i class="fa fa-check fa-li text-primary"></i> Adding Free Flight mode to devide VA and single pilots in the system.
                                                                                                 </li>
 
                                                                                             </ul>
