@@ -84,7 +84,7 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                             <div id="faq2_q3" class="panel-collapse collapse">
                                 <div class="panel-body">
                                   To create routes you must be either an Airline Manager or Owner.
-                                  As a normal Pilot on FSWire please use the premade schedules in our system.
+                                  As a normal Pilot on FSWire please use the premade schedules or create your own under the free flight menu tab.
                                 </div>
                             </div>
                         </div>
@@ -98,6 +98,18 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                 <div class="panel-body">
                               Congrats! your account is one out of many which got succesfully merge into FSWire. In order to change your Username please visit the Profile tab and edit your profile there!
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq4" href="#faq2_q5">Whats free flight?</a>
+                                </h3>
+                            </div>
+                            <div id="faq2_q5" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  Free Flight is a new way to create routes if you are not in a VA or just want to fly on you own. Achieved stats in free flight mode will only grant to your account and not the VA.  </div>
                             </div>
                         </div>
 

@@ -77,9 +77,9 @@
                                                                 class="fa fa-check"></i> Search
                                                     </button>
                                                 </div>
-                                           
-                                            </div>
+
                                         </div>
+                                </div>
                                     </form>
                                 </div>
                             </div>
