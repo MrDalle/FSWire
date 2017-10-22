@@ -59,7 +59,7 @@
 
 
     </style>
-        <body class="bg-image" style="background-image: url('assets/img/photos/bg.png');">
+        <body class="bg-image" style="background-image: url('assets/img/photos/photo17@2x.jpg');">
         <!-- Lock Screen Content -->
         <img src="assets/img/favicons/fswirelogo.png" alt="">
         <div class="content overflow-hidden">
@@ -73,7 +73,7 @@
                                     <a href="https://fswire.net" data-toggle="tooltip" data-placement="left" title="get back to home"><i class="si si-home"></i></a>
                                 </li>
                             </ul>
-                            <h3 class="block-title">Login</h3>
+                            <h3 class="block-title">Login to FSWire</h3>
                         </div>
                         <div class="block-content block-content-full block-content-narrow">
                           <!-- Warning Alert
