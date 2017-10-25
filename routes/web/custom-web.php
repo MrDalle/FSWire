@@ -29,7 +29,7 @@ Route::get('/', function() {
 })->middleware('auth');
 
 
-Route::group(['prefix' => '/flightops', 'namespace' => 'CrewOps', 'middleware' => 'auth', 'App\Http\Middleware\AdminPerms'], function() {
+Route::group(['prefix' => '/flightops', 'namespace' => 'CrewOps', 'middleware' => 'auth'], function() {
 
   Route::get('/stats', function () {
       return view('crewops.stats.view');
