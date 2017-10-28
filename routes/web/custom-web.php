@@ -28,6 +28,10 @@ Route::get('/', function() {
     return view('faq');
 })->middleware('auth');
 
+Route::get('/ranks', function() {
+    return view('ranks');
+})->middleware('auth');
+
 
 Route::group(['prefix' => '/flightops', 'namespace' => 'CrewOps', 'middleware' => 'auth'], function() {
 
