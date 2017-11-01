@@ -34,7 +34,7 @@
             </div>
         @endif
             <div class="row">
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/schedule') }}">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/crewops/schedule') }}">
             {{csrf_field()}}
 
 
