@@ -236,11 +236,14 @@
 
                     </a></div>
 
-                    <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
+
 
             <!-- END Row 1 -->
         </div>
+            <div class="col-xs-6 col-lg-3 ">
+                <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
 
+            </div>
         <div class="block animated pulse">
         </div>
 
