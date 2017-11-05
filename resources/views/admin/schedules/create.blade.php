@@ -66,7 +66,7 @@
                                             <input value="{{ old('depicao') }}" type="text" id="depicao" name="depicao"
                                                    class="form-control text-center" placeholder="eg. KLAX" required>
                                         </td>
-                                        <td class="fa fa-plane" style="width: 20%;">
+
 
 
                                         </td>

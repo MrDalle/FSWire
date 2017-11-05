@@ -3,18 +3,17 @@
 @section('content')
 
     <!-- Hero Content -->
-    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/bg4.png') }});">
+    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/photo37@2x.jpg') }});">
         <!-- Search Content -->
         <section class="content content-full content-boxed overflow-hidden">
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
             <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->
             <div class="push-100-t push-100">
-                <h1 class="font-s48 font-w700 text-uppercase text-white push-10 text-center"
+                <h1 class="font-s48 font-w700 text-uppercase text-white push-10 text-center animated pulse"
                     data-toggle="appear" data-class="animated fadeInDown">Travel The World</h1>
-                <h2 class="h3 font-w400 text-white-op push-50 text-center" data-toggle="appear"
-                    data-timeout="750">Let us help you explore the world, one step at a time.</h2>
+
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                    <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 animated pulse">
                         <div class="block">
                             <ul class="nav nav-tabs nav-justified" data-toggle="tabs">
                                 <li class="active">

@@ -21,67 +21,64 @@
 
     <!-- Page Content -->
     <div class="content content-narrow">
+
         <!-- Stats -->
-        <div class="row text-uppercase">
-            <div class="col-xs-6 col-md-3 col-lg-3">
-
-                <div class="block draggable-item block-rounded  animated pulse">
-                    <div class="block-content block-content-full">
-
-                        <div class="text-muted">
-
-                            <small><i class="si si-clock"></i> all time</small>
+        <div class="row">
+            <div class="col-xs-6 col-lg-3">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
+                    <div class="block-content block-content-full clearfix">
+                        <div class="pull-right push-15-t push-15">
+                            <i class="fa fa-clock-o fa-2x text-primary"></i>
                         </div>
-                        <div class="font-s12 font-w700 ">Hours Flown</div>
+                        <div class="h2 text-primary" data-toggle="countTo" data-to="{{$totalflightime }}"></div>
+                        <div class="text-uppercase font-w600 font-s12 text-muted">Hours Flown</div>
 
-                        <a class="h1 font-w600 text-primary" href="{{ url('/flightops/logbook') }}"
-                        >{{$totalflightime }}</a>
+
                     </div>
-                </div>
-
+                </a>
             </div>
-
-            <div class="col-xs-6 col-md-3 col-lg-3">
-                <div class="block block-rounded  animated pulse">
-
-                    <div class="block-content block-content-full ">
-                        <div class="text-muted">
-                            <small><i class="si si-plane"></i> all time</small>
+            <div class="col-xs-6 col-lg-3">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
+                    <div class="block-content block-content-full clearfix">
+                        <div class="pull-right push-15-t push-15">
+                            <i class="fa fa-plane fa-2x text-smooth"></i>
                         </div>
-                        <div class="font-s12 font-w700">Flights</div>
-                        <a class="h1 font-w600 text-primary" href="{{ url('/flightops/logbook') }}"
-                        >{{ \App\PIREP::where('user_id', Auth::user()->id)->count() }}</a>
+                        <div class="h2 text-smooth" data-toggle="countTo" data-to="{{ \App\PIREP::where('user_id', Auth::user()->id)->count() }}"></div>
+                        <div class="text-uppercase font-w600 font-s12 text-muted">Total Flights</div>
+
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-xs-6 col-md-3 col-lg-3">
-                <div class="block block-rounded  animated pulse">
-                    <div class="block-content block-content-full">
-                        <div class="text-muted">
-                            <small><i class="si si-calendar"></i> all time</small>
+            <div class="col-xs-6 col-lg-3">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
+                    <div class="block-content block-content-full clearfix">
+                        <div class="pull-right push-15-t push-15">
+                            <i class="fa fa-line-chart fa-2x text-success"></i>
                         </div>
-                        <div class="font-s12 font-w700">Miles Flown</div>
-                        <a class="h1 font-w600 text-primary" href="base_comp_charts.html">0</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-3 ">
-                <div class="block block-rounded  animated pulse">
-                    <div class="block-content block-content-full">
-                        <div class="text-muted">
-                            <small><i class="si si-calendar"></i> all pireps</small>
-                        </div>
-                        <div class="font-s12 font-w700">AVG LDG RTE</div>
-                        <a class="h1 font-w600 text-primary" href="{{ url('/flightops/logbook') }}"
+                        <div class="h2 text-success" data-toggle="countTo" data-to="{{ (int) \App\PIREP::where('user_id', Auth::user()->id)->avg('landingrate') }}" data-after=" FPM"></div>
+                        <div class="text-uppercase font-w600 font-s12 text-muted">AVG Landing Rate</div>
 
-                        >{{ (int) \App\PIREP::where('user_id', Auth::user()->id)->avg('landingrate') }} FPM</a>
                     </div>
-                </div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-lg-3">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
+                    <div class="block-content block-content-full clearfix">
+                        <div class="pull-right push-15-t push-15">
+                            <i class="fa fa-bar-chart-o fa-2x text-amethyst"></i>
+                        </div>
+                        <div class="h2 text-amethyst" data-toggle="countTo" data-to="0"></div>
+                        <div class="text-uppercase font-w600 font-s12 text-muted">Miles Flown</div>
+                    </div>
+                </a>
             </div>
         </div>
-
-
         <!-- END Stats -->
+
+
+
+
+
 
         <!-- Dashboard Charts -->
         <div class="row">
@@ -196,7 +193,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <p><i class="fa fa-check"></i><a class="alert-link"
                                                              href="javascript:void(0)">FSWire</a> was updated
-                                successfully to V1.0! </p>
+                                successfully to V1.0.8! </p>
                         </div>
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -239,11 +236,14 @@
 
                     </a></div>
 
-                    <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
+
 
             <!-- END Row 1 -->
         </div>
+            <div class="col-xs-6 col-lg-3 ">
+                <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
 
+            </div>
         <div class="block animated pulse">
         </div>
 
@@ -256,10 +256,10 @@
 @endsection
 @section('javascript')
     <!-- Page Plugins -->
-    <script src="{{ URL::asset('assets/js/plugins/chartjs/Chart.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/plugins/chartjsv2/Chart.min.js') }}"></script>
 
     <!-- Page JS Code -->
-    <script src="{{ URL::asset('assets/js/pages/base_pages_dashboard_v2.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/pages/base_pages_dashboard_v3.js') }}"></script>
 
     <script>
         jQuery(function () {
@@ -280,3 +280,4 @@
 
 
 @endsection
+
