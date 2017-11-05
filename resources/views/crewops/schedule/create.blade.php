@@ -47,6 +47,7 @@
                                     <button type="button" data-toggle="block-option"
                                             data-action="fullscreen_toggle"></button>
                                 </li>
+
                                 <li>
                                     <button type="button" data-toggle="block-option" data-action="refresh_toggle"
                                             data-action-mode="demo"><i class="si si-refresh"></i></button>
