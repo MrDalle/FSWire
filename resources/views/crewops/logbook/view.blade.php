@@ -32,9 +32,10 @@
                 <th>Flight</th>
                 <th>Departure</th>
                 <th>Arrival</th>
+                <th>Landing Rate</th>
                 <th>Aircraft</th>
                 <th>Approved</th>
-                <th class="text-center" style="width: 10%;">Actions</th>
+                <th>Flight Time</th>
             </tr>
             </thead>
             <tbody>
@@ -45,6 +46,7 @@
                     <td class="text-center">{{ $p->flightnum }}</td>
                     <td class="text-center">{{ $p->depapt->icao }}</td>
                     <td class="text-center">{{ $p->arrapt->icao }}</td>
+                    <td class="text-center">{{ $p->landingrate }} FPM</td>
                     <td class="text-center">{{ $p->aircraft->name }} ({{ $p->aircraft->registration }})</td>
                     <td class="text-center">
                         @if($p->status === 1)
@@ -56,12 +58,7 @@
                         @endif
                     </td>
 
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="fa fa-pencil"></i></button>
-
-                        </div>
-                    </td>
+                    <td class="text-center">{{ $p->flighttime }}</td>
             </tr>
                 @endforeach
             </tbody>
