@@ -34,8 +34,8 @@
                 <th>Arrival</th>
                 <th>Landing Rate</th>
                 <th>Aircraft</th>
-                <th>Approved</th>
                 <th>Flight Time</th>
+                <th>Approved</th>
             </tr>
             </thead>
             <tbody>
@@ -48,6 +48,7 @@
                     <td class="text-center">{{ $p->arrapt->icao }}</td>
                     <td class="text-center">{{ $p->landingrate }} FPM</td>
                     <td class="text-center">{{ $p->aircraft->name }} ({{ $p->aircraft->registration }})</td>
+                    <td class="text-center">{{ $p->flighttime }}</td>
                     <td class="text-center">
                         @if($p->status === 1)
                             <span class="label label-success">APPROVED</span>
@@ -58,7 +59,7 @@
                         @endif
                     </td>
 
-                    <td class="text-center">{{ $p->flighttime }}</td>
+
             </tr>
                 @endforeach
             </tbody>
