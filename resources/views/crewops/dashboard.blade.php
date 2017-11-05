@@ -25,10 +25,10 @@
         <!-- Stats -->
         <div class="row">
             <div class="col-xs-6 col-lg-3">
-                <a class="block block-link-hover1" href="{{ url('/flightops/logbook') }}">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
                     <div class="block-content block-content-full clearfix">
                         <div class="pull-right push-15-t push-15">
-                            <i class="fa fa-users fa-2x text-primary"></i>
+                            <i class="fa fa-clock-o fa-2x text-primary"></i>
                         </div>
                         <div class="h2 text-primary" data-toggle="countTo" data-to="{{$totalflightime }}"></div>
                         <div class="text-uppercase font-w600 font-s12 text-muted">Hours Flown</div>
@@ -38,10 +38,10 @@
                 </a>
             </div>
             <div class="col-xs-6 col-lg-3">
-                <a class="block block-link-hover1" href="{{ url('/flightops/logbook') }}">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
                     <div class="block-content block-content-full clearfix">
                         <div class="pull-right push-15-t push-15">
-                            <i class="fa fa-briefcase fa-2x text-smooth"></i>
+                            <i class="fa fa-plane fa-2x text-smooth"></i>
                         </div>
                         <div class="h2 text-smooth" data-toggle="countTo" data-to="{{ \App\PIREP::where('user_id', Auth::user()->id)->count() }}"></div>
                         <div class="text-uppercase font-w600 font-s12 text-muted">Total Flights</div>
@@ -50,7 +50,7 @@
                 </a>
             </div>
             <div class="col-xs-6 col-lg-3">
-                <a class="block block-link-hover1" href="{{ url('/flightops/logbook') }}">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
                     <div class="block-content block-content-full clearfix">
                         <div class="pull-right push-15-t push-15">
                             <i class="fa fa-line-chart fa-2x text-success"></i>
@@ -62,7 +62,7 @@
                 </a>
             </div>
             <div class="col-xs-6 col-lg-3">
-                <a class="block block-link-hover1" href="{{ url('/flightops/logbook') }}">
+                <a class="block block-link-hover1 animated pulse" href="{{ url('/flightops/logbook') }}">
                     <div class="block-content block-content-full clearfix">
                         <div class="pull-right push-15-t push-15">
                             <i class="fa fa-bar-chart-o fa-2x text-amethyst"></i>
@@ -193,7 +193,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <p><i class="fa fa-check"></i><a class="alert-link"
                                                              href="javascript:void(0)">FSWire</a> was updated
-                                successfully to V1.0! </p>
+                                successfully to V1.0.8! </p>
                         </div>
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

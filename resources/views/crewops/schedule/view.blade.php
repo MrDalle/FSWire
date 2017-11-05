@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Hero Content -->
-    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/bg4.png') }});">
+    <div class="bg-image overflow-hidden" style="background-image: url({{ asset('assets/img/photos/photo37@2x.jpg') }});">
         <!-- Search Content -->
         <section class="content content-full content-boxed overflow-hidden">
             <!-- Bootstrap Datepicker (.input-daterange class is initialized in App() -> uiHelperDatepicker()) -->
