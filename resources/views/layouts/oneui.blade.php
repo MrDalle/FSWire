@@ -105,7 +105,19 @@
     });
 </script>
 
+<!-- Page Plugins -->
+<script src="assets/js/plugins/chartjsv2/Chart.min.js"></script>
+
+<!-- Page JS Code -->
+<script src="assets/js/pages/base_pages_dashboard_v3.js"></script>
+
 <!-- Page JS Plugins + Page JS Code -->
+<script>
+    jQuery(function () {
+        // Init page helpers (CountTo plugin)
+        App.initHelpers('appear-countTo');
+    });
+</script>
 @yield('javascript')
 </body>
 </html>
