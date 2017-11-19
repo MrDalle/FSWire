@@ -29,7 +29,7 @@
             <tr>
                 <th class="text-center">ICAO</th>
                 <th>Airline</th>
-                <th>Flight</th>
+
                 <th>Departure</th>
                 <th>Arrival</th>
                 <th>Landing Rate</th>
@@ -41,9 +41,9 @@
             <tbody>
             @foreach($pireps as $p)
                 <tr>
-                    <td class="text-center">{{ $p->airline->icao }}</td>
+                    <td><a href="{{ url('crewops/logbook/'.$p->id) }}"> {{ $p->airline->icao . $p->flightnum }}</a></td>
                     <td class="text-center">{{ $p->airline->name }}</td>
-                    <td class="text-center">{{ $p->flightnum }}</td>
+
                     <td class="text-center">{{ $p->depapt->icao }}</td>
                     <td class="text-center">{{ $p->arrapt->icao }}</td>
                     <td class="text-center">{{ $p->landingrate }} FPM</td>
@@ -58,7 +58,6 @@
                             <span class="label label-danger">DENIED</span>
                         @endif
                     </td>
-
 
             </tr>
                 @endforeach
