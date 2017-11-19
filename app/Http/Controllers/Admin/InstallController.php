@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Config;
 use Brotzka\DotenvEditor\DotenvEditor as Env;
 use App\User;
-
+use Illuminate\Support\Facades\Session;
 
 class InstallController extends Controller {
   public function index(Request $request) {
