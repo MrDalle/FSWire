@@ -151,11 +151,11 @@ class InstallController extends Controller {
   }
     public function dbMigrate() {
        Artisan::call('migrate');
-        +      return redirect('/admin/migrations');
-+  }
-+  public function viewMigrations()
-+  {
-+      $migrations = DB::table('migrations')->get();
-+      return view('admin.migrations', ['migrations' => $migrations]);
+             return redirect('/admin/migrations');
+  }
+  public function viewMigrations()
+  {
+      $migrations = DB::table('migrations')->get();
+      return view('admin.migrations', ['migrations' => $migrations]);
     }
 }
