@@ -35,6 +35,7 @@ class InstallController extends Controller {
 
   }
 
+
   public function doInstall(Request $request) {
     if (!Schema::hasTable('users')) {
       Artisan::call('key:generate');
