@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="push-30 animated fadeInUp">
                                     <h2 class="h4 font-w600 text-white push-5">{{ $user->username }}</h2>
-                                    <h3 class="h5 text-gray">Rank Name</h3>
+                                    <h3 class="h5 text-gray">{{ $user->pilotid }}</h3>
                                 </div>
                             </div>
                         </div>
