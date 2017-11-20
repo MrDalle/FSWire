@@ -1,77 +1,77 @@
-@extends('layouts.crewops')
+@extends('layouts.oneui')
 
 @section('content')
-    <div class="z-depth-2" style="position: relative; width: 100%; height: 300px; overflow: hidden; background: url('{{ Auth::user()->cover_url }}'), url(http://i.imgur.com/3UZDNCM.png);     background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;">
-        <div style="height: 100%; background: linear-gradient(rgba(255,0,0,0), rgba(255,0,0,0), rgba(69,69,69,0.9))">
-        </div>
-        <div class="container" style="position: inherit;">
-            <div style="position: absolute; right: 0; bottom: 1rem;">
-                <div id="status" class="card">
-                    <div id="status-text" class="card-content white-text"></div>
-                </div>
+    <div class="bg-primary-dark">
+        <section class="content content-full content-boxed">
+            <!-- Section Content -->
+            <div class="push-100-t push-50 text-center">
+                <h1 class="h1 font-w700 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h1>
+                <h2 class="h5 text-white-op animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->name }} - {{ $p->arrapt->name }}</h2>
             </div>
-        </div>
-        <h3 class="white-text" style="position: absolute; bottom: 0; left: 2rem;">{{ $p->airline->icao }}{{ $p->flightnum }} Details</h3>
+            <!-- END Section Content -->
+        </section>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Crew Information</h4>
-                        <div id="captain">
-                            <ul class="collection with-header">
-                                <li class="collection-item"><div>Username<div class="secondary-content">{{ $p->user->username }}</div></div></li>
-                                <li class="collection-item"><div>Pilot ID<div class="secondary-content">{{ $p->user->pilotid }}</div></div></li>
-                                <li class="collection-item"><div>Full Name<div class="secondary-content">{{ $p->user->first_name }} {{ $p->user->last_name }}</div></div></li>
-                                <li class="collection-item"><div>Join Date<div class="secondary-content">{{ date('d/m/Y', strtotime($p->user->created_at)) }}</div></div></li>
-                                <li class="collection-item"><div>Avg Landing Rate<div class="secondary-content">{{ \App\PIREP::where('user_id', $p->user->id)->avg('landingrate') }}</div></div></li>
-                                <li class="collection-item"><div>Total Hours<div class="secondary-content">{{ \App\PIREP::where('user_id', $p->user->id)->sum('flighttime') }}</div></div></li>
-
-                            </ul>
-                        </div>
-                    </div>
+    <div class="content content-boxed">
+        <div class="block">
+        <!-- Stats -->
+        <div class="block-content text-center bg-gray-lighter">
+            <div class="row items-push text-uppercase">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">Time</div>
+                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->flighttime }}</a>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">Distance</div>
+                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->distance }}</a>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">Fuel</div>
+                        <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->fuel_used }}</a>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">LDG RTE</div>
+                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->landingrate }}</a>
                 </div>
             </div>
-            <div class="col l6 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Flight Information</h4>
-                        <ul class="tabs tabs-fixed-width">
-                            <li class="tab"><a href="#basic">Basic Information</a></li>
-                            @if($p->acars_client === "smartCARS")
-                                <li class="tab"><a href="#sclogtab">smartCARS Logs</a></li>
-                            @endif
-                        </ul>
-                            <div id="basic">
-                        <ul class="collection with-header">
-                            <li class="collection-item"><div>Airline<div class="secondary-content">{{ $p->airline->name }}</div></div></li>
-                            <li class="collection-item"><div>Flight<div class="secondary-content">{{ $p->flightnum }}</div></div></li>
-                            <li class="collection-item"><div>Departure<div class="secondary-content">{{ $p->depapt->icao }} {{ $p->depapt->name }}</div></div></li>
-                            <li class="collection-item"><div>Arrival<div class="secondary-content">{{ $p->arrapt->icao }} {{ $p->arrapt->name }}</div></div></li>
-                            <li class="collection-item"><div>Aircraft<div class="secondary-content">{{ $p->aircraft->name }} - {{ $p->aircraft->registration }}</div></div></li>
-                            <li class="collection-item"><div>Distance Flown<div class="secondary-content">{{ $p->distance }}</div></div></li>
-                            <li class="collection-item"><div>Fuel Used<div class="secondary-content">{{ $p->fuel_used }}</div></div></li>
-                            <li class="collection-item"><div>Flight Time<div class="secondary-content">{{ $p->flighttime }}</div></div></li>
-                            <li class="collection-item"><div>Landing Rate<div class="secondary-content">{{ $p->landingrate }}</div></div></li>
-                            <li class="collection-item"><div>Aircraft<div class="secondary-content">{{ $p->aircraft->name }} - {{ $p->aircraft->registration }}</div></div></li>
-                        </ul>
-                            </div>
-                        <div id="sclogtab">
+        </div>
+        <!-- END Stats -->
+        </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+                    <div class="block-content block-content-full bg-success">
+                        <div class="h1 font-w700 text-white">{{ $p->airline->name }}</div>
+                        <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->airline->icao }}</div>
+                    </div>
+                    <div class="block-content block-content-full block-content-mini">
+                        <i class="fa fa-plane text-success"></i>
+                    </div>
+                </a>
+            </div>
+
+
+
+        <div class="col-sm-6 col-lg-4">
+            <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-content block-content-full bg-primary">
+                    <div class="h1 font-w700 text-white">{{ $p->aircraft->name }} </div>
+                    <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->aircraft->registration }}</div>
+                </div>
+                <div class="block-content block-content-full block-content-mini">
+                    <i class="fa fa-arrow-up text-success"></i>
+
+        </div>
+
+
+
+
+
                         @if($p->acars_client === "smartCARS")
                             <ul id="scLogs" class="collection with-header">
 
                             </ul>
                         @endif
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </div></div>
 @endsection
 
 @section('js')
