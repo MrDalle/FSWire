@@ -1,12 +1,18 @@
 @extends('layouts.oneui')
 
+<script>
+h1,; .h1; {
+font-size;: 70;px;
+}
+
+</script>
 @section('content')
     <div class="content content-boxed">
     <div class="bg-primary-dark">
         <section class="content content-full content-boxed">
             <!-- Section Content -->
             <div class="push-100-t push-50 text-center">
-                <h1 class="h1 font-w700 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h1>
+                <h1 class="h1 font-size-70 font-w700 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h1>
                 <h2 class="h5 text-white-op animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->name }} - {{ $p->arrapt->name }}</h2>
             </div>
             <!-- END Section Content -->
@@ -36,50 +42,103 @@
             </div>
         </div>
         <!-- END Stats -->
+
         </div>
 
-        <div class="col-sm-6 col-lg-4 animated pulse">
-            <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
-                <div class="block-content block-content-full bg-danger">
-                    <div class="h1 font-w700 text-white">{{ $p->user->username }}</div>
-                    <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->user->pilotid }}</div>
-                </div>
-                <div class="block-content block-content-full block-content-mini">
-                    <i class="fa fa-user text-danger"></i>
 
-                </div>
-            </a>
-        </div>
 
-            <div class="col-sm-6 col-lg-4 animated pulse">
-                <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
-                    <div class="block-content block-content-full bg-success">
-                        <div class="h1 font-w700 text-white">{{ $p->airline->name }}</div>
-                        <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->airline->icao }}</div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-4">
+                <a class="block block-link-hover2 text-center" href="javascript:void(0)">
+                    <div class="block-header">
+                        <h3 class="block-title">Crew Information</h3>
                     </div>
-                    <div class="block-content block-content-full block-content-mini">
-                        <i class="fa fa-plane text-success"></i>
+                    <div class="block-content block-content-full bg-warning">
+                        <div class="h1 font-w700 text-white push-10">{{ $p->user->username }}</div>
+                        <div class="h5 font-w300 text-white-op">{{ $p->user->pilotid }}</div>
                     </div>
+                    <div class="block-content">
+                        <table class="table table-borderless table-condensed">
+                            <tbody>
+                            <tr>
+                                <td><strong>Name</strong> {{ $p->user->first_name }} {{ $p->user->last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AVG LDG</strong> {{ \App\PIREP::where('user_id', $p->user->id)->avg('landingrate') }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Hours</strong> {{ \App\PIREP::where('user_id', $p->user->id)->sum('flighttime') }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Join Date</strong> {{ date('d/m/Y', strtotime($p->user->created_at)) }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </a>
             </div>
 
 
+            <div class="col-sm-6 col-lg-4">
+                <a class="block block-link-hover2 text-center" href="javascript:void(0)">
+                    <div class="block-header">
+                        <h3 class="block-title">Airplane Information</h3>
+                    </div>
+                    <div class="block-content block-content-full bg-primary">
+                        <div class="h1 font-w700 text-white push-10">{{ $p->aircraft->name }}</div>
+                        <div class="h5 font-w300 text-white-op">{{ $p->aircraft->registration }}</div>
+                    </div>
+                    <div class="block-content">
+                        <table class="table table-borderless table-condensed">
+                            <tbody>
+                            <tr>
+                                <td><strong>Company</strong> {{ $p->airline->name }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flight Time</strong> {{ $p->flighttime }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fuel used</strong> {{ $p->fuel_used }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LDG RTE</strong> {{ $p->landingrate }}</td>
+                            </tr>
 
-        <div class="col-sm-6 col-lg-4 animated pulse">
-            <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
-                <div class="block-content block-content-full bg-primary">
-                    <div class="h1 font-w700 text-white">{{ $p->aircraft->name }} </div>
-                    <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->aircraft->registration }}</div>
-                </div>
-                <div class="block-content block-content-full block-content-mini">
-                    <i class="fa fa-arrow-up text-primary"></i>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </a>
+            </div>
+
+
+            <div class="col-sm-6 col-lg-4">
+                <a class="block block-link-hover2 text-center" href="javascript:void(0)">
+                    <div class="block-header">
+                        <h3 class="block-title">VA Information</h3>
+                    </div>
+                    <div class="block-content block-content-full bg-success">
+                        <div class="h1 font-w700 text-white push-10">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</div>
+                        <div class="h5 font-w300 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</div>
+                    </div>
+                    <div class="block-content">
+                        <table class="table table-borderless table-condensed">
+                            <tbody>
+                            <tr>
+                                <td><strong>Company</strong> {{ $p->airline->name }}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </a>
+            </div>
+
 
         </div>
-            </a>
-        </div>
-
-
-
 
         <h2 class="h3 font-w600 push-50-t push animated pulse">LOG FILES</h2>
         <div id="faq2" class="panel-group animated pulse">
@@ -90,22 +149,26 @@
                     </h3>
                 </div>
                 <div id="log" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p>{{ $p->flight_data }}
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <div class="panel-body" id="sclogs">
+                        <div >
+                            {{ $p->acars_client === "smartCARS" }}
 
-    </div>
+
+                             </div></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 
 @endsection
 
 @section('js')
-    <script>
-        $(document).ready(function () {
-            // Pull the data from the API so we can add stuff
-            $.getJSON( "{{ config('app.url') }}api/v1/logbook/{{$p->id}}", function( data ) {
+<script>
+$(document).ready(function () {
+// Pull the data from the API so we can add stuff
+$.getJSON( "{{ config('app.url') }}api/v1/logbook/{{$p->id}}", function( data ) {
                 console.log(data);
                 if(data.acars_client = "smartCARS") {
                     var logSplit = data.flight_data.split("*");
