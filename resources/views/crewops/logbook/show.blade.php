@@ -18,7 +18,15 @@ font-size;: 70;px;
             <!-- END Section Content -->
         </section>
     </div>
+        <div class="bg-white">
+            <section class="content content-mini content-mini-full content-boxed overflow-hidden">
+                <ol class="breadcrumb">
+                    <li><a class="text-primary-dark" href="{{ url('flightops/logbook') }}">Logbook</a></li>
 
+                    <li><a href="">{{ $p->airline->icao }}{{ $p->flightnum }}</a></li>
+                </ol>
+            </section>
+        </div>
         <div class="block">
         <!-- Stats -->
         <div class="block-content text-center bg-gray-lighter">
