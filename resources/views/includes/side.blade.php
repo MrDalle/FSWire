@@ -14,6 +14,7 @@
                       <img class="img-avatar img-avatar32" src="{{ Auth::user()->avatar_url }}"
                            onerror="this.src='{{ URL::asset('assets/img/avatars/avatar1.jpg') }}'" alt="Avatar"></a>
                     <span class="font-w600 push-10-l">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
+
                 </span>
         </div>
         <!-- END Side Header -->
