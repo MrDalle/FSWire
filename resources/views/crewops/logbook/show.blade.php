@@ -15,7 +15,7 @@
 
         <div class="block">
         <!-- Stats -->
-        <div class="block-content text-center bg-gray-lighter">
+        <div class="block-content text-center bg-gray-light">
             <div class="row items-push text-uppercase">
                 <div class="col-xs-6 col-sm-3">
                     <div class="font-w700 text-gray-darker animated fadeIn">Time</div>
@@ -36,6 +36,19 @@
             </div>
         </div>
         <!-- END Stats -->
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+            <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-content block-content-full bg-danger">
+                    <div class="h1 font-w700 text-white">{{ $p->user->username }}</div>
+                    <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->user->pilotid }}</div>
+                </div>
+                <div class="block-content block-content-full block-content-mini">
+                    <i class="fa fa-user text-danger"></i>
+
+                </div>
+            </a>
         </div>
 
             <div class="col-sm-6 col-lg-4">
@@ -59,32 +72,30 @@
                     <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->aircraft->registration }}</div>
                 </div>
                 <div class="block-content block-content-full block-content-mini">
-                    <i class="fa fa-arrow-up text-success"></i>
+                    <i class="fa fa-arrow-up text-primary"></i>
 
         </div>
             </a>
         </div>
 
-        <div class="col-sm-6 col-lg-4">
-            <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
-                <div class="block-content block-content-full bg-danger">
-                    <div class="h1 font-w700 text-white">LOG </div>
-                    <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->aircraft->registration }}</div>
-                </div>
-                <div class="block-content block-content-full block-content-mini">
-                    <i class="fa fa-arrow-up text-success"></i>
 
+
+
+        <h2 class="h3 font-w600 push-50-t push">LOG FILES</h2>
+        <div id="faq2" class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#faq2_q1">Detailed smartCARS LOG for {{ $p->airline->icao }}{{ $p->flightnum }}  </a>
+                    </h3>
                 </div>
-            </a>
+                <div id="faq2_q1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>{{ $p->flight_data }}
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
-                        @if($p->acars_client === "smartCARS")
-                            <ul id="scLogs" class="collection with-header">
-
-                            </ul>
-                        @endif
 
     </div>
 
