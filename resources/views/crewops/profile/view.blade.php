@@ -56,9 +56,9 @@
                                 </div>
 
                                 <div class="col-xs-6 col-sm-3">
-                                    <div class="font-w700 text-gray-darker animated fadeIn">RANK</div>
+                                    <div class="font-w700 text-gray-darker animated fadeIn">Total Fuel Burn</div>
                                     <div class="text-warning push-10-t animated flipInX">
-                                        <div class="h2 font-w700 text-gray-darker animated fadeIn">PILOT</div>
+                                        <div class="h2 font-w700 text-gray-darker animated fadeIn">{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}</div>
                                     </div>
                                 </div>
                             </div>
