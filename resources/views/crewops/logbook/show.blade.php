@@ -15,7 +15,7 @@
 
         <div class="block">
         <!-- Stats -->
-        <div class="block-content text-center bg-gray-light">
+        <div class="block-content text-center bg-gray-lighter">
             <div class="row items-push text-uppercase">
                 <div class="col-xs-6 col-sm-3">
                     <div class="font-w700 text-gray-darker animated fadeIn">Time</div>
@@ -38,7 +38,7 @@
         <!-- END Stats -->
         </div>
 
-        <div class="col-sm-6 col-lg-4">
+        <div class="col-sm-6 col-lg-4 animated pulse">
             <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
                 <div class="block-content block-content-full bg-danger">
                     <div class="h1 font-w700 text-white">{{ $p->user->username }}</div>
@@ -51,7 +51,7 @@
             </a>
         </div>
 
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4 animated pulse">
                 <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
                     <div class="block-content block-content-full bg-success">
                         <div class="h1 font-w700 text-white">{{ $p->airline->name }}</div>
@@ -65,7 +65,7 @@
 
 
 
-        <div class="col-sm-6 col-lg-4">
+        <div class="col-sm-6 col-lg-4 animated pulse">
             <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
                 <div class="block-content block-content-full bg-primary">
                     <div class="h1 font-w700 text-white">{{ $p->aircraft->name }} </div>
@@ -81,15 +81,15 @@
 
 
 
-        <h2 class="h3 font-w600 push-50-t push">LOG FILES</h2>
-        <div id="faq2" class="panel-group">
+        <h2 class="h3 font-w600 push-50-t push animated pulse">LOG FILES</h2>
+        <div id="faq2" class="panel-group animated pulse">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq2" href="#faq2_q1">Detailed smartCARS LOG for {{ $p->airline->icao }}{{ $p->flightnum }}  </a>
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#log" href="#log">Detailed smartCARS LOG for {{ $p->airline->icao }}{{ $p->flightnum }} <h2 class=" font-xs badge bg-success">click to view </h2></a>
                     </h3>
                 </div>
-                <div id="faq2_q1" class="panel-collapse collapse">
+                <div id="log" class="panel-collapse collapse">
                     <div class="panel-body">
                         <p>{{ $p->flight_data }}
                     </div>
