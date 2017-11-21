@@ -48,8 +48,8 @@
                     @else
                         <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-alert ">
                             <div class="ribbon-box ribbon-primary font-w600">DENIED</div>
-                            <div class="push-20-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
-                                <i class="text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
+                            <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
+                                <i class="h2 text-center">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
                             </div>
                             <div class="text-white-op">
                                 <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
@@ -57,12 +57,11 @@
                         </div>
                     @endif
 
-                    <div class="block-content">
 
+                    <div class="block-content">
                         <h4 class="mheight-20 text-center">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h4>
                         <h4 class="mheight-20 text-center">{{ $p->aircraft->name }} - {{ $p->aircraft->registration }}</h4>
                         <h4 class="mheight-50 text-center">{{ $p->landingrate }} FPM</h4>
-
                         <div class="font-s12 text-center push">{{ $p->created_at }}</div>
                     </div>
                 </a>
@@ -77,7 +76,18 @@
 
 </section>
 
-    <!-- END Dynamic Table Full -->
+
+
+
+
+
+
+
+
+
+
+
+
     @endsection
 @section('javascript')
     <script src="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>

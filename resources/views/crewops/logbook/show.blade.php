@@ -27,6 +27,8 @@ font-size;: 70;px;
                 </ol>
             </section>
         </div>
+
+
         <div class="block">
         <!-- Stats -->
         <div class="block-content text-center bg-gray-lighter">
@@ -102,7 +104,7 @@ font-size;: 70;px;
                         <table class="table table-borderless table-condensed">
                             <tbody>
                             <tr>
-                                <td><strong>Company</strong> {{ $p->airline->name }}</td>
+                                <td><strong>Owner</strong> {{ $p->airline->name }}</td>
                             </tr>
                             <tr>
                                 <td><strong>Flight Time</strong> {{ $p->flighttime }}</td>
@@ -128,14 +130,14 @@ font-size;: 70;px;
                         <h3 class="block-title">VA Information</h3>
                     </div>
                     <div class="block-content block-content-full bg-success">
-                        <div class="h1 font-w700 text-white push-10">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</div>
+                        <div class="h1 font-w700 text-white push-10">{{ $p->airline->name }}</div>
                         <div class="h5 font-w300 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</div>
                     </div>
                     <div class="block-content">
                         <table class="table table-borderless table-condensed">
                             <tbody>
                             <tr>
-                                <td><strong>Company</strong> {{ $p->airline->name }}</td>
+                                <td><strong>Company</strong> </td>
                             </tr>
 
                             </tbody>
@@ -145,8 +147,9 @@ font-size;: 70;px;
                 </a>
             </div>
 
-
         </div>
+
+
 
         <h2 class="h3 font-w600 push-50-t push animated pulse">LOG FILES</h2>
         <div id="faq2" class="panel-group animated pulse">
@@ -157,12 +160,15 @@ font-size;: 70;px;
                     </h3>
                 </div>
                 <div id="log" class="panel-collapse collapse">
-                    <div class="panel-body" id="sclogs">
-                        <div >
-                            {{ $p->acars_client === "smartCARS" }}
+                    <div class="panel-body" id="log">
+                        <div id="sclogtab">
+                                                    @if($p->acars_client === "smartCARS")
+                                                            <ul id="scLogs" class="collection with-header">
 
-
-                             </div></div>
+                                                                </ul>
+                                                        @endif
+                                                    </div>
+                    </div>
 </div>
 </div>
 </div>
