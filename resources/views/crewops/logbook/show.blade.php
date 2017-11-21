@@ -1,6 +1,7 @@
 @extends('layouts.oneui')
 
 @section('content')
+    <div class="content content-boxed">
     <div class="bg-primary-dark">
         <section class="content content-full content-boxed">
             <!-- Section Content -->
@@ -11,7 +12,7 @@
             <!-- END Section Content -->
         </section>
     </div>
-    <div class="content content-boxed">
+
         <div class="block">
         <!-- Stats -->
         <div class="block-content text-center bg-gray-lighter">
@@ -61,8 +62,21 @@
                     <i class="fa fa-arrow-up text-success"></i>
 
         </div>
+            </a>
+        </div>
 
+        <div class="col-sm-6 col-lg-4">
+            <a class="block block-rounded block-link-hover3 text-center" href="javascript:void(0)">
+                <div class="block-content block-content-full bg-danger">
+                    <div class="h1 font-w700 text-white">LOG </div>
+                    <div class="h5 text-white-op text-uppercase push-5-t">{{ $p->aircraft->registration }}</div>
+                </div>
+                <div class="block-content block-content-full block-content-mini">
+                    <i class="fa fa-arrow-up text-success"></i>
 
+                </div>
+            </a>
+        </div>
 
 
 
@@ -71,7 +85,9 @@
 
                             </ul>
                         @endif
-        </div></div>
+
+    </div>
+
 @endsection
 
 @section('js')

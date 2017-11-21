@@ -67,8 +67,8 @@
                         <div class="pull-right push-15-t push-15">
                             <i class="fa fa-bar-chart-o fa-2x text-amethyst"></i>
                         </div>
-                        <div class="h2 text-amethyst" data-toggle="countTo" data-to="0"></div>
-                        <div class="text-uppercase font-w600 font-s12 text-muted">Miles Flown</div>
+                        <div class="h2 text-amethyst" data-toggle="countTo" data-to="{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}"></div>
+                        <div class="text-uppercase font-w600 font-s12 text-muted">Total Fuel Burn</div>
                     </div>
                 </a>
             </div>
