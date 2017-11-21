@@ -96,6 +96,13 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
+                                        <label for="email">Pilot ID</label>
+                                        <input class="form-control input-lg" type="pilotid" name="pilotid"
+                                               value="{{ Auth::user()->pilotid }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
                                         <label for="email">Email Address</label>
                                         <input class="form-control input-lg" type="email" name="email"
                                                value="{{ Auth::user()->email }}" class="form-control">

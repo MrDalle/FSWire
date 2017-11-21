@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Config;
 use Brotzka\DotenvEditor\DotenvEditor as Env;
 use App\User;
-
+use Illuminate\Support\Facades\Session;
 
 class InstallController extends Controller {
   public function index(Request $request) {
@@ -34,6 +34,7 @@ class InstallController extends Controller {
     }
 
   }
+
 
   public function doInstall(Request $request) {
     if (!Schema::hasTable('users')) {
@@ -150,6 +151,11 @@ class InstallController extends Controller {
   }
     public function dbMigrate() {
        Artisan::call('migrate');
-       return redirect('/');
+             return redirect('/admin/migrations');
+  }
+  public function viewMigrations()
+  {
+      $migrations = DB::table('migrations')->get();
+      return view('admin.migrations', ['migrations' => $migrations]);
     }
 }

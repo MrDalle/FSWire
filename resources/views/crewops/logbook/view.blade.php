@@ -27,21 +27,22 @@
         <table class="table table-bordered table-striped table-hover js-dataTable-full ">
             <thead>
             <tr>
-                <th class="text-center">ICAO</th>
+
                 <th>Airline</th>
-                <th>Flight</th>
+                <th>Flight Number</th>
                 <th>Departure</th>
                 <th>Arrival</th>
                 <th>Landing Rate</th>
                 <th>Aircraft</th>
                 <th>Flight Time</th>
                 <th>Approved</th>
+                <th>Details</th>
             </tr>
             </thead>
             <tbody>
             @foreach($pireps as $p)
                 <tr>
-                    <td class="text-center">{{ $p->airline->icao }}</td>
+
                     <td class="text-center">{{ $p->airline->name }}</td>
                     <td class="text-center">{{ $p->flightnum }}</td>
                     <td class="text-center">{{ $p->depapt->icao }}</td>
@@ -58,7 +59,7 @@
                             <span class="label label-danger">DENIED</span>
                         @endif
                     </td>
-
+                    <td><a href="{{ url('flightops/logbook/'.$p->id) }}"> <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="fa fa-pencil"></i></button></a></td>
 
             </tr>
                 @endforeach

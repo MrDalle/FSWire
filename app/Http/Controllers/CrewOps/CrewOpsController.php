@@ -189,6 +189,12 @@ class CrewOpsController extends Controller
         return redirect('/flightops');
     }
 
+    public function getLogbookDetailed($id)
+    {
+       $pirep = PIREP::where('id', $id)->with('airline')->with('depapt')->with('arrapt')->with('aircraft')->with('user')->first();
+       return view('crewops.logbook.show', ['p' => $pirep]);
+    }
+
     function convertTime($dec)
     {
         // start by converting to seconds

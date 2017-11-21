@@ -45,7 +45,7 @@ require_once (__DIR__."/../vendor/autoload.php");
 
 define('skip_retired_check', false); //should 'retired' (inactive) pilots be able to log in?
 define('include_pending_flights_in_stats', false); //should flights that haven't been accepted/rejected yet be used to compute pilot stats in the smartCARS client?
-define('interface_version', 'vaos-official-v1-1/21/2017');
+define('interface_version', 'vaos-v1.0.3');
 define('TABLE_PREFIX', $_ENV['DB_PREFIX']);
 define('WEB_URL', $_ENV['APP_URL']);
 
@@ -212,7 +212,7 @@ class smartCARS {
 			$ret['totalhours'] = "N/A";
 			$ret['totalflights'] = "N/A";
 			//if($res['totalflights'] > 0) {
-				$stmt = $dbConnection->prepare("SELECT landingrate FROM " . TABLE_PREFIX . "pireps WHERE user_id = ?" . (include_pending_flights_in_stats == false ? "AND status = 1" : "AND status != 2") . " ORDER BY submitdate");
+				$stmt = $dbConnection->prepare("SELECT landingrate FROM " . TABLE_PREFIX . "pireps WHERE user_id = ?" . (include_pending_flights_in_stats == false ? "AND status = 1" : "AND status != 2"));
 				$stmt->execute(array($dbid));
 				$pireps = $stmt->fetchAll();
 				$stmt->closeCursor();
@@ -695,7 +695,7 @@ class smartCARS {
             
         if($lat < 0.005 && $lat > -0.005)
             $lat = 0;        
-        
+        /*
         $fields = array(
             'pilotid' =>$dbid,
             'flightnum' =>$flightnumber,
@@ -736,6 +736,8 @@ class smartCARS {
         {
             return false;
         }
+        */
+        return true;
 	}	
 	static function filepirep($dbid, $code, $flightnumber, $routeid, $bidid, $departureicao, $arrivalicao, $route, $aircraft, $load, $flighttime, $landingrate, $comments, $fuelused, $log) {
 		global $dbConnection;
