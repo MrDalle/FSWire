@@ -170,7 +170,7 @@
 
     </div>
 
-    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             console.log("ok");
