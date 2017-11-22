@@ -119,6 +119,46 @@
 
 
                                 </div>
+
+        <div class="col-sm-5 col-lg-4 ">
+            <div class="block animated fadeInRight ">
+                <div class="block-header bg-gray-lighter">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title"><i class="fa fa-fw fa-briefcase"></i> Pilot Details</h3>
+                </div>
+                <div class="block-content">
+                    <ul class="list list-simple list-li-clearfix">
+                        <li>
+                            <a class="item item-rounded pull-left push-10-r bg-info" href="javascript:void(0)">
+                                <i class="si si-rocket text-white-op"></i>
+                            </a>
+                            <h5 class="push-10-t">Join Date</h5>
+                            <div class="font-s13">{{ date('d/m/Y', strtotime($p->user->created_at)) }}</div>
+                        </li>
+                        <li>
+                            <a class="item item-rounded pull-left  push-10-r bg-amethyst" href="javascript:void(0)">
+                                <i class="si si-calendar text-white-op"></i>
+                            </a>
+                            <h5 class="push-10-t">Virtual Airline</h5>
+                            <div class="font-s13">FSWire</div>
+                        </li>
+                        <li>
+                            <a class="item item-rounded pull-left push-10-r bg-danger" href="javascript:void(0)">
+                                <i class="si si-speedometer text-white-op"></i>
+                            </a>
+                            <h5 class="push-10-t">Rank</h5>
+                            <div class="font-s13">Pilot</div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
                                 <div class="col-sm-5 col-lg-4 ">
 
                                     <!-- Follow -->

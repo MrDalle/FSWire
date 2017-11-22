@@ -3,7 +3,9 @@
 @section('plugin')
     <link rel="stylesheet" href="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.css') }}">
     @endsection
-@section('content')
+@section('content' )
+
+
 <div class="bg-primary-dark">
     <section class="content content-full content-boxed">
         <!-- Section Content -->
@@ -16,64 +18,88 @@
 </div>
 <!-- Page Content -->
 
-
-
-<div class="content">
-  <div class="col-xs-12 col-md-12 col-lg-12">
-  <div class="block animated fadeInUp">
-    <div class="block-content ">
-        <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
-
-        <table class="table table-bordered table-striped table-hover js-dataTable-full ">
-            <thead>
-            <tr>
-
-                <th>Airline</th>
-                <th>Flight Number</th>
-                <th>Departure</th>
-                <th>Arrival</th>
-                <th>Landing Rate</th>
-                <th>Aircraft</th>
-                <th>Flight Time</th>
-                <th>Approved</th>
-                <th>Details</th>
-            </tr>
-            </thead>
-            <tbody>
+<section class="content content-boxed overflow-hidden">
+    <div class="push-50-t push-50">
+        <div class="row">
             @foreach($pireps as $p)
-                <tr>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <a class="block block-rounded block-link-hover2" href="{{ url('flightops/logbook/'.$p->id) }}">
 
-                    <td class="text-center">{{ $p->airline->name }}</td>
-                    <td class="text-center">{{ $p->flightnum }}</td>
-                    <td class="text-center">{{ $p->depapt->icao }}</td>
-                    <td class="text-center">{{ $p->arrapt->icao }}</td>
-                    <td class="text-center">{{ $p->landingrate }} FPM</td>
-                    <td class="text-center">{{ $p->aircraft->name }} ({{ $p->aircraft->registration }})</td>
-                    <td class="text-center">{{ $p->flighttime }}</td>
-                    <td class="text-center">
-                        @if($p->status === 1)
-                            <span class="label label-success">APPROVED</span>
-                        @elseif($p->status === 2)
-                            <span class="label label-warning">PENDING</span>
-                        @else
-                            <span class="label label-danger">DENIED</span>
-                        @endif
-                    </td>
-                    <td><a href="{{ url('flightops/logbook/'.$p->id) }}"> <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="Edit Client"><i class="fa fa-pencil"></i></button></a></td>
+                    @if($p->status === 1)
+                    <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-success ">
+                        <div class="ribbon-box ribbon-primary font-w400">APPROVED</div>
+                        <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
+                            <i class="h2 font-w700 mheight-150  text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
+                        </div>
+                        <div class="text-white">
+                            <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
+                        </div>
+                    </div>
+                    @elseif($p->status === 2)
+                        <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-danger ">
+                            <div class="ribbon-box ribbon-primary font-w400">PENDING</div>
+                            <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
+                                <i class="h2 font-w700 mheight-150 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
+                            </div>
+                            <div class="text-white">
+                                <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
+                            </div>
+                        </div>
+                    @else
+                        <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-danger ">
+                            <div class="ribbon-box ribbon-primary font-w400">DENIED</div>
+                            <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
+                                <i class="h2 font-w700 mheight-150 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
+                            </div>
+                            <div class="text-white">
+                                <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
+                            </div>
+                        </div>
+                    @endif
 
-            </tr>
-                @endforeach
-            </tbody>
-        </table>
 
-                </div>
+                    <div class="block-content">
+                        <h4 class="mheight-20 text-center">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h4>
+                        <h4 class="mheight-20 text-center">{{ $p->aircraft->name }} - {{ $p->aircraft->registration }}</h4>
+                        <h4 class="mheight-50 text-center">{{ $p->landingrate }} FPM</h4>
+                        <div class="font-s12 text-center push">{{ $p->created_at }}</div>
+                    </div>
+                </a>
+
             </div>
+
+            @endforeach
+
         </div>
 
+    </div>
 
-    <!-- END Dynamic Table Full -->
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @endsection
 @section('javascript')
     <script src="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/pages/base_tables_datatables.js') }}"></script>
     @endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
+@endsection
