@@ -88,6 +88,7 @@
 
 
 
+
     @endsection
 @section('javascript')
     <script src="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>

@@ -1,23 +1,17 @@
 @extends('layouts.oneui')
 
-<script>
-h1,; .h1; {
-font-size;: 70;px;
-}
-
-</script>
 @section('content')
     <div class="content content-boxed">
-    <div class="bg-primary-dark">
-        <section class="content content-full content-boxed">
-            <!-- Section Content -->
-            <div class="push-100-t push-50 text-center">
-                <h1 class="h1 font-size-70 font-w700 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h1>
-                <h2 class="h5 text-white-op animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->name }} - {{ $p->arrapt->name }}</h2>
-            </div>
-            <!-- END Section Content -->
-        </section>
-    </div>
+        <div class="bg-primary-dark">
+            <section class="content content-full content-boxed">
+                <!-- Section Content -->
+                <div class="push-100-t push-50 text-center">
+                    <h1 class="h1 font-size-70 font-w700 text-white push-10 animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h1>
+                    <h2 class="h5 text-white-op animated fadeInDown" data-toggle="appear" data-class="animated fadeInDown">{{ $p->depapt->name }} - {{ $p->arrapt->name }}</h2>
+                </div>
+                <!-- END Section Content -->
+            </section>
+        </div>
         <div class="bg-white">
             <section class="content content-mini content-mini-full content-boxed overflow-hidden">
                 <ol class="breadcrumb">
@@ -30,28 +24,28 @@ font-size;: 70;px;
 
 
         <div class="block">
-        <!-- Stats -->
-        <div class="block-content text-center bg-gray-lighter">
-            <div class="row items-push text-uppercase">
-                <div class="col-xs-6 col-sm-3">
-                    <div class="font-w700 text-gray-darker animated fadeIn">Time</div>
-                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->flighttime }}</a>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="font-w700 text-gray-darker animated fadeIn">Distance</div>
-                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->distance }}</a>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="font-w700 text-gray-darker animated fadeIn">Fuel</div>
+            <!-- Stats -->
+            <div class="block-content text-center bg-gray-lighter">
+                <div class="row items-push text-uppercase">
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="font-w700 text-gray-darker animated fadeIn">Time</div>
+                        <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->flighttime }}</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="font-w700 text-gray-darker animated fadeIn">Distance</div>
+                        <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->distance }}</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="font-w700 text-gray-darker animated fadeIn">Fuel</div>
                         <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->fuel_used }}</a>
-                </div>
-                <div class="col-xs-6 col-sm-3">
-                    <div class="font-w700 text-gray-darker animated fadeIn">LDG RTE</div>
-                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->landingrate }}</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="font-w700 text-gray-darker animated fadeIn">LDG RTE</div>
+                        <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->landingrate }}</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- END Stats -->
+            <!-- END Stats -->
 
         </div>
 
@@ -162,27 +156,26 @@ font-size;: 70;px;
                 <div id="log" class="panel-collapse collapse">
                     <div class="panel-body" id="log">
                         <div id="sclogtab">
-                                                    @if($p->acars_client === "smartCARS")
-                                                            <ul id="scLogs" class="collection with-header">
+                            @if($p->acars_client === "smartCARS")
+                                <ul id="scLogs" class="collection with-header">
 
-                                                                </ul>
-                                                        @endif
-                                                    </div>
+                                </ul>
+                            @endif
+                        </div>
                     </div>
-</div>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
+    </div>
 
-@endsection
-
-@section('js')
-<script>
-$(document).ready(function () {
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("ok");
 // Pull the data from the API so we can add stuff
-$.getJSON( "{{ config('app.url') }}api/v1/logbook/{{$p->id}}", function( data ) {
+            $.getJSON( "{{ config('app.url') }}api/v1/logbook/{{$p->id}}", function( data ) {
                 console.log(data);
                 if(data.acars_client = "smartCARS") {
                     var logSplit = data.flight_data.split("*");
