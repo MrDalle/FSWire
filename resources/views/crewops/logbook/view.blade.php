@@ -28,7 +28,7 @@
                     @if($p->status === 1)
                     <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-success ">
                         <div class="ribbon-box ribbon-primary font-w400">APPROVED</div>
-                        <div class="push-20-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
+                        <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
                             <i class="h2 font-w700 mheight-150  text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
                         </div>
                         <div class="text-white-op">

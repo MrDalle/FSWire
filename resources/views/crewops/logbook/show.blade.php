@@ -98,7 +98,7 @@
                         <table class="table table-borderless table-condensed">
                             <tbody>
                             <tr>
-                                <td><strong>Owner</strong> {{ $p->airline->name }}</td>
+                                <td><strong>Owner</strong> {{ $p->airline->icao }}</td>
                             </tr>
                             <tr>
                                 <td><strong>Flight Time</strong> {{ $p->flighttime }}</td>
@@ -131,7 +131,9 @@
                         <table class="table table-borderless table-condensed">
                             <tbody>
                             <tr>
-                                <td><strong>Company</strong> </td>
+                                <td><strong>HUB</strong> </td>
+                                <td><strong>Pilots</strong> </td>
+
                             </tr>
 
                             </tbody>
