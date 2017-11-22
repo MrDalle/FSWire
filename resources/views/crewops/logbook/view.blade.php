@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-alert ">
+                        <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-danger ">
                             <div class="ribbon-box ribbon-primary font-w400">DENIED</div>
                             <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
                                 <i class="h2 font-w700 mheight-150 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
