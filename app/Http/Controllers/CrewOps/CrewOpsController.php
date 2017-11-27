@@ -32,7 +32,7 @@ class CrewOpsController extends Controller
             $totalflightime = $this->convertTime($flighttime);
         }
 
-        return view('crewops.dashboard', ['bids' => $totalbids, 'logs' => $totalLogs, 'newpirep' => $newpirep, 'totalflightime' => $totalflightime]);
+
         return view('crewops.dashboard', ['bids' => $totalbids, 'logs' => $totalLogs, 'newpirep' => $newpirep, 'totalflightime' => $totalflightime, 'rank' => $rank]);
     }
     public function profileUpdate(Request $request)
