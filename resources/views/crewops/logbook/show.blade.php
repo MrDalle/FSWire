@@ -183,14 +183,13 @@
 // Pull the data from the API so we can add stuff
             $.getJSON( "{{ config('app.url') }}api/v1/logbook/{{$p->id}}", function( data ) {
                 console.log(data);
-                if (data.flight_data !== null) {
-                                     var logSplit = data.flight_data.split("*");
-                                            $.each(logSplit, function (index, value) {
-                                                   $("#scLogs").append('<li class="collection-item"><div>' + value + '</div></li>')
-                                               });
-                                       }
-            };
-            // time to apply the flight status.
+                if(data.acars_client = "smartCARS") {
+                    var logSplit = data.flight_data.split("*");
+                    $.each(logSplit, function( index, value) {
+                        $("#scLogs").append('<li class="collection-item"><div>'+ value +'</div></li>')
+                    });
+                }
+                // time to apply the flight status.
                 switch(data.status) {
                     case 0:
                         $("#status").addClass("yellow darken-2");
@@ -206,6 +205,6 @@
                         break;
                 }
             });
-        })
+        });
     </script>
 @endsection
