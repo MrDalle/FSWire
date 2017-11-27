@@ -95,7 +95,7 @@
                             <div class="h5 push-15-t push-5">{{ Auth::user()->username }}</div>
                         </div>
                         <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                            <div class="text-center text-muted">Pilot Rank <h3> Pilot</h3></div>
+                            <div class="text-center text-muted">Pilot Rank <h3> {{ $rank }}</h3></div>
                         </div>
                         <div class="block-content-full progress active">
                             <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar"
