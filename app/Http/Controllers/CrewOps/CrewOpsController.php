@@ -195,6 +195,27 @@ class CrewOpsController extends Controller
        return view('crewops.logbook.show', ['p' => $pirep]);
     }
 
+    public function getRankByUserID($id)
+    {
+        $user = User::findOrFail($id);
+        $flighttime = PIREP::where('user_id', $user->id)->sum('flighttime');
+
+        if ($user->totalhours != null) {
+            $time = $user->totalhours  + $this->convertTime($flighttime);
+        }else{
+            $time = $this->convertTime($flighttime);
+        }
+        $hours = $time;
+        $rank = DB::select('SELECT tr.rank_name 
+FROM vaos_ranks as tr 
+LEFT JOIN (SELECT * FROM vaos_ranks LIMIT 1,69596585953484) as l 
+ON l.needed_points = (SELECT MIN(needed_points) FROM vaos_ranks WHERE needed_points > tr.needed_points limit 1) 
+LEFT OUTER JOIN vaos_users AS tu ON ? >= tr.needed_points AND ? < l.needed_points WHERE tu.id IS NOT NULL group by tr.rank_name', [$hours, $hours]);
+        $output = array_map(function ($object) { return $object->rank_name; }, $rank);
+        $rank = implode(', ', $output);
+        return $rank;
+    }
+
     function convertTime($dec)
     {
         // start by converting to seconds
