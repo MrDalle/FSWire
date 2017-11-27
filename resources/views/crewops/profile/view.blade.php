@@ -151,7 +151,7 @@
                                 <i class="si si-speedometer text-white-op"></i>
                             </a>
                             <h5 class="push-10-t">Rank</h5>
-                            <div class="font-s13">Pilot</div>
+                            <div class="font-s13">{{ $rank }}</div>
                         </li>
                     </ul>
 

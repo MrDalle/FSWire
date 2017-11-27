@@ -2,8 +2,8 @@
 
 # About
 
-The Virtual Airline Operations System project is an open source and modern Virtual Airline Content Management System developed for use in flight simulators such as Microsoft Flight Simulator, Prepar3D and X-Plane. Development of the system started in late 2014.
-
+FSWire is an open source community driven system. Our goal, generating a easy to use system for everyone. No Matter which online or VA Platform you use. 
+FSwire is build on top of the VAOS project and desgined with OneUI.
 
 # License
 
@@ -33,5 +33,5 @@ Donations are greatly appreciated and go towards further development of VAOS and
 
 Send donations to taylorbroad@gmail.com via. PayPal
 
-# Current Beta Version
+# Current Version
 ##### BETA 4
