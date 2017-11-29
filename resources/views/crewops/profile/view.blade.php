@@ -24,6 +24,7 @@
     <div class="content content-boxed">
         <!-- User Header -->
         <div class="block animated fadeInDown">
+
                         <!-- Basic Info -->
                         <div class="bg-image" style="background-image: url('{{ $user->cover_url }}')">
 
@@ -69,56 +70,89 @@
 
                     <!-- Main Content -->
                     <div class="row">
-                      <div class="col-sm-7 col-lg-8">
 
-                          <!-- Timeline -->
-                          <div class="block block-opt-refresh-icon6 animated fadeInLeft">
-                              <div class="block-header">
-                                  <ul class="block-options">
-                                      <li>
-                                          <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                                      </li>
-                                      <li>
-                                          <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                                      </li>
-                                  </ul>
-                                  <h3 class="block-title"><i class="fa fa-newspaper-o"></i> Recent Flights</h3>
-                              </div>
-
-@foreach(\App\PIREP::where('user_id', $user->id)->orderBy('id', 'desc')->limit(10)->get() as $p)
-                                  <!-- System Notification -->
-                                  <div class="block-content content-full">
-                                      <div class="block-header">
-                                        <table class="table table-condensed table-hover">
-                                          <tbody>
-                                          <ul class="block-options">
-                                              <li>
-                                                  <span><em class=" label label-success">{{ date('d/m/Y', strtotime($p->created_at)) }}</em></span>
-                                              </li>
-
-                                              <li>
-                                                  <span><i class="fa fa-database "></i></span>
-                                              </li>
-
-                                          </ul>
-<td class=" h4 font-w400">{{ $p->airline->icao . $p->flightnum }}
-                                          <td class="h1 font-w700">{{ $p->depapt->icao }} -
-                                          {{ $p->arrapt->icao }}</td></td>
-                                          </div>
-</tbody></table>
-                                      </div>
-
-                                  </div>@endforeach
-                                  <!-- END System Notification -->
-
-
-                                      </div>
-
-
-
-
-
+                        <div class="col-md-6">
+                            <div class="block block-rounded block-opt-refresh-icon8">
+                                <div class="block-header bg-gray-lighter">
+                                    <ul class="block-options">
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                        </li>
+                                    </ul>
+                                    <h3 class="block-title">Earnings in $</h3>
                                 </div>
+                                <div class="block-content block-content-full text-center">
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-5 col-lg-6 ">
+
+                            <!-- Follow -->
+                            <div class="block animated fadeInRight">
+                                <div class="block-content block-content-full text-center">
+                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-plus"></i> Logbook</button>
+                                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus"></i> Edit Profile</button>
+                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus"></i> Edit Profile</button>
+                                </div>
+                            </div>
+                            <!-- END Follow -->
+
+
+
+
+                        </div>
+
+
+                        <div class="col-lg-6">
+                            <!-- Striped Table -->
+                            <div class="block">
+                                <div class="block-header">
+
+                                    <h3 class="block-title">Latest PIREPS</h3>
+                                </div>
+                                <div class="block-content">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center" style="width: 50px;">#</th>
+                                            <th class="text-center">DEP - ARR</th>
+                                            <th class="hidden-xs" style="width: 15%;">Access</th>
+                                            <th class="text-center" style="width: 100px;">Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach(\App\PIREP::where('user_id', $user->id)->orderBy('id', 'desc')->limit(5)->get() as $p)
+                                        <tr>
+                                            <td class="text-center">{{ $p->airline->icao . $p->flightnum }}</td>
+                                            <td class="text-center">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</td>
+                                            <td class="hidden-xs">
+                                                <span class="label label-info">{{ date('d/m/Y', strtotime($p->created_at)) }}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Edit Client"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Remove Client"><i class="fa fa-times"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END Striped Table -->
+                        </div>
+
+
+
+
+
+
+
+
 
         <div class="col-sm-5 col-lg-4 ">
             <div class="block animated fadeInRight ">
@@ -151,7 +185,7 @@
                                 <i class="si si-speedometer text-white-op"></i>
                             </a>
                             <h5 class="push-10-t">Rank</h5>
-                            <div class="font-s13">{{ $rank }}</div>
+                            <div class="font-s13"></div>
                         </li>
                     </ul>
 
@@ -159,20 +193,34 @@
             </div>
         </div>
 
-                                <div class="col-sm-5 col-lg-4 ">
 
-                                    <!-- Follow -->
-                                    <div class="block animated fadeInRight">
-                                        <div class="block-content block-content-full text-center">
-                                            <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus"></i> Edit Profile</button>
-
-                                        </div>
-                                    </div>
-                                    <!-- END Follow -->
-
-
-
-
-                                            </div>
 
     @endsection
+
+
+        @section('javascript')
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: "Landing Rate ",
+
+                        borderColor: 'rgb(55, 169, 103)',
+                        data: [
+                            ],
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+        </script>
+@endsection

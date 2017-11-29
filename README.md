@@ -1,10 +1,11 @@
-![alt text](http://i.imgur.com/E2Qa1tf.jpg)
+![alt text](https://fswire.net/assets/img/various/promo2.png)
 
 # About
 
 FSWire is an open source community driven system. Our goal, generating a easy to use system for everyone. No Matter which online or VA Platform you use. 
 FSwire is build on top of the VAOS project and desgined with OneUI.
 
+www.fswire.net
 # License
 
 CC Attribution-NonCommercial 4.0 International
@@ -17,7 +18,7 @@ CC Attribution-NonCommercial 4.0 International
 
 # System Requirements
 
-- **PHP**: 5.6 or newer
+- **PHP**: 7.1 or newer
 
 - **MySQL**: MySQL Community Server 5.3.x or newer
 
@@ -34,4 +35,4 @@ Donations are greatly appreciated and go towards further development of VAOS and
 Send donations to taylorbroad@gmail.com via. PayPal
 
 # Current Version
-##### BETA 4
+##### 1.1
