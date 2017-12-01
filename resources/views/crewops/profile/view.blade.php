@@ -59,7 +59,7 @@
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">Total Fuel Burn</div>
                                     <div class="text-warning push-10-t animated flipInX">
-                                        <div class="h2 font-w700 text-gray-darker animated fadeIn">{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}</div>
+                                        <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                     <!-- Main Content -->
                     <div class="row">
 
-                        <div class="col-md-6">
+                        <div class="col-xs-4 col-md-5 col-lg-5">
                             <div class="block block-rounded block-opt-refresh-icon8">
                                 <div class="block-header bg-gray-lighter">
                                     <ul class="block-options">
@@ -88,14 +88,14 @@
                         </div>
 
 
-                        <div class="col-sm-5 col-lg-6 ">
+                        <div class="col-sm-3 col-lg-3 ">
 
                             <!-- Follow -->
                             <div class="block animated fadeInRight">
-                                <div class="block-content block-content-full text-center">
-                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-plus"></i> Logbook</button>
-                                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus"></i> Edit Profile</button>
-                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-plus"></i> Edit Profile</button>
+                                <div class="block-content block-content-full text-right">
+                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-book"></i> Logbook</button>
+                                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-cog"></i> Edit Profile</button>
+
                                 </div>
                             </div>
                             <!-- END Follow -->
@@ -106,13 +106,19 @@
                         </div>
 
 
-                        <div class="col-lg-6">
+                        <div class="col-xs-4 col-md-5 col-lg-5">
                             <!-- Striped Table -->
-                            <div class="block">
-                                <div class="block-header">
-
-                                    <h3 class="block-title">Latest PIREPS</h3>
+                            <div class="block block-rounded block-opt-refresh-icon8">
+                                <div class="block-header bg-gray-lighter">
+                                    <ul class="block-options">
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                        </li>
+                                    </ul>
+                                    <h3 class="block-title">Latest Pireps</h3>
                                 </div>
+
+
                                 <div class="block-content">
                                     <table class="table table-striped">
                                         <thead>
@@ -133,8 +139,8 @@
                                             </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Edit Client"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="Remove Client"><i class="fa fa-times"></i></button>
+                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="PIREP Details" onclick="window.location.href=;{{ url('flightops/logbook/'.$p->id) }} "><i class="fa fa-pencil"></i></button>
+
                                                 </div>
                                             </td>
                                         </tr>
@@ -154,7 +160,7 @@
 
 
 
-        <div class="col-sm-5 col-lg-4 ">
+        <div class="col-xs-4 col-md-5 col-lg-5 ">
             <div class="block animated fadeInRight ">
                 <div class="block-header bg-gray-lighter">
                     <ul class="block-options">
@@ -192,6 +198,7 @@
                 </div>
             </div>
         </div>
+                    </div>
 
 
 
