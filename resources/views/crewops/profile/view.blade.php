@@ -30,11 +30,12 @@
 
                             <div class="block-content bg-primary-dark-op text-center overflow-hidden">
                                 <div class="push-30-t push animated fadeInDown">
-                                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ $user->avatar_url }}" onerror="this.src='http://identicon.org?t={{ $user->username }}&s=400'" alt="Avatar"></a>
+                                    <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ $user->avatar_url }}" onerror="this.src='http://identicon.org?t={{ $user->username }}&s=400'" alt="Avatar">
                                 </div>
                                 <div class="push-30 animated fadeInUp">
                                     <h2 class="h4 font-w600 text-white push-5">{{ $user->username }}</h2>
-                                    <h3 class="h5 text-gray">{{ $user->pilotid }}</h3>
+                                    <h3 class="h5 text-gray">{{ $user->pilotid }}
+                                    </h3>
                                 </div>
                             </div>
                         </div>
@@ -64,22 +65,21 @@
                                 </div>
                             </div>
                         </div>
+    </div>
                         <!-- END Stats -->
-                    </div>
+
                     <!-- END User Header -->
 
                     <!-- Main Content -->
-                    <div class="row">
+<div class="content content-boxed">
+        <div class="row">
 
-                        <div class="col-xs-4 col-md-5 col-lg-5">
-                            <div class="block block-rounded block-opt-refresh-icon8">
+
+                        <div class="col-xs-4 col-md-5 col-lg-6">
+                            <div class="block block-rounded">
                                 <div class="block-header bg-gray-lighter">
-                                    <ul class="block-options">
-                                        <li>
-                                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                                        </li>
-                                    </ul>
-                                    <h3 class="block-title">Earnings in $</h3>
+
+                                    <h3 class="block-title">Latest Landings</h3>
                                 </div>
                                 <div class="block-content block-content-full text-center">
                                     <canvas id="myChart"></canvas>
@@ -88,25 +88,10 @@
                         </div>
 
 
-                        <div class="col-sm-3 col-lg-3 ">
-
-                            <!-- Follow -->
-                            <div class="block animated fadeInRight">
-                                <div class="block-content block-content-full text-right">
-                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-book"></i> Logbook</button>
-                                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-cog"></i> Edit Profile</button>
-
-                                </div>
-                            </div>
-                            <!-- END Follow -->
 
 
 
-
-                        </div>
-
-
-                        <div class="col-xs-4 col-md-5 col-lg-5">
+                        <div class="col-xs-4 col-md-5 col-lg-6">
                             <!-- Striped Table -->
                             <div class="block block-rounded block-opt-refresh-icon8">
                                 <div class="block-header bg-gray-lighter">
@@ -152,6 +137,17 @@
                             <!-- END Striped Table -->
                         </div>
 
+                        <div class="col-sm-3 col-lg-3 ">
+
+                            <!-- Follow -->
+                            <div class="block animated fadeInRight">
+                                <div class="block-content block-content-full text-right">
+                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-book"></i> Logbook</button>
+                                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-cog"></i> Edit Profile</button>
+
+                                </div>
+                            </div>
+                            <!-- END Follow -->
 
 
 
@@ -160,7 +156,10 @@
 
 
 
-        <div class="col-xs-4 col-md-5 col-lg-5 ">
+
+
+
+        <div class="col-xs-4 col-md-5 col-lg-6 ">
             <div class="block animated fadeInRight ">
                 <div class="block-header bg-gray-lighter">
                     <ul class="block-options">
@@ -198,9 +197,10 @@
                 </div>
             </div>
         </div>
+                        </div>
                     </div>
 
-
+</div>
 
     @endsection
 
@@ -209,12 +209,15 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
         <script>
+
+
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
                 // The type of chart we want to create
                 type: 'line',
 
                 // The data for our dataset
+
                 data: {
                     labels: [],
                     datasets: [{
@@ -222,12 +225,26 @@
 
                         borderColor: 'rgb(55, 169, 103)',
                         data: [
+                            @foreach($pireps as $p) {{ $p->landingrate }}, @endforeach
+
                             ],
                     }]
                 },
 
                 // Configuration options go here
-                options: {}
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
             });
+
+
         </script>
 @endsection
+
+@foreach($pireps as $p) {{ $p->landingrate }}, @endforeach

@@ -121,6 +121,9 @@
             </div>
 
 
+
+
+
             <!-- Dashboard Cards -->
             <div class="col-xs-4 col-lg-2 col-md-2">
                 <a class="block block-link-hover2 text-center   animated pulse" href="{{ url('/flightops/schedule') }}">
