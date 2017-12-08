@@ -134,31 +134,34 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 </div>
 </div>
 
+
+
+
 <div class="col-md-6">
   <div class="block block-content block-content-full block-content-narrow">
                             <h2 class="h3 font-w600 push-50-t push">FSWire Roadmap - Feature Plans</h2>
 
 
-                                                                <!-- Changelog Content -->
-                                                                <div id="changelog" class="panel-group">
-                                                                    <div class="panel panel-default">
-                                                                        <div class="panel-heading">
-                                                                            <h4 class="panel-title">
-                                                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update10" aria-expanded="FALSE">
-                                                                                    <strong>1.0</strong> Initial Release <span class="font-w400 text-muted pull-right">August 2017</span>
-                                                                                </a>
-                                                                            </h4>
-                                                                        </div>
-                                                                        <div id="changelog-update10" class="panel-collapse collapse " aria-expanded="false" style="height: 0px;">
-                                                                            <div class="panel-body">
-                                                                                <ul class="list list-simple">
-                                                                                    <li>
-                                                                                        <strong class="text-uppercase">New features</strong>
-                                                                                        <ul class="fa-ul list-simple-mini push-10-t">
 
+      <!-- Changelog Content -->
+      <div id="changelog" class="panel-group">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update10" aria-expanded="FALSE">
+                          <strong>1.0</strong> Initial Release <span class="font-w400 text-muted pull-right">August 2017 </span>
 
-                                                                                            <li>
-                                                                                                <i class="fa fa-plus fa-li text-success"></i> Allmost all features of the old VAS are included
+                      </a>
+                  </h4>
+              </div>
+              <div id="changelog-update10" class="panel-collapse collapse " aria-expanded="false" style="height: 0px;">
+                  <div class="panel-body">
+                      <ul class="list list-simple">
+                          <li>
+                              <strong class="text-uppercase">New features</strong>
+                              <ul class="fa-ul list-simple-mini push-10-t">
+                                  <li>
+                                      <i class="fa fa-plus fa-li text-success"></i> Allmost all features of the old VAS are included
                                                                                             </li>
                                                                                             <li>
                                                                                                 <i class="fa fa-plus fa-li text-success"></i> New Livemap with 3D mode and live telemetry
@@ -300,7 +303,14 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                               <strong class="text-uppercase">Improvements</strong>
                               <ul class="fa-ul list-simple-mini push-10-t">
                                   <li>
-                                      <i class="fa fa-check fa-li text-primary"></i> We will implement the old Ranksystem with a new Achievemnt system
+                                      <i class="fa fa-check fa-li text-primary"></i> We will implement a Ranksystem
+                                  </li>
+
+                                  <li>
+                                      <i class="fa fa-check fa-li text-primary"></i> New Layout for Logbook Page and Pagination
+                                  </li>
+                                  <li>
+                                      <i class="fa fa-check fa-li text-primary"></i> Comlpete Redesign of the Profile Page. Now with ChartJSv2 and more!
                                   </li>
 
                               </ul>
@@ -494,7 +504,15 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 
 
 
-                            </div></div></div>
+                            </div>
+
+      <div class="col-sm-6 col-lg-4">
+          <button class="btn btn-minw btn-square btn-primary" onclick="window.location.href='https://fswire.net/down.php'" type="button">Downloads</button>
+      </div>
+
+  </div>
+
+</div>
 
 @endsection
 </body>

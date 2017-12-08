@@ -394,6 +394,11 @@
                         <a href="  {{ url('flightops/logbook') }}"><i class="si si-book-open"></i><span
                                     class="sidebar-mini-hide">Logbook</span></a>
                     </li>
+                    <li>
+                        <a href="  {{ url('flightops/bids') }}"><i
+                                    class="fa fa-check-square-o"></i><span
+                                    class="sidebar-mini-hide">Bids</span></a>
+                    </li>
 
 
 
@@ -415,11 +420,7 @@
                                     class="sidebar-mini-hide">Schedule</span></a>
                     </li>
 
-                    <li>
-                        <a href="  {{ url('flightops/bids') }}"><i
-                                    class="fa fa-check-square-o"></i><span
-                                    class="sidebar-mini-hide">Bids</span></a>
-                    </li>
+
                     <!-- Admin Center -->
                 @if(Auth::user()->admin)
                     <li>
@@ -486,6 +487,11 @@
                         <a href="https://discord.gg/ZFp9Rgc"><i class="fa fa-headphones"></i><span
                                     class="sidebar-mini-hide">Join Discord</span></a>
                     </li>
+
+                        <li>
+                            <a target="_blank" href=" https://fswire.net/down.php"><i class="si si-cloud-download"></i><span
+                                        class="sidebar-mini-hide">Downloads</span></a>
+                        </li>
 
 
 

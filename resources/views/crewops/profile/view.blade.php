@@ -141,25 +141,54 @@
                             <!-- END Striped Table -->
                         </div>
 
-                        <div class="col-sm-3 col-lg-3 ">
-
-                            <!-- Follow -->
-                            <div class="block animated fadeInRight">
-                                <div class="block-content block-content-full text-right">
-                                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-book"></i> Logbook</button>
-                                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-cog"></i> Edit Profile</button>
-
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                            <!-- END Follow -->
 
 
 
+    <div class="col-sm-6 col-lg-4">
+        <a class="block block-link-hover2 text-center" href="javascript:void(0)">
+            <div class="block-header">
+                <h3 class="block-title">Pilot Information</h3>
+            </div>
+            <div class="block-content block-content-full bg-warning">
+                <div class="h1 font-w700 text-white push-10">{{ $p->user->username }}</div>
+                <div class="h5 font-w300 text-white-op">{{ $p->user->pilotid }}</div>
+            </div>
+            <div class="block-content">
+                <table class="table table-borderless table-condensed">
+                    <tbody>
+                    <tr>
+                        <td><strong>Name</strong> {{ $p->user->first_name }} {{ $p->user->last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hub</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rank</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AVG LDG</strong> {{ \App\PIREP::where('user_id', $p->user->id)->avg('landingrate') }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Hours</strong> {{ \App\PIREP::where('user_id', $p->user->id)->sum('flighttime') }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Join Date</strong> {{ date('d/m/Y', strtotime($p->user->created_at)) }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="block-content block-content-full text-right">
+                    <button class="btn btn-sm btn-success"  onclick="window.location.href='/flightops/logbook'"><i class="fa fa-fw fa-book"></i> Logbook</button>
+                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-cog"></i> Edit Profile</button>
+
+                </div>
+            </div>
+
+        </a>
+    </div>
 
 
         </div>
+
 </div>
 
 

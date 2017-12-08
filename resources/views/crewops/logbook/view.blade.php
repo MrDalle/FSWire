@@ -21,6 +21,7 @@
 <section class="content content-boxed overflow-hidden">
     <div class="push-50-t push-50">
         <div class="row">
+
             @foreach($pireps  as $p)
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <a class="block block-rounded block-link-hover2" href="{{ url('flightops/logbook/'.$p->id) }}">
