@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script type="text/javascript">

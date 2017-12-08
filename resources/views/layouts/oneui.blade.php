@@ -109,6 +109,9 @@
 <script src="assets/js/plugins/chartjsv2/Chart.min.js"></script>
 
 <!-- Page JS Code -->
+<script src="assets/js/pages/base_comp_chartjs_v2.js"></script>
+
+<!-- Page JS Code -->
 <script src="assets/js/pages/base_pages_dashboard_v3.js"></script>
 
 <!-- Page JS Plugins + Page JS Code -->

@@ -22,6 +22,7 @@
 
     <!-- Page Content -->
     <div class="content content-boxed">
+
         <!-- User Header -->
         <div class="block animated fadeInDown">
 
@@ -46,25 +47,26 @@
                             <div class="row items-push text-uppercase">
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">Total Hours</div>
-                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $totalflightime }}</a>
+                                    <div class="h2 text-primary" data-toggle="countTo" data-to="{{$totalflightime }}"></div>
                                 </div>
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">Total flights</div>
-                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ \App\PIREP::where('user_id', $user->id)->count() }}</a>
+                                    <div class="h2 text-primary" data-toggle="countTo" data-to="{{ \App\PIREP::where('user_id', Auth::user()->id)->count() }}"></div>
                                 </div>
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">AVG LDG RTE</div>
-                                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ (int) \App\PIREP::where('user_id', $user->id)->avg('landingrate') }}</a>
+                                    <div class="h2 text-primary" data-toggle="countTo" data-to="{{ (int) \App\PIREP::where('user_id', Auth::user()->id)->avg('landingrate') }}" data-after=" FPM"></div>
                                 </div>
 
                                 <div class="col-xs-6 col-sm-3">
                                     <div class="font-w700 text-gray-darker animated fadeIn">Total Fuel Burn</div>
                                     <div class="text-warning push-10-t animated flipInX">
-                                        <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}</div>
-                                    </div>
+                                        <div class="h2 text-primary" data-toggle="countTo" data-to="{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}"></div></div>
                                 </div>
                             </div>
+
                         </div>
+
     </div>
                         <!-- END Stats -->
 
@@ -74,24 +76,31 @@
 <div class="content content-boxed">
         <div class="row">
 
+            <div class="col-xs-4 col-md-5 col-lg-6">
+                <a class="block block-link-hover2 text-center" href="javascript:void(0)">
+                    <div class="block-header bg-gray-lighter">
+                        <ul class="block-options">
+                            <li>
+                                <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title">Latest Landings</h3>
+                    </div>
+
+                    <div class="block-content">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                </a>
+            </div>
+
+
+
+
+
 
                         <div class="col-xs-4 col-md-5 col-lg-6">
-                            <div class="block block-rounded">
-                                <div class="block-header bg-gray-lighter">
-
-                                    <h3 class="block-title">Latest Landings</h3>
-                                </div>
-                                <div class="block-content block-content-full text-center">
-                                    <canvas id="myChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="col-xs-4 col-md-5 col-lg-6">
+                            <a class="block block-link-hover2 text-center" href="javascript:void(0)">
                             <!-- Striped Table -->
                             <div class="block block-rounded">
                                 <div class="block-header bg-gray-lighter">
@@ -108,26 +117,21 @@
                                     <table class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th class="text-center" style="width: 50px;">#</th>
+                                            <th class="text-center" style="width: 50px;">ID</th>
                                             <th class="text-center">DEP - ARR</th>
-                                            <th class="hidden-xs" style="width: 15%;">Access</th>
-                                            <th class="text-center" style="width: 100px;">Actions</th>
+                                            <th class="hidden-xs" style="width: 15%;">DATE</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach(\App\PIREP::where('user_id', $user->id)->orderBy('id', 'desc')->limit(5)->get() as $p)
                                         <tr>
+
                                             <td class="text-center">{{ $p->airline->icao . $p->flightnum }}</td>
                                             <td class="text-center">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</td>
                                             <td class="hidden-xs">
                                                 <span class="label label-info">{{ date('d/m/Y', strtotime($p->created_at)) }}</span>
                                             </td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="PIREP Details" onclick="window.location.href=;{{ url('flightops/logbook/'.$p->id) }} "><i class="fa fa-pencil"></i></button>
 
-                                                </div>
-                                            </td>
                                         </tr>
                                         @endforeach
                                         </tbody>
@@ -147,6 +151,7 @@
 
                                 </div>
                             </div>
+                            </a>
                         </div>
                             <!-- END Follow -->
 
@@ -154,7 +159,8 @@
 
 
 
-
+        </div>
+</div>
 
 
 
@@ -178,7 +184,10 @@
                 // The data for our dataset
 
                 data: {
-                    labels: [],
+                    labels: [
+                        @foreach($pireps as $p) "", @endforeach
+
+                    ],
                     datasets: [{
                         label: "Landing Rate ",
 
@@ -204,6 +213,6 @@
 
 
         </script>
+
 @endsection
 
-@foreach($pireps as $p) {{ $p->landingrate }}, @endforeach
