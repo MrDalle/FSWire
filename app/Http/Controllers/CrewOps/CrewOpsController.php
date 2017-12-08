@@ -154,7 +154,7 @@ class CrewOpsController extends Controller
     }
     public function getLogbook()
     {
-        $pireps = PIREP::where('user_id', Auth::user()->id)->with('airline')->with('depapt')->with('arrapt')->with('aircraft')->get();
+        $pireps = PIREP::where('user_id', Auth::user()->id)->with('airline')->with('depapt')->with('arrapt')->with('aircraft')->orderBy('created_at', 'desc')->paginate(8);
         return view('crewops.logbook.view', ['pireps' => $pireps]);
     }
     public function getScheduleSearch()
