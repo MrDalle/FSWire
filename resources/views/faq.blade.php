@@ -113,8 +113,55 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                             </div>
                         </div>
 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq4" href="#faq2_q6">Ranks</a>
+                                </h3>
+                            </div>
+                            <div id="faq2_q6" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Currently we feature the follwing Ranks in our System
 
-                    </div>
+
+
+                                        <!-- Striped Table -->
+                                        <div class="block block-rounded">
+                                            <div class="block-content">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center">Rank Name</th>
+                                                        <th class="text-center">Hours needed</th>
+
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @foreach(\App\Rank::all() as $r)
+                                                        <tr>
+
+                                                            <td class="text-center">{{ $r->rank_name}}</td>
+                                                            <td class="text-center">{{ $r->needed_points}}</td>
+
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- END Striped Table -->
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        </div>
+
+
+  </div>
                     <!-- END Functionality -->
 
 
@@ -122,31 +169,34 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 </div>
 </div>
 
+
+
+
 <div class="col-md-6">
   <div class="block block-content block-content-full block-content-narrow">
                             <h2 class="h3 font-w600 push-50-t push">FSWire Roadmap - Feature Plans</h2>
 
 
-                                                                <!-- Changelog Content -->
-                                                                <div id="changelog" class="panel-group">
-                                                                    <div class="panel panel-default">
-                                                                        <div class="panel-heading">
-                                                                            <h4 class="panel-title">
-                                                                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update10" aria-expanded="FALSE">
-                                                                                    <strong>1.0</strong> Initial Release <span class="font-w400 text-muted pull-right">August 2017</span>
-                                                                                </a>
-                                                                            </h4>
-                                                                        </div>
-                                                                        <div id="changelog-update10" class="panel-collapse collapse " aria-expanded="false" style="height: 0px;">
-                                                                            <div class="panel-body">
-                                                                                <ul class="list list-simple">
-                                                                                    <li>
-                                                                                        <strong class="text-uppercase">New features</strong>
-                                                                                        <ul class="fa-ul list-simple-mini push-10-t">
 
+      <!-- Changelog Content -->
+      <div id="changelog" class="panel-group">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a class="accordion-toggle collapsed " data-toggle="collapse" data-parent="#changelog" href="#changelog-update10" aria-expanded="FALSE">
+                          <strong>1.0</strong> Initial Release <span class="font-w400 text-muted pull-right">August 2017 </span>
 
-                                                                                            <li>
-                                                                                                <i class="fa fa-plus fa-li text-success"></i> Allmost all features of the old VAS are included
+                      </a>
+                  </h4>
+              </div>
+              <div id="changelog-update10" class="panel-collapse collapse " aria-expanded="false" style="height: 0px;">
+                  <div class="panel-body">
+                      <ul class="list list-simple">
+                          <li>
+                              <strong class="text-uppercase">New features</strong>
+                              <ul class="fa-ul list-simple-mini push-10-t">
+                                  <li>
+                                      <i class="fa fa-plus fa-li text-success"></i> Allmost all features of the old VAS are included
                                                                                             </li>
                                                                                             <li>
                                                                                                 <i class="fa fa-plus fa-li text-success"></i> New Livemap with 3D mode and live telemetry
@@ -211,7 +261,7 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                             <div class="panel-heading">
                                                                                 <h4 class="panel-title">
                                                                                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update11" aria-expanded="false">
-                                                                                        <strong>1.1</strong> PIREP Update <span class="font-w400 text-muted pull-right">September | 2017</span>
+                                                                                        <strong>1.1</strong> PIREP Update <span class="font-w400 text-muted pull-right">Oktober | 2017</span>
                                                                                     </a>
                                                                                 </h4>
                                                                             </div>
@@ -259,12 +309,116 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                         </div>
                                                                     </div>
 
-                                                                    <div id="changelog" class="panel-group">
+
+      <div id="changelog" class="panel-group">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update14" aria-expanded="false">
+                          <strong>1.2</strong> Rank & Achviements Update <span class="font-w400 text-muted pull-right">December | 2017</span>
+                      </a>
+                  </h4>
+              </div>
+              <div id="changelog-update14" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div class="panel-body">
+                      <ul class="list list-simple">
+                          <li>
+                              <strong class="text-uppercase">New features</strong>
+                              <ul class="fa-ul list-simple-mini push-10-t">
+
+
+                                  <li>
+                                      <i class="fa fa-plus fa-li text-success"></i> With Ranks you can measure your skills and collect achivements while using FSWire and track your flights
+                                  </li>
+                                  <li>
+                                      <i class="fa fa-plus fa-li text-success"></i> Collect Achievements while flying with FSWire!
+                              </ul>
+                          </li>
+                          <li>
+                              <strong class="text-uppercase">Improvements</strong>
+                              <ul class="fa-ul list-simple-mini push-10-t">
+                                  <li>
+                                      <i class="fa fa-check fa-li text-primary"></i> We will implement a Ranksystem
+                                  </li>
+
+                                  <li>
+                                      <i class="fa fa-check fa-li text-primary"></i> New Layout for Logbook Page and Pagination
+                                  </li>
+                                  <li>
+                                      <i class="fa fa-check fa-li text-primary"></i> Complete Redesign of the Profile Page. Now with ChartJSv2 and more!
+                                  </li>
+
+                              </ul>
+                          </li>
+
+
+                          </li>
+                      </ul>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div id="changelog" class="panel-group">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update16" aria-expanded="false">
+                          <strong>1.3</strong> Flightplanner Update <span class="font-w400 text-muted pull-right">January | 2018</span>
+                      </a>
+                  </h4>
+              </div>
+              <div id="changelog-update16" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div class="panel-body">
+                      <ul class="list list-simple">
+                          <li>
+                              <strong class="text-uppercase">New features</strong>
+                              <ul class="fa-ul list-simple-mini push-10-t">
+
+
+                                  <li>
+                                      <i class="fa fa-plus fa-li text-success"></i>Create a Route for a plane of your choice right from the BID page
+                                  </li>
+                                  <li>
+                                      <i class="fa fa-plus fa-li text-success"></i>Its builded on top of the Simbrief API (you need an account at simbrief)
+                                  </li>
+                                  <li>
+                                      <strong class="text-uppercase">Improvements</strong>
+                                      <ul class="fa-ul list-simple-mini push-10-t">
+                                          <li>
+                                              <i class="fa fa-check fa-li text-primary"></i> Improving many pages that are already in the system
+                                          </li>
+                                          <li>
+                                              <i class="fa fa-check fa-li text-primary"></i> Total Miles now countet for every Pirep and in total on your Profile and Dashboard
+                                          </li>
+                                          <li>
+                                              <i class="fa fa-check fa-li text-primary"></i> Overhaul of the logbook page with more detailed infos
+                                          </li>
+
+                                      </ul>
+                                  </li>
+
+
+                                  </li>
+
+
+
+</ul>
+                              </ul>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div id="changelog" class="panel-group">
                                                                         <div class="panel panel-default">
                                                                             <div class="panel-heading">
                                                                                 <h4 class="panel-title">
                                                                                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update12" aria-expanded="false">
-                                                                                        <strong>1.3</strong> Permission System Update <span class="font-w400 text-muted pull-right">October | 2017</span>
+                                                                                        <strong>1.35</strong> Permission System Update <span class="font-w400 text-muted pull-right">February | 2018</span>
                                                                                     </a>
                                                                                 </h4>
                                                                             </div>
@@ -286,7 +440,7 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                                             <strong class="text-uppercase">Improvements</strong>
                                                                                             <ul class="fa-ul list-simple-mini push-10-t">
                                                                                                 <li>
-                                                                                                    <i class="fa fa-check fa-li text-primary"></i> Improving many pages that are already in teh system
+                                                                                                    <i class="fa fa-check fa-li text-primary"></i> Improving many pages that are already in the system
                                                                                                 </li>
 
                                                                                             </ul>
@@ -305,7 +459,7 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                             <div class="panel-heading">
                                                                                 <h4 class="panel-title">
                                                                                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update13" aria-expanded="false">
-                                                                                        <strong>1.4</strong> VA Update <span class="font-w400 text-muted pull-right">December | 2017</span>
+                                                                                        <strong>1.4</strong> VA Update <span class="font-w400 text-muted pull-right">March | 2018</span>
                                                                                     </a>
                                                                                 </h4>
                                                                             </div>
@@ -323,15 +477,16 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                                                 <li>
                                                                                                     <i class="fa fa-plus fa-li text-success"></i> Due the Permission system you will only see routes and planes from your VA
                                                                                                 </li>
-                                                                                            </ul>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <strong class="text-uppercase">Improvements</strong>
-                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
-                                                                                                <li>
-                                                                                                    <i class="fa fa-check fa-li text-primary"></i> Free Flight and VA Mode for Pilots using FSWire
-                                                                                                </li>
 
+                                                                                                <li>
+                                                                                                    <strong class="text-uppercase">Improvements</strong>
+                                                                                                    <ul class="fa-ul list-simple-mini push-10-t">
+                                                                                                        <li>
+                                                                                                            <i class="fa fa-check fa-li text-primary"></i> Improving many pages that are already in the system
+                                                                                                        </li>
+
+                                                                                                    </ul>
+                                                                                                </li>
                                                                                             </ul>
                                                                                         </li>
 
@@ -344,48 +499,6 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                         </div>
                                                                     </div>
 
-                                                                    <div id="changelog" class="panel-group">
-                                                                        <div class="panel panel-default">
-                                                                            <div class="panel-heading">
-                                                                                <h4 class="panel-title">
-                                                                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update14" aria-expanded="false">
-                                                                                        <strong>1.5</strong> Rank & Achviements Update <span class="font-w400 text-muted pull-right">February | 2018</span>
-                                                                                    </a>
-                                                                                </h4>
-                                                                            </div>
-                                                                            <div id="changelog-update14" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                                                                <div class="panel-body">
-                                                                                    <ul class="list list-simple">
-                                                                                        <li>
-                                                                                            <strong class="text-uppercase">New features</strong>
-                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
-
-
-                                                                                                <li>
-                                                                                                    <i class="fa fa-plus fa-li text-success"></i> With Ranks you can measure your skills and collect achivements while using FSWire and track your flights
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <i class="fa fa-plus fa-li text-success"></i> Collect Achievements while flying with FSWire!
-                                                                                            </ul>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <strong class="text-uppercase">Improvements</strong>
-                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
-                                                                                                <li>
-                                                                                                    <i class="fa fa-check fa-li text-primary"></i> We will implement the old Ranksystem with a new Achievemnt system
-                                                                                                </li>
-
-                                                                                            </ul>
-                                                                                        </li>
-
-
-                                                                                        </li>
-                                                                                    </ul>
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
 
                                                                     <div id="changelog" class="panel-group">
                                                                         <div class="panel panel-default">
@@ -408,39 +521,6 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
                                                                                                     <i class="fa fa-plus fa-li text-success"></i> To enhance also the support experience we will built it into FSWire instead of handling it over a subdomain
                                                                                                 </li>
 
-
-
-                                                                                        </li>
-                                                                                    </ul>
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div id="changelog" class="panel-group">
-                                                                        <div class="panel panel-default">
-                                                                            <div class="panel-heading">
-                                                                                <h4 class="panel-title">
-                                                                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#changelog" href="#changelog-update16" aria-expanded="false">
-                                                                                        <strong>1.8</strong> Flightplanner Update <span class="font-w400 text-muted pull-right">June | 2018</span>
-                                                                                    </a>
-                                                                                </h4>
-                                                                            </div>
-                                                                            <div id="changelog-update16" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                                                                <div class="panel-body">
-                                                                                    <ul class="list list-simple">
-                                                                                        <li>
-                                                                                            <strong class="text-uppercase">New features</strong>
-                                                                                            <ul class="fa-ul list-simple-mini push-10-t">
-
-
-                                                                                                <li>
-                                                                                                    <i class="fa fa-plus fa-li text-success"></i>Create a Route for a plane of your choice
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <i class="fa fa-plus fa-li text-success"></i>Its builded on top of the Simbrief API
-                                                                                                </li>
 
 
                                                                                         </li>
@@ -479,7 +559,15 @@ We try to create smth new and indepent for bush flyers and Virtual Airline Pilot
 
 
 
-                            </div></div></div>
+                            </div>
+
+      <div class="col-sm-6 col-lg-4">
+          <button class="btn btn-minw btn-square btn-primary" onclick="window.location.href='https://fswire.net/down.php'" type="button">Downloads</button>
+      </div>
+
+  </div>
+
+</div>
 
 @endsection
 </body>

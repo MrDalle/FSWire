@@ -4,6 +4,7 @@
     <div id="side-overlay-scroll">
         <!-- Side Header -->
         <div class="side-header side-content">
+
             <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
             <button class="btn btn-default pull-right" type="button" data-toggle="layout"
                     data-action="side_overlay_close">
@@ -13,9 +14,15 @@
 <a href="{{ url('/flightops/profile/'.Auth::user()->id) }}">
                       <img class="img-avatar img-avatar32" src="{{ Auth::user()->avatar_url }}"
                            onerror="this.src='{{ URL::asset('assets/img/avatars/avatar1.jpg') }}'" alt="Avatar"></a>
-                    <span class="font-w600 push-10-l">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
+                    <span class="font-w600 push-10-l">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span> <br>
+                <span class="font-w400 push-10-l">   {{ $rank }} </span>
 
                 </span>
+            <div class="block-content-full progress active">
+                <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar"
+                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%">{{ $percentageDone }}% done for next rank | {{ $hoursLeft }} Hours left
+                </div>
+            </div>
         </div>
         <!-- END Side Header -->
 
@@ -23,12 +30,7 @@
         <div class="side-content remove-padding-t">
             <!-- Side Overlay Tabs -->
             <div class="block pull-r-l border-t">
-                <ul class="nav nav-tabs nav-tabs-alt nav-justified" data-toggle="tabs">
-                    <li class="active">
-                        <a href="#tabs-side-overlay-overview"><i class="fa fa-fw fa-coffee"></i> Overview</a>
-                    </li>
 
-                </ul>
                 <div class="block-content tab-content">
                     <!-- Overview Tab -->
                     <div class="tab-pane fade fade-right in active" id="tabs-side-overlay-overview">
@@ -36,7 +38,7 @@
                         <a class="block block-link-hover2" href="javascript:void(0)">
                             <div class="block-content block-content-full bg-primary clearfix">
                                 <i class="si si-clock fa-2x text-white pull-right"></i>
-                                <span class="h4 font-w700 text-white">0</span>
+                                <span class="h4 font-w700 text-white">{{ $totalMiles }}</span>
                                 <span class="h4 text-white-op">Miles flown</span>
                             </div>
                         </a>
@@ -56,6 +58,8 @@
                                 <span class="h4 text-white-op">AVG LDG RTE</span>
                             </div>
                         </a>
+
+
 
 
                         <!-- Quick Settings -->
@@ -394,16 +398,17 @@
                         <a href="  {{ url('flightops/logbook') }}"><i class="si si-book-open"></i><span
                                     class="sidebar-mini-hide">Logbook</span></a>
                     </li>
+                    <li>
+                        <a href="  {{ url('flightops/bids') }}"><i
+                                    class="fa fa-check-square-o"></i><span
+                                    class="sidebar-mini-hide">Bids</span></a>
+                    </li>
 
 
 
                     <li class="nav-main-heading"><span class="sidebar-mini-hide">Dispatch</span></li>
 
-
-                    <li>
-                        <a href="  {{ url('flp') }}"><i class="si si-calculator"></i><span
-                                    class="sidebar-mini-hide">Plan Flight</span></a>
-                    </li>
+                    
 
                     <li>
                         <a href="  {{ url('flightops/freeflight') }}"><i class="si si-plane"></i><span
@@ -415,18 +420,11 @@
                                     class="sidebar-mini-hide">Schedule</span></a>
                     </li>
 
-                    <li>
-                        <a href="  {{ url('flightops/bids') }}"><i
-                                    class="fa fa-check-square-o"></i><span
-                                    class="sidebar-mini-hide">Bids</span></a>
-                    </li>
+
                     <!-- Admin Center -->
                 @if(Auth::user()->admin)
-                    <li>
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span
-                                    class="sidebar-mini-hide">Admin Center</span></a>
-                        <ul>
 
+                    <li>
 
                             <li class="nav-main-heading"><span class="sidebar-mini-hide">VA Management</span></li>
 
@@ -445,7 +443,10 @@
                                             class="fa fa-ravelry"></i><span
                                             class="sidebar-mini-hide">Airlines</span></a>
                             </li>
-
+                    <!--
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span
+                                    class="sidebar-mini-hide">Admin Center</span></a>
+                        <ul>
                             <li class="nav-main-heading"><span class="sidebar-mini-hide">Admin Center</span></li>
                             <li>
                                 <a href="{{ url('admin') }}"><i class="fa fa-ravelry"></i><span
@@ -464,7 +465,7 @@
                                             class="fa fa-ravelry"></i><span
                                             class="sidebar-mini-hide">Awaiting Approval</span></a>
                             </li>
-                        </ul>
+                        </ul> -->
 
                     @endif
 
@@ -486,6 +487,11 @@
                         <a href="https://discord.gg/ZFp9Rgc"><i class="fa fa-headphones"></i><span
                                     class="sidebar-mini-hide">Join Discord</span></a>
                     </li>
+
+                        <li>
+                            <a target="_blank" href=" https://fswire.net/down.php"><i class="si si-cloud-download"></i><span
+                                        class="sidebar-mini-hide">Downloads</span></a>
+                        </li>
 
 
 

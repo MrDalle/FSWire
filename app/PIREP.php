@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Classes\VAOSHelpers;
 use Illuminate\Database\Eloquent\Model;
 
 class PIREP extends Model
@@ -28,4 +29,25 @@ class PIREP extends Model
     {
         return $this->belongsTo('App\Models\Aircraft');
     }
+
+    /*public function getDistanceAttribute($value)
+    {
+        if ($value) {
+            return $value;
+        }
+        return round(VAOSHelpers::getDistance($this->depapt->lat, $this->depapt->lon, $this->arrapt->lat, $this->arrapt->lon, "M"));
+
+    }
+
+    public static function getTotalDistance($userID)
+    {
+        $pireps = PIREP::where('user_id', $userID)->get();
+        $total = 0;
+        foreach ($pireps as $pirep)
+        {
+            $total += $pirep->distance;
+        }
+        return $total;
+    }*/
+
 }

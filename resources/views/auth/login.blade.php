@@ -158,7 +158,7 @@
 
                         <!-- Lock Screen Footer -->
                         <div class="push-10-t text-center animated fadeInUp">
-                            <small class="text-black-op font-w600"><span class="js-year-copy"></span> &copy; FSWire 1.0</small>
+                            <small class="text-black-op font-w600"><span class="js-year-copy"></span> &copy; FSWire 1.3</small>
                         </div>
                         <!-- END Lock Screen Footer -->
 

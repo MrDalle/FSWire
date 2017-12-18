@@ -67,16 +67,13 @@
                         <div class="pull-right push-15-t push-15">
                             <i class="fa fa-bar-chart-o fa-2x text-amethyst"></i>
                         </div>
-                        <div class="h2 text-amethyst" data-toggle="countTo" data-to="{{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}"></div>
-                        <div class="text-uppercase font-w600 font-s12 text-muted">Total Fuel Burn</div>
+                        <div class="h2 text-amethyst" data-toggle="countTo" data-to="{{$totalMiles}}" data-after=" NM"></div>
+                        <div class="text-uppercase font-w600 font-s12 text-muted">Total Miles Flown</div>
                     </div>
                 </a>
             </div>
         </div>
         <!-- END Stats -->
-
-
-
 
 
 
@@ -95,11 +92,11 @@
                             <div class="h5 push-15-t push-5">{{ Auth::user()->username }}</div>
                         </div>
                         <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                            <div class="text-center text-muted">Pilot Rank <h3> Pilot</h3></div>
+                            <div class="text-center text-muted">Pilot Rank <h3>{{ $rank }}</h3></div>
                         </div>
                         <div class="block-content-full progress active">
                             <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar"
-                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%">75% for next rank | 20 Hours left
+                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%">{{ $percentageDone }}% done for next rank | {{ $hoursLeft }} Hours left
                             </div>
                         </div>
                         <div class="block-content">
@@ -119,6 +116,9 @@
 
 
             </div>
+
+
+
 
 
             <!-- Dashboard Cards -->
@@ -192,8 +192,8 @@
                         <div class="alert alert-success alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <p><i class="fa fa-check"></i><a class="alert-link"
-                                                             href="javascript:void(0)">FSWire</a> was updated
-                                successfully to V1.0.8! </p>
+                                                             href="{{ url('/faq') }}">FSWire</a> was updated
+                                successfully to V1.3! </p>
                         </div>
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -240,6 +240,9 @@
 
             <!-- END Row 1 -->
         </div>
+
+
+
             <div class="col-xs-6 col-lg-3 ">
                 <iframe class="animated pulse"src="https://discordapp.com/widget?id=347110168405999618&theme=dark" width="370" height="400" allowtransparency="true" frameborder="0"></iframe>
 
@@ -253,13 +256,15 @@
 
     <!-- END Page Content -->
     </div>
+
+
 @endsection
 @section('javascript')
     <!-- Page Plugins -->
     <script src="{{ URL::asset('assets/js/plugins/chartjsv2/Chart.min.js') }}"></script>
 
     <!-- Page JS Code -->
-    <script src="{{ URL::asset('assets/js/pages/base_pages_dashboard_v3.js') }}"></script>
+    <!--<script src="assets/js/pages/base_pages_dashboard_v3.js"></script>-->
 
     <script>
         jQuery(function () {
@@ -277,6 +282,7 @@
             App.initHelpers('draggable-items');
         });
     </script>
+
 
 
 @endsection

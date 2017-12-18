@@ -35,11 +35,10 @@
                                 <div class="block-content block-content-full text-center">
 
                                   <span class="pull-middle">
-                                      <a href="#" class="btn btn-primary" data-toggle="modal"
-                                              data-target="#modal-popout{{$s->id}}" role="button">Details</a>
-                                              <a href="#" class="btn btn-warning" data-toggle="modal"
-                                                      data-target="#modal-popout-brief{{$s->id}}" role="button">Briefing</a>
-                                      <a href="#" class="btn btn-danger" role="button" onclick="event.preventDefault();
+                                             <a href="/flightops/bids/{{ $s->id }}" class="btn btn-success"  role="button">Briefing</a>
+
+
+                                      <a href="#" class="btn btn-warning" role="button" onclick="event.preventDefault();
                                                                document.getElementById('delete-bid{{ $s->id }}').submit();">Cancel</a>
                                       <form id="delete-bid{{ $s->id }}" method="POST" action="{{ url('/flightops/bids/'.$s->id) }}" accept-charset="UTF-8" hidden>
                                           {{ csrf_field() }}
@@ -93,6 +92,7 @@
                                 <li>
                                     <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
                                 </li>
+
                             </ul>
                             <h3 class="block-title">Details for {{ $s->airline->icao }}{{ $s->flightnum }}</h3>
                         </div>
@@ -148,34 +148,7 @@
 
 
         <!-- Pop Out Modal BRIEFING-->
-        <div class="modal fade" id="modal-popout-brief{{$s->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-popout modal-m">
-                <div class="modal-content">
-                    <div class="block block-themed block-transparent remove-margin-b">
 
-                        <div class="block-header bg-primary-dark">
-                            <ul class="block-options">
-                                <li>
-                                    <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
-                                </li>
-                            </ul>
-                            <h3 class="block-title">Briefing for {{ $s->airline->icao }}{{ $s->flightnum }}</h3>
-                        </div>
-
-                        </div>
-                        <div class="block-content text-center">
-                           <h2>This feature will be implemented later. Stay tuned!</h2>
-
-</div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-sm btn-primary text" type="button" data-dismiss="modal"><i
-                                    class="fa fa-check"></i> Ok
-                        </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         <!-- END Pop Out Modal -->
     @endforeach

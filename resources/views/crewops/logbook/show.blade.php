@@ -15,7 +15,7 @@
         <div class="bg-white">
             <section class="content content-mini content-mini-full content-boxed overflow-hidden">
                 <ol class="breadcrumb">
-                    <li><a class="text-primary-dark" href="{{ url('flightops/logbook') }}">Logbook</a></li>
+                    <li><a class="text-primary-dark" href="{{ url('flightops/bids') }}">Logbook</a></li>
 
                     <li><a href="">{{ $p->airline->icao }}{{ $p->flightnum }}</a></li>
                 </ol>
@@ -32,7 +32,7 @@
                         <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->flighttime }}</a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
-                        <div class="font-w700 text-gray-darker animated fadeIn">Distance</div>
+                        <div class="font-w700 text-gray-darker animated fadeIn">Distance (NM)</div>
                         <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)">{{ $p->distance }}</a>
                     </div>
                     <div class="col-xs-6 col-sm-3">
@@ -48,7 +48,6 @@
             <!-- END Stats -->
 
         </div>
-
 
 
 
@@ -174,7 +173,7 @@
         </div>
     </div>
 
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script type="text/javascript">

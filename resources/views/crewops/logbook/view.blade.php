@@ -21,47 +21,47 @@
 <section class="content content-boxed overflow-hidden">
     <div class="push-50-t push-50">
         <div class="row">
-            @foreach($pireps as $p)
+
+            @foreach($pireps  as $p)
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <a class="block block-rounded block-link-hover2" href="{{ url('flightops/logbook/'.$p->id) }}">
 
                     @if($p->status === 1)
-                    <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-success ">
+                    <div class="block-content block-content-full text-center bg-primary ribbon ribbon-bookmark ribbon-success ">
                         <div class="ribbon-box ribbon-primary font-w400">APPROVED</div>
                         <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
-                            <i class="h2 font-w700 mheight-150  text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
+                            <i class="h1 font-w800 mheight-150  text-white">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
                         </div>
                         <div class="text-white">
-                            <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
+                            <em>{{ $p->depapt->icao }}</em> <i class="fa fa-plane"></i> <em>{{ $p->arrapt->icao }}</em>
                         </div>
                     </div>
                     @elseif($p->status === 2)
-                        <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-danger ">
+                        <div class="block-content block-content-full text-center bg-alert ribbon ribbon-bookmark ribbon-danger ">
                             <div class="ribbon-box ribbon-primary font-w400">PENDING</div>
                             <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
                                 <i class="h2 font-w700 mheight-150 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
                             </div>
                             <div class="text-white">
-                                <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
+                                <em>{{ $p->depapt->icao }}</em> <i class="fa fa-plane"></i> <em>{{ $p->arrapt->icao }}</em>
                             </div>
                         </div>
                     @else
-                        <div class="block-content block-content-full text-center bg-gray-dark ribbon ribbon-bookmark ribbon-danger ">
+                        <div class="block-content block-content-full text-center bg-danger ribbon ribbon-bookmark ribbon-warning ">
                             <div class="ribbon-box ribbon-primary font-w400">DENIED</div>
                             <div class="push-50-t push-20 animated fadeIn" data-toggle="appear" data-offset="50" data-class="animated fadeIn">
                                 <i class="h2 font-w700 mheight-150 text-white-op">{{ $p->airline->icao }}{{ $p->flightnum }}</i>
                             </div>
                             <div class="text-white">
-                                <em>{{ $p->airline->name }}</em> • <em>{{ $p->airline->icao }}</em>
+                                <em>{{ $p->depapt->icao }}</em> <i class="fa fa-plane"></i> <em>{{ $p->arrapt->icao }}</em>
                             </div>
                         </div>
                     @endif
 
 
                     <div class="block-content">
-                        <h4 class="mheight-20 text-center">{{ $p->depapt->icao }} - {{ $p->arrapt->icao }}</h4>
+                        <h4 class="mheight-20 text-center">{{ $p->airline->name }}</h4>
                         <h4 class="mheight-20 text-center">{{ $p->aircraft->name }} - {{ $p->aircraft->registration }}</h4>
-                        <h4 class="mheight-50 text-center">{{ $p->landingrate }} FPM</h4>
                         <div class="font-s12 text-center push">{{ $p->created_at }}</div>
                     </div>
                 </a>
@@ -69,12 +69,13 @@
             </div>
 
             @endforeach
-
+                {{ $pireps->links('vendor.pagination.oneui-default') }}
         </div>
 
     </div>
 
 </section>
+
 
 
 

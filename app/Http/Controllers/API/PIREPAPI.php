@@ -49,7 +49,9 @@ class PIREPAPI extends Controller
             $pirep->depapt()->associate($flightinfo->depapt_id);
             $pirep->arrapt()->associate($flightinfo->arrapt_id);
             $pirep->flightnum = $flightinfo->flightnum;
+            $pirep->distance = $flightinfo->getDistance();
             $pirep->route = "NOT SUPPORTED";
+            $pirep->distance = $flightinfo->getDistance();
             $pirep->status = 0;
             $pirep->landingrate = $request->input('landingrate');
 

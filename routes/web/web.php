@@ -31,6 +31,7 @@ Route::group(['prefix' => '/flightops', 'namespace' => 'CrewOps', 'middleware' =
     Route::get('/logbook', 'CrewOpsController@getLogbook');
     Route::get('/logbook/{id}', 'CrewOpsController@getLogbookDetailed');
     Route::resource('/bids', 'BiddingController');
+    Route::get('/simbrief/output', 'SimbriefController@output');
     Route::get('/roster', 'CrewOpsController@getRoster');
     Route::post('/filepirep', 'CrewOpsController@postManualPirep');
 });
@@ -58,6 +59,10 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['au
         Route::get('/schedule', 'ImportExportController@getSchedule');
         Route::post('/schedule', 'ImportExportController@postSchedule');
     });
+});
+
+Route::group(['prefix' => '/simbrief', 'namespace' => 'Simbrief', 'middleware' => 'auth'], function() {
+    Route::get('/output/{id}', 'SimBriefController@output');
 });
 
 // System Migration Routes

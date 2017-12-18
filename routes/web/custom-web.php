@@ -7,9 +7,6 @@ Route::get('/forum', function () {
     return view('forum');
 })->middleware('auth');
 
-Route::get('/flp', function() {
-    return view('flp');
-})->middleware('auth');
 
 Route::get('/wxr', function() {
     return view('wxr');

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Classes\VAOSHelpers;
 use Illuminate\Database\Eloquent\Model;
 
 class Bid extends Model
@@ -30,5 +31,10 @@ class Bid extends Model
     public function aircraft()
     {
         return $this->belongsTo('App\Models\Aircraft');
+    }
+
+    public function getDistance()
+    {
+        return round(VAOSHelpers::getDistance($this->depapt->lat, $this->depapt->lon, $this->arrapt->lat, $this->arrapt->lon, "N"));
     }
 }

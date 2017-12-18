@@ -68,3 +68,10 @@ Route::group(['prefix' => 'acars', 'namespace' => 'LegacyACARS'], function () {
 
     });
 });
+
+Route::group(['prefix' => 'simbrief', 'namespace' => 'Simbrief'], function () {
+
+    // SimbriefAPI function
+    Route::get('/getapicode', 'SimBriefApiController@getApiCode');
+    Route::get('/checkpageexist', 'SimBriefApiController@checkPageExist');
+});

@@ -41,9 +41,14 @@ class smartCARS extends Controller
         $pirep->depapt()->associate($flightinfo->depapt_id);
         $pirep->arrapt()->associate($flightinfo->arrapt_id);
         $pirep->flightnum = $flightinfo->flightnum;
-        $pirep->route = "NOT SUPPORTED";
+        if (is_null($flightinfo->route)) {
+            $pirep->route = 'NOT FILLED';
+        } else {
+            $pirep->route = $flightinfo->route;
+        }
+
         $pirep->status = 0;
-        $pirep->distance = 0;
+        $pirep->distance = $flightinfo->getDistance();
         $pirep->landingrate = $request->input('landingrate');
         $pirep->flighttime = $request->input('flighttime');
         $pirep->acars_client = $request->input('source');
@@ -140,6 +145,7 @@ class smartCARS extends Controller
         //dd($bids);
         $c = 0;
         foreach ($bids as $bid) {
+            $route_data = json_decode($bid['route_data']);
             $export[$c]['bidid'] = $bid['id'];
             $export[$c]['routeid'] = $bid['id'];
             $export[$c]['code'] = $bid['airline']['icao'];
@@ -147,13 +153,13 @@ class smartCARS extends Controller
             $export[$c]['type'] = "P";
             $export[$c]['departureicao'] = $bid['depapt']['icao'];
             $export[$c]['arrivalicao'] = $bid['arrapt']['icao'];
-            $export[$c]['route'] = $bid['route'];
-            $export[$c]['cruisingaltitude'] = "35000";
+            $export[$c]['route'] = isset($bid['route']) ? $bid['route'] : '';
+            $export[$c]['cruisingaltitude'] = isset($bid['cruise']) ? $bid['cruise'] : 35000;
             $export[$c]['aircraft'] = $bid['aircraft_id'];
-            $export[$c]['duration'] = '0.00';
+            $export[$c]['duration'] = property_exists($route_data, 'duration') ? $route_data->duration : '00:00';
             $export[$c]['departuretime'] = $bid['deptime'];
             $export[$c]['arrivaltime'] = $bid['arrtime'];
-            $export[$c]['load'] = '0';
+            $export[$c]['load'] = $bid['load'];
             $export[$c]['daysofweek'] = "0123456";
             // Iterate through the array
             $c++;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CrewOps;
 
 use App\Bid;
 use App\Classes\VAOS_Schedule;
+use App\Models\Aircraft;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -61,7 +62,12 @@ class BiddingController extends Controller
      */
     public function show($id)
     {
-        //
+        $bid = Bid::where('id', $id)->with('user')->with('airline')->with('depapt')->with('arrapt')->with('aircraft')->first();
+        $aircrafts = Aircraft::orderBy('name', 'asc') -> get();
+        return view('crewops.bids.planning', [
+            'bid' => $bid,
+            'aircrafts' => $aircrafts
+        ]);
     }
 
     /**
@@ -82,9 +88,27 @@ class BiddingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Bid $bid)
     {
-        //
+        $bid -> aircraft_id = $request->get('briefing_Aircraft_Id');
+        if ($request->get('briefing_Route') == "")
+        {
+            $bid -> route = null;
+        } else
+        {
+            $bid -> route = $request->get('briefing_Route');
+        }
+
+        if ($request->get('briefing_FlightLevel') == "")
+        {
+            $bid -> cruise =null;
+        } else
+        {
+            $bid -> cruise = $request->get('briefing_FlightLevel');
+        }
+        $bid -> save();
+
+        return redirect('flightops/bids/' . $bid->id);
     }
 
     /**
