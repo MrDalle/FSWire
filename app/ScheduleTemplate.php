@@ -27,6 +27,6 @@ class ScheduleTemplate extends Model
     // Eloquent Eger Loading Helper
     public static function allFK()
     {
-        return with('depicao')->with('arricao')->with('airline')->with('aircraft_group')->get();
+        return with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->get();
     }
 }

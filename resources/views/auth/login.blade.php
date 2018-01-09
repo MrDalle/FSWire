@@ -167,7 +167,7 @@
                     <!-- END Lock Screen Block -->
                 </div>
             </div>
-        </div></div>
+        </div>
         <!-- END Lock Screen Content -->
 
 

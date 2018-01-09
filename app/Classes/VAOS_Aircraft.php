@@ -169,7 +169,7 @@ class VAOS_Aircraft
         //    return false;
         //}
     }
-    public function deleteAircraft($id)
+    public static function deleteAircraft($id)
     {
         // First remove the aircraft from the aircraft group.
 

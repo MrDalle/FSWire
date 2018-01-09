@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\ACARSData;
 use App\Airline;
 use App\Bid;
+use App\Events\PosReportSave;
 use App\Models\Aircraft;
 use App\Models\Airport;
 use App\ScheduleComplete;
@@ -67,6 +68,10 @@ class AcarsAPI extends Controller
         $rpt->phase = $report['phase'];
         $rpt->client = $report['client'];
         $rpt->save();
+
+        //firing an event
+        event(new PosReportSave($rpt));
+
         return response()->json([
             'status' => 200
         ]);

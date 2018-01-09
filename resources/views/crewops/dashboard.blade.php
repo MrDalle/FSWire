@@ -95,15 +95,15 @@
                             <div class="text-center text-muted">Pilot Rank <h3>{{ $rank }}</h3></div>
                         </div>
                         <div class="block-content-full progress active">
-                            <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar"
-                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%">{{ $percentageDone }}% done for next rank | {{ $hoursLeft }} Hours left
-                            </div>
+                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ $percentageDone }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $percentageDone }}%"></div>
                         </div>
+                        <div class="text-center text-muted">  {{ $percentageDone }}% done for next rank | {{ $hoursLeft }} Hours left </div>
+
                         <div class="block-content">
                             <div class="row items-push text-center">
                                 <div class="col-xs-6">
                                     <div class="push-5"><i class="si si-badge fa-2x"></i></div>
-                                    <div class="h5 font-w300 text-muted">0 Badges</div>
+                                    <div class="h5 font-w300 text-muted">0 Achievements</div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="push-5"><i class="si si-wallet fa-2x"></i></div>
@@ -113,8 +113,6 @@
                         </div>
                     </div>
                 </a>
-
-
             </div>
 
 

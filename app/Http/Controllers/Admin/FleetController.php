@@ -138,6 +138,8 @@ class FleetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Delete the fleet from the system
+        VAOS_Aircraft::deleteAircraft($id);
+        return redirect('/admin/fleet');
     }
 }

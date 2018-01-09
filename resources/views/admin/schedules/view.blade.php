@@ -88,8 +88,6 @@
                         <td>
                             <a href="{{ url('/admin/schedule/'.$s->id.'/edit') }}" class="btn btn-primary btn-sm">Edit</a>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                {{--<a href="#" role="button" class="btn btn-danger" onclick="event.preventDefault();
-                                        document.getElementById('delete-{{ $s->id }}').submit();">Delete</a>--}}
                             </div>
 
                         </td>

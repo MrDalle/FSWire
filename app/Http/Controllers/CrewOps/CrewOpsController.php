@@ -5,14 +5,14 @@ namespace App\Http\Controllers\CrewOps;
 use App\AircraftGroup;
 use App\Airline;
 use App\Bid;
+use App\Classes\FSWireHelpers;
 use App\Models\Aircraft;
 use App\Models\Airport;
 use App\PIREP;
-use App\Rank;
 use App\ScheduleTemplate;
 use App\User;
+use App\VamEvent;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
@@ -26,21 +26,12 @@ class CrewOpsController extends Controller
         $totalLogs = PIREP::where('user_id', Auth::user()->id)->get();
         //$rank = $this->getRankByUserID(Auth::user()->id);
         $newpirep = PIREP::where('user_id', Auth::user()->id)->with('depapt')->with('arrapt')->latest('created_at')->first();
-        $flighttime = PIREP::where('user_id', Auth::user()->id)->sum('flighttime');
-
-
-        if (Auth::user()->totalhours != null) {
-            $totalflightime = Auth::user()->totalhours + $this->convertTime($flighttime);
-        }else{
-            $totalflightime = $this->convertTime($flighttime);
-        }
-
 
         return view('crewops.dashboard', [
             'bids' => $totalbids,
             'logs' => $totalLogs,
             'newpirep' => $newpirep,
-            'totalflightime' => $totalflightime
+            'totalflightime' => FSWireHelpers::getTotalFlightTime(Auth::user()->id)
             ]);
     }
     public function profileUpdate(Request $request)
@@ -94,20 +85,13 @@ class CrewOpsController extends Controller
             ->limit(10)
             ->get();
 
-        $flighttime = PIREP::where('user_id', $id)->sum('flighttime');
-        if ($user->totalhours != null) {
-            $totalflightime = $user->totalhours + $this->convertTime($flighttime);
-        }else{
-            $totalflightime = $this->convertTime($flighttime);
-        }
-        $rankUser = $this->getRankVariables($totalflightime);
-
+        $rankUser = FSWireHelpers::getRankVariables($id);
 
         return view('crewops.profile.view', [
             'user' => $user,
             'pireps' => $pireps,
-            'totalflightime' => $totalflightime,
-            'userTotalMiles' => PIREP::where('user_id', $user->id)->sum('distance'),
+            'totalflightime' => FSWireHelpers::getTotalFlightTime($id),
+            'userTotalMiles' => FSWireHelpers::getTotalMilesFlown($id),
             'userRankName' => $rankUser['name'],
             'userRankHoursLeft' => $rankUser['hoursLeft'],
             'userRankProgressToNextRank' => $rankUser['percentageProgressToNextRank']
@@ -123,14 +107,10 @@ class CrewOpsController extends Controller
                     ->limit(10)
                     ->get();
 
-                $flighttime = PIREP::where('user_id', $user->id)->sum('flighttime');
-                if ($user->totalhours != null) {
-                    $totalflightime = $user->totalhours + $this->convertTime($flighttime);
-                }else{
-                    $totalflightime = $this->convertTime($flighttime);
-                }
-
-        return view('crewops.profile.edit', ['user' => $user, 'pireps' => $pireps, 'totalflightime' => $totalflightime]);
+        return view('crewops.profile.edit', [
+            'user' => $user,
+            'pireps' => $pireps,
+            'totalflightime' => FSWireHelpers::getTotalFlightTime($user->id)]);
     }
     public function getSchedule(Request $request)
     {
@@ -169,7 +149,8 @@ class CrewOpsController extends Controller
         //dd($query);
         // Load all the schedules within the database
         if (empty($query)) {
-            $schedules = ScheduleTemplate::with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->orderBy('created_at', 'desc')->paginate(8);
+            //$schedules = ScheduleTemplate::with('depapt')->with('arrapt')->with('airline')->with('aircraft_group')->orderBy('created_at', 'desc')->limit(8);
+            $schedules = ScheduleTemplate::where('id', -1)->paginate(8);
             //dd($schedules);
         }
         else
@@ -200,7 +181,7 @@ class CrewOpsController extends Controller
     }
     public function getRoster()
     {
-        $users = User::all();
+        $users = User::paginate(12);
 
         return view('crewops.roster.view', ['users' => $users]);
     }
@@ -228,65 +209,37 @@ class CrewOpsController extends Controller
 
     public function getLogbookDetailed($id)
     {
-       $pirep = PIREP::where('id', $id)->with('airline')->with('depapt')->with('arrapt')->with('aircraft')->with('user')->first();
-       return view('crewops.logbook.show', ['p' => $pirep]);
-    }
+        $pirep = PIREP::where('id', $id)->with('airline')->with('depapt')->with('arrapt')->with('aircraft')->with('user')->first();
+        $log = [];
+        $log['type'] = "UNKNOWN";
+        $log['logs'] = [];
+        switch ($pirep->acars_client) {
+            case 'SimAcars':
+                $log['type'] = "SIMACARS";
+                $flight_data = json_decode($pirep->flight_data);
+                foreach ($flight_data as $key => $value) {
+                    if ($value != '') {
+                        $log['events'][] = strtoupper($key) . ' : ' . $value;
+                    }
+                }
+                $events = VamEvent::where('flight_id', $pirep->schedule_data)->get();
+                foreach ($events as $item) {
+                    $log['logs'][] = $item->event_timestamp . " : " . $item->event_description;
+                };
 
-    public function getRankByUserID($id)
-    {
-        $user = User::findOrFail($id);
-        $flighttime = PIREP::where('user_id', $user->id)->sum('flighttime');
+                break;
+            case 'smartCARS':
+                $log['type'] = "SMARTACARS";
+                $log['logs'] = explode("*", $pirep->flight_data);
+                break;
 
-        if ($user->totalhours != null) {
-            $time = $user->totalhours  + $this->convertTime($flighttime);
-        }else{
-            $time = $this->convertTime($flighttime);
         }
-        $hours = $time;
 
-        $rank = DB::select('SELECT tr.rank_name 
-FROM vaos_ranks as tr 
-LEFT JOIN (SELECT * FROM vaos_ranks LIMIT 1,69596585953484) as l 
-ON l.needed_points = (SELECT MIN(needed_points) FROM vaos_ranks WHERE needed_points > tr.needed_points limit 1) 
-LEFT OUTER JOIN vaos_users AS tu ON ? >= tr.needed_points AND ? < l.needed_points WHERE tu.id IS NOT NULL group by tr.rank_name', [$hours, $hours]);
-        $output = array_map(function ($object) { return $object->rank_name; }, $rank);
-        $rank = implode(', ', $output);
-        return $rank;
+        return view('crewops.logbook.show', [
+            'p' => $pirep,
+            'log' => $log
+        ]);
     }
 
-    function convertTime($dec)
-    {
-        // start by converting to seconds
-        $seconds = ($dec * 3600);
-        // we're given hours, so let's get those the easy way
-        $hours = floor($dec);
-        // since we've "calculated" hours, let's remove them from the seconds variable
-        $seconds -= $hours * 3600;
-        // calculate minutes left
-        $minutes = floor($seconds / 60);
-        // remove those from seconds as well
-        $seconds -= $minutes * 60;
-        // return the time formatted HH:MM:SS
-        //return lz($hours).":".lz($minutes).":".lz($seconds);
-        return $hours;
-
-    }
-
-// lz = leading zero
-    function lz($num)
-    {
-        return (strlen($num) < 2) ? "0{$num}" : $num;
-    }
-
-    private function getRankVariables($flighttime)
-    {
-        $rank = Rank::where('needed_points','<=',$flighttime)->orderBy('needed_points', 'desc')->first();
-        $nextRank = Rank::where('needed_points','>',$flighttime)->orderBy('needed_points', 'asc')->first();
-        return [
-            'hoursLeft' => round($nextRank->needed_points - $flighttime),
-            'percentageProgressToNextRank' => round(($flighttime - $rank->needed_points)/($nextRank->needed_points - $rank->needed_points)*100),
-            'name' => $rank->rank_name
-        ];
-    }
 
 }

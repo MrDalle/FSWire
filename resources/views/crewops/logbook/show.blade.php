@@ -149,61 +149,58 @@
         </div>
 
 
-
-        <h2 class="h3 font-w600 push-50-t push animated pulse">LOG FILES</h2>
-        <div id="faq2" class="panel-group animated pulse">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#log" href="#log">Detailed smartCARS LOG for {{ $p->airline->icao }}{{ $p->flightnum }} <h2 class=" font-xs badge bg-success">click to view </h2></a>
-                    </h3>
-                </div>
-                <div id="log" class="panel-collapse collapse">
-                    <div class="panel-body" id="log">
-                        <div id="sclogtab">
-                            @if($p->acars_client === "smartCARS")
-                                <ul id="scLogs" class="collection with-header">
-
+        @if($log['type'] != 'UNKNOWN')
+            <h2 class="h3 font-w600 push-50-t push animated pulse">LOG FILES</h2>
+            <div id="faq2" class="panel-group animated pulse">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#log" href="#log">Detailed ACARS LOG from {{ $log['type'] }} for {{ $p->airline->icao }}{{ $p->flightnum }} <h2 class=" font-xs badge bg-success">click to view </h2></a>
+                        </h3>
+                    </div>
+                    <div id="log" class="panel-collapse collapse">
+                        <div class="panel-body" id="log">
+                            <div class="sclogtab">
+                                <ul class="scLogs" class="collection with-header">
+                                    @foreach($log['logs'] as $item)
+                                        <li class="collection-item"><div>{{ $item }}</div></li>
+                                    @endforeach
                                 </ul>
-                            @endif
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            @if($log['type'] === 'SIMACARS')
+                <div id="faq3" class="panel-group animated pulse">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#log2" href="#log2">Critical Events from {{ $log['type'] }} on {{ $p->airline->icao }}{{ $p->flightnum }} <h2 class=" font-xs badge ">click to view </h2></a>
+                            </h3>
+                        </div>
+                        <div id="log2" class="panel-collapse collapse">
+                            <div class="panel-body" id="log2">
+                                <div class="sclogtab">
+                                    <ul class="scLogs" class="collection with-header">
+                                        @foreach($log['events'] as $item)
+                                            <li class="collection-item"><div>{{ $item }}</div></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endif
+
+
+
     </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            console.log("ok");
-// Pull the data from the API so we can add stuff
-            $.getJSON( "{{ config('app.url') }}api/v1/logbook/{{$p->id}}", function( data ) {
-                console.log(data);
-                if(data.acars_client = "smartCARS") {
-                    var logSplit = data.flight_data.split("*");
-                    $.each(logSplit, function( index, value) {
-                        $("#scLogs").append('<li class="collection-item"><div>'+ value +'</div></li>')
-                    });
-                }
-                // time to apply the flight status.
-                switch(data.status) {
-                    case 0:
-                        $("#status").addClass("yellow darken-2");
-                        $("#status-text").append('STATUS: <b>PENDING</b>');
-                        break;
-                    case 1:
-                        $("#status").addClass("green");
-                        $("#status-text").append('STATUS: <b>APPROVED</b>');
-                        break;
-                    case 2:
-                        $("#status").addClass("red");
-                        $("#status-text").append('STATUS: <b>DENIED</b>');
-                        break;
-                }
-            });
-        });
-    </script>
+
 @endsection

@@ -75,3 +75,23 @@ Route::group(['prefix' => 'simbrief', 'namespace' => 'Simbrief'], function () {
     Route::get('/getapicode', 'SimBriefApiController@getApiCode');
     Route::get('/checkpageexist', 'SimBriefApiController@checkPageExist');
 });
+
+// VAMAcars
+Route::group(['prefix' => 'vam', 'namespace' => 'Vamacars'], function () {
+    Route::post('/vam_acars_remove_book_aircraft.php', 'VamacarsController@removeBookAircraft');
+    Route::post('/vam_acars_get_aircraft.php', 'VamacarsController@getAircraft');
+    Route::post('/vam_acars_pilot_connection.php', 'VamacarsController@pilotConnection');
+    Route::post('/vamliveacars.php', 'VamacarsController@liveAcars');
+    Route::post('/receivevampirep.php', 'VamacarsController@receiveVamPirep');
+    Route::post('/receivevamevents.php', 'VamacarsController@receiveVamEvents');
+    Route::post('/receivevamtracks.php', 'VamacarsController@receiveVamTracks');
+    Route::post('/vam_acars_check_data.php', 'VamacarsController@checkData');
+    Route::post('/vam_acars_delete_data.php', 'VamacarsController@deleteData');
+
+});
+
+//SmartCARS
+Route::group(['prefix' => 'smartCARS', 'namespace' => 'SmartCARS'], function () {
+    Route::post('/frame.php', 'SmartCARSApiController@index');
+    Route::get('/frame.php', 'SmartCARSApiController@index');
+});

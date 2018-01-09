@@ -1,7 +1,6 @@
 <?php
-Route::get('/map', function () {
-    return view('map');
-})->middleware('auth');
+Route::get('/map', 'Maps\AcarsMapController@renderMaps')->middleware('auth');
+Route::get('/acars/{id}', 'Maps\AcarsMapController@getAcars');
 
 Route::get('/forum', function () {
     return view('forum');

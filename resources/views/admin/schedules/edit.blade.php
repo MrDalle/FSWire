@@ -101,7 +101,14 @@
             <div class="card">
                 <div class="card-block">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp; Submit</button>
-                    <button type="reset" class="btn btn-danger"><i class="fa fa-ban"></i>&nbsp; Reset</button>
+                    <button type="reset" class="btn btn-warning"><i class="fa fa-ban"></i>&nbsp; Reset</button>
+
+                    <form id="delete-{{ $schedule->id }}" method="POST" action="{{ url('/admin/schedule/'.$schedule->id) }}" accept-charset="UTF-8" hidden>
+                        {{ csrf_field() }}
+                        <input name="_method" type="hidden" value="DELETE">
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i>&nbsp; Delete</button>
+                    </form>
+
                 </div>
             </div>
         </div>

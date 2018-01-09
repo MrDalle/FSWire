@@ -63,7 +63,7 @@
                             @endif
                             <td>{{ $a->callsign }}</td>
                             <td>
-                                <a href="{{ url('admin/airlines/'.$a->id.'/edit') }}" class="btn btn-primary btn-sm disabled">Edit</a>
+                                <a href="{{ url('admin/airlines/'.$a->id.'/edit') }}" class="btn btn-primary btn-sm">Edit</a>
                             </td>
                         </tr>
                     @endforeach

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\LegacyACARS;
 
+use App\Events\PirepSave;
+use App\Events\PosReportSave;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Airline;
@@ -72,8 +74,10 @@ class smartCARS extends Controller
         $comment->comment = $request->input('comment');
         $comment->save();
 
-        // Time to delete the bid from the table.
+        //firing an event
+        event(new PirepSave($pirep));
 
+        // Time to delete the bid from the table.
         $flightinfo->delete();
 
         return response()->json([
@@ -134,6 +138,10 @@ class smartCARS extends Controller
         $rpt->timeremaining = $report['timeremaining'];
         $rpt->online =  $report['online'];
         $rpt->save();
+
+        //firing an event
+        event(new PosReportSave($rpt));
+
         return response()->json([
             'status' => 200
         ]);

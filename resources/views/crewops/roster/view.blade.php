@@ -1,7 +1,10 @@
 @extends('layouts.oneui')
 
+
 @section('head')
     <link href="{{URL::asset('/crewops/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('/crewops/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('/crewops/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
 @endsection
 @section('content')
@@ -39,8 +42,8 @@
                                 <td>{{ count($u->pirep) }}</td>
                             </tr>
                             <tr>
-                                <td class="font-w600">AVG LDG RTE</td>
-                                <td>{{ (int) \App\PIREP::where('user_id', $u->id)->avg('landingrate') }}</td>
+                                <td class="font-w600">Total Hours</td>
+                                <td>{{ $u->totalhours }}</td>
                             </tr>
                             <tr>
                                 <td class="font-w600">RANK</td>
@@ -54,8 +57,9 @@
         </div>
 
 
-@endforeach
 
+@endforeach
+          {{ $users->links('vendor.pagination.oneui-default') }}
       </div>
   </div>
 

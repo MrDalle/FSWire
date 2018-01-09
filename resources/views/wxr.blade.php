@@ -5,16 +5,16 @@
                 <!-- MAP -->
                 <style type="text/css">
                 .map-container {
-
-                  border: none;
+                    padding-left: 0px;
+                    padding-rigt: 0px;
+                    border: none;
                 }
 
                 .map-container iframe{
-                  height:1080px;
-                	width:100%;
-
-
-                	position: relative; /* IE needs a position other than static */
+                   /* IE needs a position other than static */
+                    width: calc(100% - 60px);
+                    height: calc(100% - 60px);
+                    position: absolute;
                 }
 
                 </style>
@@ -24,8 +24,8 @@
 
 
                 <!-- MAP -->
-                <div class="map-container">
-                <iframe  frameBorder="0" src="https://www.ventusky.com/"></iframe>
+                <div class="container-fluid map-container">
+                    <iframe  frameBorder="0" src="https://www.ventusky.com/"></iframe>
                 </div>
                 <!-- END MAP -->
 

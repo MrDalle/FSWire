@@ -24,4 +24,8 @@ class Aircraft extends Model
     {
         return $this->belongsToMany('App\AircraftGroup', 'aircraft_group_pivot');
     }
+    public function image()
+    {
+        return $this->belongsTo('App\AircraftImage','icao','icao');
+    }
 }

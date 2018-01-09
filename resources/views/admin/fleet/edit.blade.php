@@ -116,17 +116,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-lg-4">
             <div class="card">
                 <div class="card-block">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp; Submit</button>
-                    <button type="reset" class="btn btn-danger"><i class="fa fa-ban"></i>&nbsp; Reset</button>
+                    <button type="reset" class="btn btn-warning"><i class="fa fa-ban"></i>&nbsp; Reset</button>
+
+
                 </div>
             </div>
         </div>
     </form>
 @endsection
 
-@section('js')
-    <script src="{{ asset('/resources/admin/js/MasterData.js') }}"></script>
-@endsection
+

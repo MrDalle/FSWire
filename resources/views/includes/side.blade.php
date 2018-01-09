@@ -424,25 +424,23 @@
                     <!-- Admin Center -->
                 @if(Auth::user()->admin)
 
+                        <li class="">
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-puzzle"></i><span class="sidebar-mini-hide">VA Management</span></a>
+                            <ul>
+                                <li>
+                                    <a href="{{url('admin/schedule/create')}}">Route Creator</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/schedule') }}">Schedule Manager</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/fleet') }}">Fleet Manager</a>
+                                </li>
+                            </ul>
+                        </li>
+
                     <li>
 
-                            <li class="nav-main-heading"><span class="sidebar-mini-hide">VA Management</span></li>
-
-
-                            <li>
-                                <a href="{{url('admin/schedule')}}"><i
-                                            class="fa fa-ravelry"></i><span
-                                            class="sidebar-mini-hide">Route Creator</span></a>
-                            </li>
-                            <li>
-                                <a href="  {{ url('admin/fleet') }}"><i class="si si-plane"></i><span
-                                            class="sidebar-mini-hide">Fleet Manager</span></a>
-                            </li>
-                            <li>
-                                <a href="{{url('admin/airlines')}}"><i
-                                            class="fa fa-ravelry"></i><span
-                                            class="sidebar-mini-hide">Airlines</span></a>
-                            </li>
                     <!--
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span
                                     class="sidebar-mini-hide">Admin Center</span></a>
@@ -489,7 +487,7 @@
                     </li>
 
                         <li>
-                            <a target="_blank" href=" https://fswire.net/down.php"><i class="si si-cloud-download"></i><span
+                            <a target="_blank" href="https://fswire.net/#download"><i class="si si-cloud-download"></i><span
                                         class="sidebar-mini-hide">Downloads</span></a>
                         </li>
 

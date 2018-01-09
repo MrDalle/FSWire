@@ -9,11 +9,10 @@ use Illuminate\Http\Request;
 
 class SimBriefApiController extends Controller
 {
-    protected $simbrief_api_key = env('SIMBRIEF_KEY');
-
     public function getApiCode(Request $request)
     {
-        return response(md5($this->simbrief_api_key.$request->get('api_req')),200);
+        $simbrief_api_key = env('SIMBRIEF_KEY','');
+        return response(md5($simbrief_api_key.$request->get('api_req')),200);
     }
 
     public function checkPageExist(Request $request)

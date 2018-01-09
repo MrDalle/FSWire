@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Classes\phpVMSLegacy;
+use App\Events\PirepSave;
 use App\PIREP;
 use App\PIREPComment;
 use App\User;
@@ -71,6 +72,9 @@ class PIREPAPI extends Controller
             $comment->pirep()->associate($pirep);
             $comment->comment = $request->input('comment');
             $comment->save();
+
+            //firing an event
+            event(new PirepSave($pirep));
 
             // Time to delete the bid from the table.
 

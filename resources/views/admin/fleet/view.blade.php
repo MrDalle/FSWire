@@ -14,7 +14,6 @@
 
 
 
-
   <!-- Main Container -->
 
             <!-- Page Header -->
@@ -28,8 +27,7 @@
                 <i class="fa fa-align-justify"></i> Aircraft Table
             </div>
           <div class="block-content block-content-full ">
-              <a href="{{ url('admin/fleet/create') }}" role="button" class="button btn btn-primary pull-r"><i class="fa fa-plus"></i>&nbsp; New Aircraft</a>
-                <div class="block-content block-content-full text-center">
+                <div class="block-content block-content-full">
 
                     @if(session('aircraft_created'))
                         <div class="alert alert-success">Aircraft successfully created.</div>
@@ -37,6 +35,7 @@
                         <div class="alert alert-success">Aircraft successfully updated.</div>
                     @endif
 
+                    <a href="{{ url('admin/fleet/create') }}" role="button" class="button btn btn-primary pull-r"><i class="fa fa-plus"></i>&nbsp; New Aircraft</a>
 
                 </div>
                 @if($fleet == '[]')
@@ -44,7 +43,7 @@
                         <strong>No Airplanes Found:</strong> The server returned no airplanes in the system.
                     </div>
                 @else
-                    <table id="table_id" class="table table-striped table-hover">
+                  <table class="table table-bordered table-striped table-hover js-dataTable-full ">
                         <thead>
                         <tr>
                             <th>Airline</th>
@@ -82,8 +81,8 @@
 
                                 <td>
                                     <a href="{{ url('/admin/fleet/'.$a->id.'/edit') }}" class="btn btn-primary btn-sm">Edit</a>
-                                </td>
 
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -94,27 +93,7 @@
     </div>
 @endsection
 
-@section('js')
-    <script type="text/javascript">
-        $(document).ready( function () {
-            $('#table_id').DataTable( {
-                responsive: true,
-                "autoWidth": false
-            });
-            /*
-            $(".clickable-row").click(function() {
-                window.document.location = $(this).data("href");
-            });
-            */
-            $(".clickable-row").click(function() {
-                return false;
-            }).dblclick(function() {
-                window.document.location = this.href;
-                return false;
-            });
-        });
-    </script>
-    <script src="{{URL::asset('/crewops/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{URL::asset('/crewops/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('/crewops/vendor/datatables-responsive/dataTables.responsive.js')}}"></script>
+      @section('javascript')
+          <script src="{{ URL::asset('assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+          <script src="{{ URL::asset('assets/js/pages/base_tables_datatables.js') }}"></script>
 @endsection

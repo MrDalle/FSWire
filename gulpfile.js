@@ -1,5 +1,6 @@
 const elixir = require('laravel-elixir');
-
+var gulp = require('gulp');
+var googleWebFonts = require('gulp-google-webfonts');
 require('laravel-elixir-vue-2');
 
 /*
@@ -13,7 +14,20 @@ require('laravel-elixir-vue-2');
  |
  */
 
+var options = { };
+
+gulp.task('fonts', function () {
+    return gulp.src('./fonts.list')
+        .pipe(googleWebFonts(options))
+        .pipe(gulp.dest('public/assets/fonts'))
+        ;
+});
+
+
+
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    mix.sass('app.scss', 'public/assets/css/main.css')
+    .task('fonts')
+    .webpack('app.js', 'public/assets/js/main.js')
+    .scripts(['simbrief.apiv1.js'], 'public/assets/js/simbrief.apiv1.js');
 });

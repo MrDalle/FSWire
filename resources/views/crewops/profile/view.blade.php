@@ -144,6 +144,7 @@
                 <div class="block-content block-content-full text-right">
 
                     <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/settings'"><i class="fa fa-fw fa-cog"></i> Edit Profile</button>
+                    <button class="btn btn-sm btn-primary"  onclick="window.location.href='/flightops/roster'"><i class="fa fa-fw fa-cog"></i> View all Pilots</button>
 
                 </div>
                 </a>
@@ -170,7 +171,7 @@
                             </tr>
 
                             <tr>
-                                <td><strong>Hub</strong></td>
+                                <td><strong>Callsign</strong> {{ $user->id }}</td>
                             </tr>
                             <tr>
                                 <td><strong>Fuel Burned</strong> {{  \App\PIREP::where('user_id', Auth::id())->sum('fuel_used') }}</td>
@@ -187,6 +188,7 @@
                             </tbody>
                         </table>
                     </div>
+
 
                 </a>
             </div>
@@ -255,7 +257,7 @@
                           </div>
                           <!-- END Friends Widget -->
             </div>
-            -->
+
 
         </div>
 
